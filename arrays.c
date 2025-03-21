@@ -283,3 +283,19 @@ int main(){
     printarray(mynums,5);
     return 0;
 }
+// 2d arrays 
+void main(){
+    int matrix[2][3]={{1,2,3},{4,5,6}};
+    printf("%d\n",matrix[0][0]);
+    printf("%d\n",matrix[0][1]);
+    printf("%d\n",matrix[0][2]);
+}
+void main(){
+    int matrix[2][3]={{1,2,3},{4,5,6}};
+    matrix[0][0]=10;
+    matrix[0][1]=20;
+    matrix[0][2]=30;
+    printf("%d\n",matrix[0][0]);
+    printf("%d\n",matrix[0][1]);
+    printf("%d\n",matrix[0][2]);
+}
