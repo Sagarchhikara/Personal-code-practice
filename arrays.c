@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 // to enter the aray elements and print them
 // int main(){
 //     int i,n,arr[10];
@@ -46,7 +46,7 @@
 //     }
 //     printf("The largest element in the array is %d\n",max);
 //     return 0;
-// to generate the fibonacci series using arrays 
+// to generate the fibonacci series using arrays
 // int main(){
 //     int i,n,a[10];
 //     printf("Enter the number of elements in the fibonacci series:\n");
@@ -96,7 +96,7 @@
 
 //     return 0;
 // }
-// Sum of two matrixes 
+// Sum of two matrixes
 // int main(){
 //     int a[10][10],b[10][10],sum[10][10],i,j,r,c;
 //     printf("Enter the number of rows and columns:\n");
@@ -127,31 +127,31 @@
 //     }
 //     return 0;
 // }
-    // int main(){
-    //     int i,n,arr[100];
-    //     printf("Enter the number of elements in the array:\n");
-    //     scanf("%d",&n);
-    //     printf("Enter the array elements:\n");
-    //     for(i=0;i<n;i++){
-    //         scanf("%d", &arr[i]);
-    //     }
-    //     int found = -1;
-    //     for(i=1; i<n-1; i++){
-    //         if(arr[i-1] < arr[i] && arr[i] > arr[i+1]){
-    //             found = arr[i];
-    //             break;
-    //         }
-    //     }
-    //     if(found != -1){
-    //         printf("%d", found);
-    //     } else if(n > 0 && arr[n-1] > arr[n-2]){
-    //         printf("%d", arr[n-1]);
-    //     } else {
-    //         printf("-1");
-    //     }
-    //     return 0;
-    // }
-// binary search 
+// int main(){
+//     int i,n,arr[100];
+//     printf("Enter the number of elements in the array:\n");
+//     scanf("%d",&n);
+//     printf("Enter the array elements:\n");
+//     for(i=0;i<n;i++){
+//         scanf("%d", &arr[i]);
+//     }
+//     int found = -1;
+//     for(i=1; i<n-1; i++){
+//         if(arr[i-1] < arr[i] && arr[i] > arr[i+1]){
+//             found = arr[i];
+//             break;
+//         }
+//     }
+//     if(found != -1){
+//         printf("%d", found);
+//     } else if(n > 0 && arr[n-1] > arr[n-2]){
+//         printf("%d", arr[n-1]);
+//     } else {
+//         printf("-1");
+//     }
+//     return 0;
+// }
+// binary search
 // int main(){
 //     int i,n,arr[100],key;
 //     printf("Enter the number of elements in the array:\n");
@@ -175,8 +175,8 @@
 //         }
 //     }
 // }
-//  sorting 
-// bubble sort algorithm 
+//  sorting
+// bubble sort algorithm
 // int main(){
 //     int i,n,j,arr[100],temp;
 //     printf("Enter the number of elements in array:\n");
@@ -201,43 +201,72 @@
 //     }
 //     return 0;
 // }
-int main(){
-    int i,j,arr[100],min,temp,n;
+int main()
+{
+    int i, j, arr[100], min, temp, n;
     printf("Enter the no of array elements:\n");
-    scanf("%d",&n);
+    scanf("%d", &n);
     printf("Enter the array elements:\n");
-    for(i=0; i<n; i++){
-        scanf("%d",&arr[i]);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
     }
-      for(i=0; i<n-1; i++){
-        min=i;
-        for(j=i+1; j<n; j++){
-            if(arr[j]<arr[min]){
-                min=j;
+    for (i = 0; i < n - 1; i++)
+    {
+        min = i;
+        for (j = i + 1; j < n; j++)
+        {
+            if (arr[j] < arr[min])
+            {
+                min = j;
             }
         }
-        temp=arr[min];
-        arr[min]=arr[i];
-        arr[i]=temp;
+        temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
     }
     printf("The sorted array is:\n");
-for(i=0; i<n; i++){
-    printf("%d\n",arr[i]);
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
 }
-}
-void main(){
+void main()
+{
     char sec;
     printf("Enter your section:\n");
-    sec=getchar();
+    sec = getchar();
     printf("Your section is:\n");
     putchar(sec);
 }
-int main(){
-    int mynums[5]={25,30,40,50,60};
-    printf("%p\n",mynums);
-    printf("%p\n",&mynums[0]);
-    printf("%p\n",&mynums[1]);
-    printf("%p\n",&mynums[2]);
-    printf("%d\n",*mynums); // prints the value of first element of an array 
+int main()
+{
+    int mynums[5] = {25, 30, 40, 50, 60};
+    printf("%p\n", mynums);
+    printf("%p\n", &mynums[0]);
+    printf("%p\n", &mynums[1]);
+    printf("%p\n", &mynums[2]);
+    printf("%d\n", *mynums);       // prints the value of first element of an array
+    printf("%d\n", *(mynums + 1)); // prints the value of second element of an array
+    printf("%d\n", *(mynums + 2)); // prints the value of third element of an array
     return 0;
+}
+void main()
+{
+    int mynums[5] = {25, 30, 40, 50, 60};
+    int *ptr = mynums;
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("%d\n", *(ptr + i));
+        ptr++;
+    }}
+// updating the value of array using pointers 
+void main(){
+    int mynums[5]={1,2,3,4,5};
+    *mynums=13;
+    *(mynums+1)=14;
+    *(mynums+2)=15;
+    printf("%d\n",*mynums);
+    printf("%d\n",*(mynums+1));
 }
