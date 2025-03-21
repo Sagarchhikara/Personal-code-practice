@@ -299,3 +299,14 @@ void main(){
     printf("%d\n",matrix[0][1]);
     printf("%d\n",matrix[0][2]);
 }
+// printing the sum of elements of matrix
+// void main(){
+//     int sum =0;
+//     int matrix[2][3]={{1,2,3},{4,5,6}};
+//     for(int i=0; i<2; i++){
+//         for(int j=0; j<3; j++){
+//             sum+=matrix[i][j];
+//         }
+//     }
+//     printf("The sum of the elements of the matrix is %d\n",sum);
+// }
