@@ -232,3 +232,12 @@ void main(){
     printf("Your section is:\n");
     putchar(sec);
 }
+int main(){
+    int mynums[5]={25,30,40,50,60};
+    printf("%p\n",mynums);
+    printf("%p\n",&mynums[0]);
+    printf("%p\n",&mynums[1]);
+    printf("%p\n",&mynums[2]);
+    printf("%d\n",*mynums); // prints the value of first element of an array 
+    return 0;
+}
