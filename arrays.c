@@ -270,3 +270,16 @@ void main(){
     printf("%d\n",*mynums);
     printf("%d\n",*(mynums+1));
 }
+// passing arrays to functions 
+void printarray(int *arr,int size){
+    int i;
+    for(i=0;i<size;i++){
+        printf("%d\n",arr[i]);
+    }
+    printf("\n");
+}
+int main(){
+    int mynums[5]={1,2,3,4,5};
+    printarray(mynums,5);
+    return 0;
+}
