@@ -225,3 +225,10 @@ for(i=0; i<n; i++){
     printf("%d\n",arr[i]);
 }
 }
+void main(){
+    char sec;
+    printf("Enter your section:\n");
+    sec=getchar();
+    printf("Your section is:\n");
+    putchar(sec);
+}
