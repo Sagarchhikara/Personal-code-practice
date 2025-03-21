@@ -310,3 +310,18 @@ void main(){
 //     }
 //     printf("The sum of the elements of the matrix is %d\n",sum);
 // }
+void main(){
+    int transpose[3][2],matrix[2][3]={{1,2,3},{4,5,6}};
+    for(int i=0; i<2; i++){
+        for(int j=0; j<3; j++){
+            transpose[j][i]=matrix[i][j];
+        }
+    }
+    printf("The transpose of the matrix is:\n");
+    for(int i=0; i<3; i++){
+        for(int j=0; j<2; j++){
+            printf("%d ",transpose[i][j]);
+        }
+        printf("\n");
+    }
+}
