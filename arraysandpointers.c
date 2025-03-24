@@ -50,3 +50,8 @@ int main() {
     printf("Address of a using pointer : %u\n",p);
     return 0;
 }
+
+int main(){
+    printf("hello world");
+    return 0;
+}
