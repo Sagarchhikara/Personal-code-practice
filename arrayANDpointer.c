@@ -162,7 +162,7 @@
 // }
 // pointer increment 
 #include <stdio.h>
-int main(){
+
     // int a=20;
     // int *p;
     // p=&a;
@@ -171,10 +171,24 @@ int main(){
     // printf("Address of a : %u\n",p);
     // return 0;
 // }
-int x=50;
-int *p1=&x;
-int *p2=&x;
-int y=++*p2;
-printf("%d %d\n",++*p1,y);
-return 0;
+// int x=50;
+// int *p1=&x;
+// int *p2=&x;
+// int y=++*p2;
+// printf("%d %d\n",++*p1,y);
+// return 0;
+
+int main(){
+    int num1,num2,sum;
+    int *ptr1,*ptr2; 
+    ptr1=&num1;
+    ptr2=&num2;
+    printf("Enter the first number\n");
+    scanf("%d",ptr1);
+    printf("Enter the second number\n");
+    scanf("%d",ptr2);
+    sum=*ptr1+*ptr2;    
+    printf("The sum of the two numbers is %d\n",sum);
+    return 0;
+
 }
