@@ -178,17 +178,29 @@
 // printf("%d %d\n",++*p1,y);
 // return 0;
 
+// int main(){
+//     int num1,num2,sum;
+//     int *ptr1,*ptr2; 
+//     ptr1=&num1;
+//     ptr2=&num2;
+//     printf("Enter the first number\n");
+//     scanf("%d",ptr1);
+//     printf("Enter the second number\n");
+//     scanf("%d",ptr2);
+//     sum=*ptr1+*ptr2;    
+//     printf("The sum of the two numbers is %d\n",sum);
+//     return 0;
+// multiplication using pointers 
 int main(){
-    int num1,num2,sum;
-    int *ptr1,*ptr2; 
+    int num1,num2,mul;
+    int *ptr1,*ptr2;
     ptr1=&num1;
     ptr2=&num2;
     printf("Enter the first number\n");
     scanf("%d",ptr1);
     printf("Enter the second number\n");
     scanf("%d",ptr2);
-    sum=*ptr1+*ptr2;    
-    printf("The sum of the two numbers is %d\n",sum);
+    mul=*ptr1 * *ptr2;
+    printf("The multiplication of the two numbers is %d\n",mul);
     return 0;
-
 }
