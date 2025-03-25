@@ -160,3 +160,21 @@
 //     printf("%d %d",*ptr,*ptr1);
 //     return 0;
 // }
+// pointer increment 
+#include <stdio.h>
+int main(){
+    // int a=20;
+    // int *p;
+    // p=&a;
+    // printf("Address of a : %u\n",p);
+    // p++;
+    // printf("Address of a : %u\n",p);
+    // return 0;
+// }
+int x=50;
+int *p1=&x;
+int *p2=&x;
+int y=++*p2;
+printf("%d %d\n",++*p1,y);
+return 0;
+}
