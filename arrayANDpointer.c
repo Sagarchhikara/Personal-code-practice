@@ -190,9 +190,10 @@
 //     sum=*ptr1+*ptr2;    
 //     printf("The sum of the two numbers is %d\n",sum);
 //     return 0;
-// multiplication using pointers 
+// }
+// comparison of two number using pointers 
 int main(){
-    int num1,num2,mul;
+    int num1,num2;
     int *ptr1,*ptr2;
     ptr1=&num1;
     ptr2=&num2;
@@ -200,7 +201,14 @@ int main(){
     scanf("%d",ptr1);
     printf("Enter the second number\n");
     scanf("%d",ptr2);
-    mul=*ptr1 * *ptr2;
-    printf("The multiplication of the two numbers is %d\n",mul);
+    if(*ptr1>*ptr2){
+        printf("The first number is greater\n");
+    }
+    else if(*ptr1<*ptr2){
+        printf("The second number is greater\n");
+    }
+    else{
+        printf("Both the numbers are equal\n");
+    }
     return 0;
 }
