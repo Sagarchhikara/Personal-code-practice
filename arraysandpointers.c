@@ -40,18 +40,18 @@
 // POINTER OPERATORS 
 // 1. Address of operator (&) : It is used to get the address of a variable.
 // 2. dereference operator (*) : It is used to get the value of a variable.
-int main() {
-    int a = 10;
-    int *p;
-    p = &a;
-    printf("Address of a : %u\n",&a);
-    printf("Value of a : %d\n",a);
-    printf("Value of a using pointer : %d\n",*p);
-    printf("Address of a using pointer : %u\n",p);
-    return 0;
-}
+// int main() {
+//     int a = 10;
+//     int *p;
+//     p = &a;
+//     printf("Address of a : %u\n",&a);
+//     printf("Value of a : %d\n",a);
+//     printf("Value of a using pointer : %d\n",*p);
+//     printf("Address of a using pointer : %u\n",p);
+//     return 0;
+// }
 
-int main(){
-    printf("hello world");
-    return 0;
-}
+// int main(){
+//     printf("hello world");
+//     return 0;
+// }
