@@ -192,23 +192,42 @@
 //     return 0;
 // }
 // comparison of two number using pointers 
+// int main(){
+//     int num1,num2;
+//     int *ptr1,*ptr2;
+//     ptr1=&num1;
+//     ptr2=&num2;
+//     printf("Enter the first number\n");
+//     scanf("%d",ptr1);
+//     printf("Enter the second number\n");
+//     scanf("%d",ptr2);
+//     if(*ptr1>*ptr2){
+//         printf("The first number is greater\n");
+//     }
+//     else if(*ptr1<*ptr2){
+//         printf("The second number is greater\n");
+//     }
+//     else{
+//         printf("Both the numbers are equal\n");
+//     }
+//     return 0;
+// }
+// dynamic memory allocation
+#include <stdio.h>
 int main(){
-    int num1,num2;
-    int *ptr1,*ptr2;
-    ptr1=&num1;
-    ptr2=&num2;
-    printf("Enter the first number\n");
-    scanf("%d",ptr1);
-    printf("Enter the second number\n");
-    scanf("%d",ptr2);
-    if(*ptr1>*ptr2){
-        printf("The first number is greater\n");
+    int *arr;
+    int size=5;
+    arr=(int*)malloc(size*sizeof(int));
+    for(int i=0;i<size;i++){
+        printf("Enter the element %d: ",i+1);
+        scanf("%d",&arr[i]);
     }
-    else if(*ptr1<*ptr2){
-        printf("The second number is greater\n");
+    printf("\nThe elements are:\n");
+    for(int i=0; i<size; i++) {
+        printf("%d ", arr[i]);
     }
-    else{
-        printf("Both the numbers are equal\n");
-    }
+    printf("\n");
+    
+    free(arr); // Free the dynamically allocated memory
     return 0;
 }
