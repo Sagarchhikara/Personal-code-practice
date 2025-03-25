@@ -231,29 +231,98 @@
 //     free(arr); // Free the dynamically allocated memory
 //     return 0;
 // }
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main(){
+//     int *arr;
+//     int size=5;
+//     arr=(int*)calloc(size,sizeof(int));
+//     for(int i=0;i<size;i++){
+//         printf("Enter the element %d: ",i+1);
+//         scanf("%d",&arr[i]);
+//     }
+//     printf("\nThe elements are:\n");
+//     for(int i=0;i<size;i++){
+//         printf("%d ",arr[i]);
+//         }
+//     printf("\n");
+//     size=10;
+//     arr=(int*)realloc(arr,size*sizeof(int));
+//     for(int i=0;i<size;i++){
+//         printf("Enter the element %d: ",i+1);
+//         scanf("%d",&arr[i]);
+//     }
+//     printf("\nThe elements are:\n");
+//     free(arr);
+//     return 0;
+
+// }
+
+// Dynamic array allocation and sorting
 #include <stdio.h>
 #include <stdlib.h>
-int main(){
-    int *arr;
-    int size=5;
-    arr=(int*)calloc(size,sizeof(int));
-    for(int i=0;i<size;i++){
-        printf("Enter the element %d: ",i+1);
-        scanf("%d",&arr[i]);
-    }
-    printf("\nThe elements are:\n");
-    for(int i=0;i<size;i++){
-        printf("%d ",arr[i]);
+
+void bubbleSort(int *arr, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
         }
-    printf("\n");
-    size=10;
-    arr=(int*)realloc(arr,size*sizeof(int));
-    for(int i=0;i<size;i++){
-        printf("Enter the element %d: ",i+1);
-        scanf("%d",&arr[i]);
     }
-    printf("\nThe elements are:\n");
+}
+
+int main() {
+    int size;
+    int *arr;
+
+    // Get array size from user
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    // Check if size is valid
+    if (size <= 0) {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    // Dynamically allocate memory
+    arr = (int *)malloc(size * sizeof(int));
+
+    // Check if memory allocation was successful
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    // Get array elements from user
+    printf("Enter %d elements:\n", size);
+    for (int i = 0; i < size; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    // Print original array
+    printf("\nOriginal array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Sort the array
+    bubbleSort(arr, size);
+
+    // Print sorted array
+    printf("Sorted array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Free the dynamically allocated memory
     free(arr);
     return 0;
-
 }
