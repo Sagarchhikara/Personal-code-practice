@@ -213,21 +213,47 @@
 //     return 0;
 // }
 // dynamic memory allocation
+// #include <stdio.h>
+// int main(){
+//     int *arr;
+//     int size=5;
+//     arr=(int*)malloc(size*sizeof(int));
+//     for(int i=0;i<size;i++){
+//         printf("Enter the element %d: ",i+1);
+//         scanf("%d",&arr[i]);
+//     }
+//     printf("\nThe elements are:\n");
+//     for(int i=0; i<size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
+    
+//     free(arr); // Free the dynamically allocated memory
+//     return 0;
+// }
 #include <stdio.h>
+#include <stdlib.h>
 int main(){
     int *arr;
     int size=5;
-    arr=(int*)malloc(size*sizeof(int));
+    arr=(int*)calloc(size,sizeof(int));
     for(int i=0;i<size;i++){
         printf("Enter the element %d: ",i+1);
         scanf("%d",&arr[i]);
     }
     printf("\nThe elements are:\n");
-    for(int i=0; i<size; i++) {
-        printf("%d ", arr[i]);
-    }
+    for(int i=0;i<size;i++){
+        printf("%d ",arr[i]);
+        }
     printf("\n");
-    
-    free(arr); // Free the dynamically allocated memory
+    size=10;
+    arr=(int*)realloc(arr,size*sizeof(int));
+    for(int i=0;i<size;i++){
+        printf("Enter the element %d: ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    printf("\nThe elements are:\n");
+    free(arr);
     return 0;
+
 }
