@@ -493,3 +493,75 @@
 //     free(text);
 //     return 0;
 // }
+// // reallocating memory
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main(){
+//     int n,i;
+//     int *arr;
+//     int sum=0;
+//     printf("Enter the number of elements: ");
+//     scanf("%d",&n);
+//     arr = (int *)malloc(n*sizeof(int));
+//     if(arr==NULL){
+//         printf("Memory not allocated\n");
+//         return 1;
+//     }
+//     for(i=0;i<n;i++){
+//         printf("Enter the element %d: ",i+1);
+//         scanf("%d",&arr[i]);
+//         sum+=arr[i];
+//     }
+//     printf("Sum = %d\n",sum);
+//     sum=0;
+//     arr=(int *)realloc(arr,n*sizeof(int));
+//     if(arr==NULL){
+//         printf("Memory not allocated\n");
+//         return 1;
+//     }
+//     printf("Enter the new size of the array: ");
+//     scanf("%d",&n);
+//     for(i=0;i<n;i++){
+//         printf("Enter the element %d: ",i+1);
+//         scanf("%d",&arr[i]);
+//         sum+=arr[i];
+//     }
+//     printf("Sum = %d\n",sum);
+//     free(arr);
+// }
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int *int_ptr;
+    int_ptr = (int *)malloc(sizeof(int));
+    if(int_ptr==NULL){
+        printf("Memory not allocated\n");
+        return 1;
+    }
+    *int_ptr = 50;
+    printf("Value of int_ptr: %d\n",*int_ptr);
+    printf("Address of int_ptr: %p\n",int_ptr);
+
+    //alocate memory for char_ptr
+    char *char_ptr=(char *)malloc(20*sizeof(char));
+    if(char_ptr==NULL){
+        printf("Memory not allocated\n");
+        return 1;
+    }
+    *char_ptr = 'A';
+    printf("Value of char_ptr: %c\n",*char_ptr);
+    printf("Address of char_ptr: %p\n",char_ptr);
+
+    //allocate memory for float_ptr
+    float *float_ptr = (float *)malloc(sizeof(float));
+    if(float_ptr==NULL){
+        printf("Memory not allocated\n");
+        return 1;
+    }
+    *float_ptr = 3.14;
+    printf("Value of float_ptr: %f\n",*float_ptr);
+    printf("Address of float_ptr: %p\n",float_ptr);
+    return 0;
+
+}
