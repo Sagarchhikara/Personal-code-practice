@@ -427,5 +427,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
+    int *int_ptr=(int*)malloc(sizeof(int));
+    if (int_ptr==NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    *int_ptr=10;
+    printf(" Integer Value  : %d\n",*int_ptr);
+    printf(" Address of int_ptr : %p\n",int_ptr);
+    // allocate memory for char
+    char *char_ptr=(char*)malloc(sizeof(char));
+    if (char_ptr==NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    *char_ptr='A';
+    printf(" Character Value : %c\n",*char_ptr);
+    printf(" Address of char_ptr : %p\n",char_ptr);
+    // allocate memory for float
+
+    float *float_ptr=(float*)malloc(sizeof(float));
+    if (float_ptr==NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    *float_ptr=3.14;
+    printf(" Float Value : %f\n",*float_ptr);
+    printf(" Address of float_ptr : %p\n",float_ptr);
+    // free allocated memory
+    free(int_ptr);
+    free(char_ptr);
+    free(float_ptr);
+    return 0;
     
 }
