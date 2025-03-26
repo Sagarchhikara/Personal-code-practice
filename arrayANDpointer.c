@@ -70,7 +70,6 @@
 //     return 0;
 // }
 
-
 // Operations on 2D arrays:
 // 1. TRAVERSING - access elements row by row or column by column
 // 2. MODIFICATION - change specific elements using indices or pointers
@@ -119,8 +118,6 @@
 //     return 0;
 // }
 
-
-
 // POINTERS
 // it is a variable which holds the address of another variable.
 // Syntax : datatype *ptr-name
@@ -130,14 +127,12 @@
 // #include <stdio.h>
 // int main() {
 //     int *p,a;
-//     printf("Enter the value of a\n"); 
+//     printf("Enter the value of a\n");
 //     scanf("%d",&a);
 //     p = &a;
 //     printf("Value of a is : %d\n",*p);     /* show a's value using p variable */
 //     return 0;
 // }
-
-
 
 // #include <stdio.h>
 // int main() {
@@ -148,7 +143,6 @@
 //     printf("%d %d",*ptr1,*ptr2);
 //     return 0;
 // }
-
 
 // #include <stdio.h>
 // int main() {
@@ -161,8 +155,6 @@
 //     return 0;
 // }
 
-
-
 // BENEFITS of using POINTERS
 // 1. used to access the address of variable
 // 2. more efficient in handling arrays in c nd structures in c
@@ -174,15 +166,13 @@
 // 8. more efficient in handling the data tables
 // 9. used in data structures in linked organization of data.
 
-
-// POINTER OPERATORS 
-// Two types of operator : 
+// POINTER OPERATORS
+// Two types of operator :
 // 1. address operator (&) : used to find the address of any type of variable
 // Syntax : pointer = &variable-name (address of variable)
 
 // 2. dereference operator (*) : access the value of variable through its address / pointer.
 // Syntax : *pointervariable
-
 
 // POINTERS ARITHMETIC in C
 // 1. increment (++) : p = p + sizeof(datatype)
@@ -199,7 +189,7 @@
 //     return 0;
 // }
 
-// eg : 
+// eg :
 // #include <stdio.h>
 // int main() {
 //     int x = 50;
@@ -210,9 +200,7 @@
 //     return 0;
 // }
 
-
-
-// 2. decrement (--) : 
+// 2. decrement (--) :
 // #include <stdio.h>
 // int main() {
 //     int a = 20;
@@ -252,7 +240,6 @@
 //     return 0;
 // }
 
-
 // Program to add two numbers using pointers
 // #include <stdio.h>
 // int main() {
@@ -268,7 +255,6 @@
 //     printf("Sum=%d",sum);
 //     return 0;
 // }
-
 
 // 4. subtraction (-) :
 // #include <stdio.h>
@@ -287,7 +273,6 @@
 // }
 
 // NOTE : pointer can not be multiplied or divided
-
 
 // 5. comparison (==) :
 // #include <stdio.h>
@@ -312,12 +297,9 @@
 //     return 0;
 // }
 
-
-
-
 // MEMORY ALLOCATION FUNCTIONS:
 
-// Dynamic Memory Allocation 
+// Dynamic Memory Allocation
 // 1. malloc - allocates memory
 // #include <stdio.h>
 // #include <stdlib.h>
@@ -339,8 +321,6 @@
 //     free(arr);
 //     return 0;
 // }
-
-
 
 // 2. calloc - allocates and initialize memory
 // #include <stdio.h>
@@ -368,7 +348,7 @@
 //     }
 //     for (int i = 5; i<size;i++) {
 //         arr[i] = i+1;
-//     }    
+//     }
 //     printf("\nResized array: \n");
 //     for (int i = 0;i<size;i++) {
 //         printf("%d",arr[i]);
@@ -402,7 +382,7 @@
 //     printf("Enter the number of elements: ");
 //     scanf("%d", &n);
 //     int *arr = (int *)malloc(n * sizeof(int));
-    
+
 //     if (arr == NULL) {
 //         printf("Memory allocation failed!\n");
 //         return 1;
@@ -424,40 +404,83 @@
 
 // 4. free - releases memory
 // Dynamic memoery allocation in c
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *int_ptr=(int*)malloc(sizeof(int));
+//     if (int_ptr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     *int_ptr=10;
+//     printf(" Integer Value  : %d\n",*int_ptr);
+//     printf(" Address of int_ptr : %p\n",int_ptr);
+//     // allocate memory for char
+//     char *char_ptr=(char*)malloc(sizeof(char));
+//     if (char_ptr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     *char_ptr='A';
+//     printf(" Character Value : %c\n",*char_ptr);
+//     printf(" Address of char_ptr : %p\n",char_ptr);
+//     // allocate memory for float
+
+//     float *float_ptr=(float*)malloc(sizeof(float));
+//     if (float_ptr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     *float_ptr=3.14;
+//     printf(" Float Value : %f\n",*float_ptr);
+//     printf(" Address of float_ptr : %p\n",float_ptr);
+//     // free allocated memory
+//     free(int_ptr);
+//     free(char_ptr);
+//     free(float_ptr);
+//     return 0;
+
+// }
+// reallocating memory
 #include <stdio.h>
 #include <stdlib.h>
-int main() {
-    int *int_ptr=(int*)malloc(sizeof(int));
-    if (int_ptr==NULL) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
-    *int_ptr=10;
-    printf(" Integer Value  : %d\n",*int_ptr);
-    printf(" Address of int_ptr : %p\n",int_ptr);
-    // allocate memory for char
-    char *char_ptr=(char*)malloc(sizeof(char));
-    if (char_ptr==NULL) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
-    *char_ptr='A';
-    printf(" Character Value : %c\n",*char_ptr);
-    printf(" Address of char_ptr : %p\n",char_ptr);
-    // allocate memory for float
+#include <string.h>
 
-    float *float_ptr=(float*)malloc(sizeof(float));
-    if (float_ptr==NULL) {
+int main()
+{
+    char *text = NULL;
+    int size = 0;
+    int capacity = 0;  // Track allocated capacity
+    char ch;
+    
+    // Initial allocation
+    capacity = 10;  // Start with a reasonable size
+    text = (char *)malloc(capacity * sizeof(char));
+    if (text == NULL) {
         printf("Memory allocation failed\n");
         return 1;
     }
-    *float_ptr=3.14;
-    printf(" Float Value : %f\n",*float_ptr);
-    printf(" Address of float_ptr : %p\n",float_ptr);
-    // free allocated memory
-    free(int_ptr);
-    free(char_ptr);
-    free(float_ptr);
-    return 0;
+
+    while ((ch = getchar()) != '\n' && ch != EOF)
+    {
+        // Check if we need to expand
+        if (size >= capacity - 1) {  // Leave room for null terminator
+            capacity *= 2;  // Double the capacity
+            char *temp = (char *)realloc(text, capacity * sizeof(char));
+            if (temp == NULL) {
+                printf("Memory allocation failed\n");
+                free(text);
+                return 1;
+            }
+            text = temp;
+        }
+        
+        text[size++] = ch;
+    }
     
+    text[size] = '\0';  // Proper null termination
+    
+    printf("You entered: %s\n", text);
+    free(text);
+    return 0;
 }
