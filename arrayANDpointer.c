@@ -442,45 +442,54 @@
 
 // }
 // reallocating memory
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 
-int main()
-{
-    char *text = NULL;
-    int size = 0;
-    int capacity = 0;  // Track allocated capacity
-    char ch;
+// #define MAX_INPUT_SIZE 1000  // Prevent unlimited memory allocation
+
+// int main() {
+//     char *text = NULL;
+//     int size = 0;
+//     int capacity = 0;
+//     char ch;
     
-    // Initial allocation
-    capacity = 10;  // Start with a reasonable size
-    text = (char *)malloc(capacity * sizeof(char));
-    if (text == NULL) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
-
-    while ((ch = getchar()) != '\n' && ch != EOF)
-    {
-        // Check if we need to expand
-        if (size >= capacity - 1) {  // Leave room for null terminator
-            capacity *= 2;  // Double the capacity
-            char *temp = (char *)realloc(text, capacity * sizeof(char));
-            if (temp == NULL) {
-                printf("Memory allocation failed\n");
-                free(text);
-                return 1;
-            }
-            text = temp;
-        }
+//     // Start with an initial allocation
+//     capacity = 16;
+//     text = malloc(capacity * sizeof(char));
+//     if (text == NULL) {
+//         printf("Initial memory allocation failed\n");
+//         return 1;
+//     }
+    
+//     // Read input
+//     while ((ch = getchar()) != '\n' && ch != EOF && size < MAX_INPUT_SIZE - 1)
+//     {
+//         // Grow buffer if needed
+//         if (size + 1 >= capacity) {
+//             capacity *= 2;
+//             char *temp = realloc(text, capacity * sizeof(char));
+//             if (temp == NULL) {
+//                 printf("Memory reallocation failed\n");
+//                 free(text);
+//                 return 1;
+//             }
+//             text = temp;
+//         }
         
-        text[size++] = ch;
-    }
+//         text[size++] = ch;
+//     }
     
-    text[size] = '\0';  // Proper null termination
+//     // Null terminate
+//     text[size] = '\0';
     
-    printf("You entered: %s\n", text);
-    free(text);
-    return 0;
-}
+//     // Check if any input was received
+//     if (size > 0) {
+//         printf("You entered: %s\n", text);
+//     } else {
+//         printf("No input received\n");
+//     }
+    
+//     free(text);
+//     return 0;
+// }
