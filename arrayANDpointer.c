@@ -160,169 +160,272 @@
 //     printf("%d %d",*ptr,*ptr1);
 //     return 0;
 // }
-// pointer increment 
-#include <stdio.h>
 
-    // int a=20;
-    // int *p;
-    // p=&a;
-    // printf("Address of a : %u\n",p);
-    // p++;
-    // printf("Address of a : %u\n",p);
-    // return 0;
-// }
-// int x=50;
-// int *p1=&x;
-// int *p2=&x;
-// int y=++*p2;
-// printf("%d %d\n",++*p1,y);
-// return 0;
 
-// int main(){
-//     int num1,num2,sum;
-//     int *ptr1,*ptr2; 
-//     ptr1=&num1;
-//     ptr2=&num2;
-//     printf("Enter the first number\n");
-//     scanf("%d",ptr1);
-//     printf("Enter the second number\n");
-//     scanf("%d",ptr2);
-//     sum=*ptr1+*ptr2;    
-//     printf("The sum of the two numbers is %d\n",sum);
+
+// BENEFITS of using POINTERS
+// 1. used to access the address of variable
+// 2. more efficient in handling arrays in c nd structures in c
+// 3. reduces length of program nd its execution time as well
+// 4. allows C language to support dynamic memory management
+// 5. pointers are dynamic variables
+// 6. used for dynamic memory allocation
+// 7. enables us to access a variable that is defined outside the function
+// 8. more efficient in handling the data tables
+// 9. used in data structures in linked organization of data.
+
+
+// POINTER OPERATORS 
+// Two types of operator : 
+// 1. address operator (&) : used to find the address of any type of variable
+// Syntax : pointer = &variable-name (address of variable)
+
+// 2. dereference operator (*) : access the value of variable through its address / pointer.
+// Syntax : *pointervariable
+
+
+// POINTERS ARITHMETIC in C
+// 1. increment (++) : p = p + sizeof(datatype)
+// #include <stdio.h>
+// int main() {
+//     int a = 20;
+//     int *p;     // pointer to an integer
+//     p = &a;     // pointer stores the address of a
+//     printf("Pointer before increment: ");
+//     printf("%p\n",p);
+//     p++;        // incrementing pointer ptr 1
+//     printf("Pointer after increment: ");
+//     printf("%p\n",p);
 //     return 0;
 // }
-// comparison of two number using pointers 
-// int main(){
-//     int num1,num2;
+
+// eg : 
+// #include <stdio.h>
+// int main() {
+//     int x = 50;
+//     int *ptr1= &x;
+//     int *ptr2 = &x;
+//     int y = ++*ptr2;     // increment the value of x through ptr2 and assign it to y
+//     printf("%d %d",++*ptr1,y);
+//     return 0;
+// }
+
+
+
+// 2. decrement (--) : 
+// #include <stdio.h>
+// int main() {
+//     int a = 20;
+//     int *p;
+//     p = &a;
+//     printf("Pointer before decrement: ");
+//     printf("%p\n",p);
+//     p--;
+//     printf("POinter after decrement: ");
+//     printf("%p\n",p);
+//     return 0;
+// }
+
+// 3. addition (+) : new_address = current_address + (number * size_of(data type))
+// when a pointer is added with a value, the value is first multiplied by the size of data type and then added to the pointer
+
+// #include <stdio.h>
+// int main() {
+//     int a = 50;
+//     int b = 3;
+//     int *p;
+//     p = &b;
+//     printf("Address of p variable is %u\n",p);
+//     p = p+b;
+//     printf("After adding 3: Address of p variable is %u\n",p);
+//     return 0;
+// }
+
+// int main() {
+//     int a = 50;
+//     float b = 3;
+//     float *p;
+//     p=&b;
+//     printf("Address of p variable is %u\n",p);
+//     p = p+a;
+//     printf("After adding 3: Address of p variable is %u\n",p);
+//     return 0;
+// }
+
+
+// Program to add two numbers using pointers
+// #include <stdio.h>
+// int main() {
+//     int num1, num2, sum;
 //     int *ptr1,*ptr2;
 //     ptr1=&num1;
 //     ptr2=&num2;
-//     printf("Enter the first number\n");
-//     scanf("%d",ptr1);
-//     printf("Enter the second number\n");
-//     scanf("%d",ptr2);
-//     if(*ptr1>*ptr2){
-//         printf("The first number is greater\n");
-//     }
-//     else if(*ptr1<*ptr2){
-//         printf("The second number is greater\n");
-//     }
-//     else{
-//         printf("Both the numbers are equal\n");
-//     }
+
+//     printf("Enter any two numbers: ");
+//     scanf("%d %d",ptr1,ptr2);
+
+//     sum=*ptr1+*ptr2;
+//     printf("Sum=%d",sum);
 //     return 0;
 // }
-// dynamic memory allocation
+
+
+// 4. subtraction (-) :
 // #include <stdio.h>
-// int main(){
-//     int *arr;
-//     int size=5;
-//     arr=(int*)malloc(size*sizeof(int));
-//     for(int i=0;i<size;i++){
-//         printf("Enter the element %d: ",i+1);
-//         scanf("%d",&arr[i]);
+// int main() {
+//     int num1, num2, difference;
+//     int *ptr1,*ptr2;
+//     ptr1=&num1;
+//     ptr2=&num2;
+
+//     printf("Enter any two numbers: ");
+//     scanf("%d %d",ptr1,ptr2);
+
+//     difference=*ptr1-*ptr2;
+//     printf("Difference=%d",difference);
+//     return 0;
+// }
+
+// NOTE : pointer can not be multiplied or divided
+
+
+// 5. comparison (==) :
+// #include <stdio.h>
+
+// int main() {
+//     int a, b;
+//     int *ptr1, *ptr2;
+
+//     printf("Enter two numbers: ");
+//     scanf("%d %d", &a, &b);
+//     ptr1 = &a;
+//     ptr2 = &b;
+
+//     if (*ptr1 > *ptr2) {
+//         printf("The larger number is: %d\n", *ptr1);
+//     } else if (*ptr1 < *ptr2) {
+//         printf("The larger number is: %d\n", *ptr2);
+//     } else {
+//         printf("Both numbers are equal.\n");
 //     }
-//     printf("\nThe elements are:\n");
-//     for(int i=0; i<size; i++) {
+
+//     return 0;
+// }
+
+
+
+
+// MEMORY ALLOCATION FUNCTIONS:
+
+// Dynamic Memory Allocation 
+// 1. malloc - allocates memory
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *arr;
+//     int size = 5;
+//     arr = (int *)malloc(size *sizeof(int));
+//     if (arr == NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     for (int i = 0;i<size;i++) {
+//         arr[i] = i + 1;
+//     }
+//     for (int i = 0;i<size;i++) {
+//         printf("%d",arr[i]);
+//     }
+//     printf("\n");
+//     free(arr);
+//     return 0;
+// }
+
+
+
+// 2. calloc - allocates and initialize memory
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *arr;
+//     int size = 5;
+//     arr = (int *)calloc(size,sizeof(int));
+//     if (arr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     for (int i = 0; i<size; i++) {
+//         arr[i] = i + 1;
+//     }
+//     printf("Original array: \n");
+//     for (int i = 0; i <size;i++) {
+//         printf("%d",arr[i]);
+//     }
+//     size = 10;
+//     arr = (int *)realloc(arr,size * sizeof(int));
+//     if (arr == NULL) {
+//         printf("Memory reallocation failed\n");
+//         return 1;
+//     }
+//     for (int i = 5; i<size;i++) {
+//         arr[i] = i+1;
+//     }    
+//     printf("\nResized array: \n");
+//     for (int i = 0;i<size;i++) {
+//         printf("%d",arr[i]);
+//     }
+//     printf("\n");
+//     free(arr);
+//     return 0;
+// }
+
+// sorting by dynamically allocating the memory
+// #include <stdio.h>
+// #include <stdlib.h>
+// void swap(int *a, int *b) {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// void bubbleSort(int *arr, int n) {
+//     for (int i = 0; i < n - 1; i++) {
+//         for (int j = 0; j < n - i - 1; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 swap(&arr[j], &arr[j + 1]);
+//             }
+//         }
+//     }
+// }
+
+// int main() {
+//     int n;
+//     printf("Enter the number of elements: ");
+//     scanf("%d", &n);
+//     int *arr = (int *)malloc(n * sizeof(int));
+    
+//     if (arr == NULL) {
+//         printf("Memory allocation failed!\n");
+//         return 1;
+//     }
+//     printf("Enter %d elements: ", n);
+//     for (int i = 0; i < n; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+//     bubbleSort(arr, n);
+//     printf("Sorted array: ");
+//     for (int i = 0; i < n; i++) {
 //         printf("%d ", arr[i]);
 //     }
 //     printf("\n");
-    
-//     free(arr); // Free the dynamically allocated memory
-//     return 0;
-// }
-// #include <stdio.h>
-// #include <stdlib.h>
-// int main(){
-//     int *arr;
-//     int size=5;
-//     arr=(int*)calloc(size,sizeof(int));
-//     for(int i=0;i<size;i++){
-//         printf("Enter the element %d: ",i+1);
-//         scanf("%d",&arr[i]);
-//     }
-//     printf("\nThe elements are:\n");
-//     for(int i=0;i<size;i++){
-//         printf("%d ",arr[i]);
-//         }
-//     printf("\n");
-//     size=10;
-//     arr=(int*)realloc(arr,size*sizeof(int));
-//     for(int i=0;i<size;i++){
-//         printf("Enter the element %d: ",i+1);
-//         scanf("%d",&arr[i]);
-//     }
-//     printf("\nThe elements are:\n");
 //     free(arr);
 //     return 0;
-
 // }
+// 3. realloc - resizes allocated memory
 
-// Dynamic array allocation and sorting
+// 4. free - releases memory
+// Dynamic memoery allocation in c
 #include <stdio.h>
 #include <stdlib.h>
-
-void bubbleSort(int *arr, int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // Swap elements
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
-
 int main() {
-    int size;
-    int *arr;
-
-    // Get array size from user
-    printf("Enter the size of the array: ");
-    scanf("%d", &size);
-
-    // Check if size is valid
-    if (size <= 0) {
-        printf("Invalid array size!\n");
-        return 1;
-    }
-
-    // Dynamically allocate memory
-    arr = (int *)malloc(size * sizeof(int));
-
-    // Check if memory allocation was successful
-    if (arr == NULL) {
-        printf("Memory allocation failed!\n");
-        return 1;
-    }
-
-    // Get array elements from user
-    printf("Enter %d elements:\n", size);
-    for (int i = 0; i < size; i++) {
-        printf("Element %d: ", i + 1);
-        scanf("%d", &arr[i]);
-    }
-
-    // Print original array
-    printf("\nOriginal array: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    // Sort the array
-    bubbleSort(arr, size);
-
-    // Print sorted array
-    printf("Sorted array: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    // Free the dynamically allocated memory
-    free(arr);
-    return 0;
+    
 }
