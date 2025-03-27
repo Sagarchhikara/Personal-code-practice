@@ -36,3 +36,21 @@ int main() {
    
     return 0;
 }
+// printing nmber 1 to n 
+#include <stdio.h>
+int printnos(int n){
+    if(n==0) return 0;
+    printnos(n-1);
+    printf("%d\n",n);
+}
+
+int main() {
+    int n;
+    printf("enter your number:");
+    scanf("%d",&n);
+    int result=printnos(n);
+    printf("%d",result);
+    
+   
+    return 0;
+}
