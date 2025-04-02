@@ -201,7 +201,7 @@
 //     }
 //     return 0;
 // }
-int main()
+void selection_sort_demo()
 {
     int i, j, arr[100], min, temp, n;
     printf("Enter the no of array elements:\n");
