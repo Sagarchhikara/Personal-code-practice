@@ -353,43 +353,237 @@
 //     return 0;
 // }
 
+// int main() {
+//     int matrix[10][10], transpose[10][10];
+//     int rows, cols;
+
+//     printf("Enter rows and columns of the matrix: ");
+//     scanf("%d%d", &rows, &cols);
+
+//     printf("Enter elements of the matrix:\n");
+//     for (int i = 0; i < rows; ++i) {
+//         for (int j = 0; j < cols; ++j) {
+//             printf("matrix[%d][%d]: ", i, j);
+//             scanf("%d", &matrix[i][j]);
+//         }
+//     }
+
+//     for (int i = 0; i < rows; ++i) {
+//         for (int j = 0; j < cols; ++j) {
+//             transpose[j][i] = matrix[i][j];
+//         }
+//     }
+
+//     printf("\nOriginal Matrix:\n");
+//     for (int i = 0; i < rows; ++i) {
+//         for (int j = 0; j < cols; ++j) {
+//             printf("%d\t", matrix[i][j]);
+//         }
+//         printf("\n");
+//     }
+
+//     printf("\nTransposed Matrix:\n");
+//     for (int i = 0; i < cols; ++i) {
+//         for (int j = 0; j < rows; ++j) {
+//             printf("%d\t", transpose[i][j]);
+//         }
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+// int factorial(int n) {
+//     if (n == 0 || n == 1)
+//         return 1; // Base case
+//     else
+//         return n * factorial(n - 1); // Recursive call
+// }
+
+// int main() {
+//     int num;
+
+//     printf("Enter a number to find its factorial: ");
+//     scanf("%d", &num);
+
+//     if (num < 0) {
+//         printf("Factorial is not defined for negative numbers.\n");
+//     } else {
+//         printf("Factorial of %d is %d\n", num, factorial(num));
+//     }
+
+//     return 0;
+// }
+
+#include <string.h>
+#include <stdlib.h>
+
+// Function to reverse a string (as strrev is not standard C)
+void my_strrev(char *str) {
+    int length = strlen(str);
+    int i, j;
+    char temp;
+    
+    for (i = 0, j = length - 1; i < j; i++, j--) {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+}
+
 int main() {
-    int matrix[10][10], transpose[10][10];
-    int rows, cols;
-
-    printf("Enter rows and columns of the matrix: ");
-    scanf("%d%d", &rows, &cols);
-
-    printf("Enter elements of the matrix:\n");
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            printf("matrix[%d][%d]: ", i, j);
-            scanf("%d", &matrix[i][j]);
+    char str1[100], str2[100], result[200];
+    int choice, position, length;
+    
+    while (1) {
+        printf("\n\n===== STRING FUNCTIONS MENU =====\n");
+        printf("1. strlen - Find the length of a string\n");
+        printf("2. strcpy - Copy one string to another\n");
+        printf("3. strcat - Concatenate two strings\n");
+        printf("4. strcmp - Compare two strings\n");
+        printf("5. strrev - Reverse a string\n");
+        printf("6. strstr - Find substring in a string\n");
+        printf("7. strchr - Find character in a string\n");
+        printf("8. strncpy - Copy n characters from one string to another\n");
+        printf("9. strncat - Concatenate n characters from one string to another\n");
+        printf("0. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
+        // Clear input buffer
+        while (getchar() != '\n');
+        
+        switch (choice) {
+            case 1: // strlen
+                printf("Enter a string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0; // Remove trailing newline
+                
+                printf("Length of the string: %lu\n", strlen(str1));
+                break;
+                
+            case 2: // strcpy
+                printf("Enter a string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                strcpy(str2, str1);
+                printf("Copied string: %s\n", str2);
+                break;
+                
+            case 3: // strcat
+                printf("Enter first string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                printf("Enter second string: ");
+                fgets(str2, sizeof(str2), stdin);
+                str2[strcspn(str2, "\n")] = 0;
+                
+                strcpy(result, str1);
+                strcat(result, str2);
+                printf("Concatenated string: %s\n", result);
+                break;
+                
+            case 4: // strcmp
+                printf("Enter first string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                printf("Enter second string: ");
+                fgets(str2, sizeof(str2), stdin);
+                str2[strcspn(str2, "\n")] = 0;
+                
+                int cmp = strcmp(str1, str2);
+                if (cmp == 0)
+                    printf("Strings are equal\n");
+                else if (cmp < 0)
+                    printf("First string is lexicographically smaller than second\n");
+                else
+                    printf("First string is lexicographically greater than second\n");
+                break;
+                
+            case 5: // strrev (custom implementation)
+                printf("Enter a string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                strcpy(str2, str1); // Copy to preserve original
+                my_strrev(str2);
+                printf("Reversed string: %s\n", str2);
+                break;
+                
+            case 6: // strstr
+                printf("Enter main string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                printf("Enter substring to find: ");
+                fgets(str2, sizeof(str2), stdin);
+                str2[strcspn(str2, "\n")] = 0;
+                
+                char *found = strstr(str1, str2);
+                if (found)
+                    printf("Substring found at position: %ld\n", found - str1);
+                else
+                    printf("Substring not found\n");
+                break;
+                
+            case 7: // strchr
+                printf("Enter a string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                printf("Enter character to find: ");
+                char ch = getchar();
+                
+                char *ch_found = strchr(str1, ch);
+                if (ch_found)
+                    printf("Character found at position: %ld\n", ch_found - str1);
+                else
+                    printf("Character not found\n");
+                break;
+                
+            case 8: // strncpy
+                printf("Enter source string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                printf("Enter number of characters to copy: ");
+                scanf("%d", &length);
+                while (getchar() != '\n');
+                
+                strncpy(str2, str1, length);
+                str2[length] = '\0'; // Ensure null termination
+                printf("Copied string: %s\n", str2);
+                break;
+                
+            case 9: // strncat
+                printf("Enter first string: ");
+                fgets(str1, sizeof(str1), stdin);
+                str1[strcspn(str1, "\n")] = 0;
+                
+                printf("Enter second string: ");
+                fgets(str2, sizeof(str2), stdin);
+                str2[strcspn(str2, "\n")] = 0;
+                
+                printf("Enter number of characters to concatenate: ");
+                scanf("%d", &length);
+                while (getchar() != '\n');
+                
+                strcpy(result, str1);
+                strncat(result, str2, length);
+                printf("Concatenated string: %s\n", result);
+                break;
+                
+            case 0: // Exit
+                printf("Exiting program. Goodbye!\n");
+                exit(0);
+                
+            default:
+                printf("Invalid choice! Please try again.\n");
         }
     }
-
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            transpose[j][i] = matrix[i][j];
-        }
-    }
-
-    printf("\nOriginal Matrix:\n");
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            printf("%d\t", matrix[i][j]);
-        }
-        printf("\n");
-    }
-
-    printf("\nTransposed Matrix:\n");
-    for (int i = 0; i < cols; ++i) {
-        for (int j = 0; j < rows; ++j) {
-            printf("%d\t", transpose[i][j]);
-        }
-        printf("\n");
-    }
-
+    
     return 0;
 }
 
