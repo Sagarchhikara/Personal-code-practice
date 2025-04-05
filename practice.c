@@ -207,32 +207,82 @@
 //     return 0;
 // }
 
-void displayArray(int arr[], int size) {
-    if (size == 0) {
-        printf("The array is empty.\n");
-        return;
-    }
+// void displayArray(int arr[], int size) {
+//     if (size == 0) {
+//         printf("The array is empty.\n");
+//         return;
+//     }
 
-    printf("Array elements: [ ");
+//     printf("Array elements: [ ");
+//     for (int i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("]\n");
+// }
+
+// int main() {
+//     int arr[100], size;
+
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+
+//     printf("Enter %d elements: ", size);
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+
+//     displayArray(arr, size);
+
+//     return 0;
+// }
+// void searchElement(int arr[], int size, int key) {
+//     int found = 0;
+//     printf("Element %d found at index: ", key);
+//     for (int i = 0; i < size; i++) {
+//         if (arr[i] == key) {
+//             printf("%d ", i);
+//             found = 1;
+//         }
+//     }
+//     if (!found) {
+//         printf("Not found");
+//     }
+//     printf("\n");
+// }
+// int main() {
+//     int arr[100], size, key;
+
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+
+//     printf("Enter %d elements: ", size);
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+//     printf("Enter the element to search: ");
+//     scanf("%d", &key);
+
+//     searchElement(arr, size, key);
+
+//     return 0;
+// }
+int sumArray(int arr[], int size) {
+    int sum = 0;
     for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+        sum += arr[i];
     }
-    printf("]\n");
+    return sum; // Return the sum of elements
 }
-
 int main() {
     int arr[100], size;
-
     printf("Enter the size of the array: ");
     scanf("%d", &size);
-
     printf("Enter %d elements: ", size);
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
-
-    displayArray(arr, size);
+    int result = sumArray(arr, size);
+    printf("Sum of array elements: %d\n", result);
 
     return 0;
 }
-
