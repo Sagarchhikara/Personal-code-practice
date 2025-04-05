@@ -266,23 +266,41 @@
 
 //     return 0;
 // }
-int sumArray(int arr[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += arr[i];
-    }
-    return sum; // Return the sum of elements
+// int sumArray(int arr[], int size) {
+//     int sum = 0;
+//     for (int i = 0; i < size; i++) {
+//         sum += arr[i];
+//     }
+//     return sum; // Return the sum of elements
+// }
+// int main() {
+//     int arr[100], size;
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+//     printf("Enter %d elements: ", size);
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+//     int result = sumArray(arr, size);
+//     printf("Sum of array elements: %d\n", result);
+
+//     return 0;
+// }
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 int main() {
-    int arr[100], size;
-    printf("Enter the size of the array: ");
-    scanf("%d", &size);
-    printf("Enter %d elements: ", size);
-    for (int i = 0; i < size; i++) {
-        scanf("%d", &arr[i]);
-    }
-    int result = sumArray(arr, size);
-    printf("Sum of array elements: %d\n", result);
+    int x = 10, y = 20;
+
+    printf("Before swapping:\n");
+    printf("x = %d, y = %d\n", x, y);
+
+    swap(&x, &y);
+
+    printf("\nAfter swapping:\n");
+    printf("x = %d, y = %d\n", x, y);
 
     return 0;
 }
