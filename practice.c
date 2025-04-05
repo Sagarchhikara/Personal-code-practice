@@ -54,26 +54,53 @@
 
 //     return 0;
 // }
-#define PI 3.14159
+// #define PI 3.14159
 
-double calculateArea(double radius) {
-    return PI * radius * radius;
+// double calculateArea(double radius) {
+//     return PI * radius * radius;
+// }
+// double calculateCircumference(double radius) {
+//     return 2 * PI * radius;
+// }
+// int main() {
+//     double radius, area, circumference;
+
+//     printf("Enter the radius of the circle: ");
+//     scanf("%lf", &radius);
+    
+//     area = calculateArea(radius);
+//     circumference = calculateCircumference(radius);
+    
+//     printf("Area of the circle: %.2lf\n", area);
+//     printf("Circumference of the circle: %.2lf\n", circumference);
+    
+//     return 0;
+// }
+
+void swapByValue(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Inside swapByValue: a = %d, b = %d\n", a, b);
 }
-double calculateCircumference(double radius) {
-    return 2 * PI * radius;
+void swapByReference(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 int main() {
-    double radius, area, circumference;
+    int x, y;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+     printf("\nBefore swapping: x = %d, y = %d\n", x, y);
 
-    printf("Enter the radius of the circle: ");
-    scanf("%lf", &radius);
-    
-    area = calculateArea(radius);
-    circumference = calculateCircumference(radius);
-    
-    printf("Area of the circle: %.2lf\n", area);
-    printf("Circumference of the circle: %.2lf\n", circumference);
-    
+    swapByValue(x, y);
+    printf("After swapByValue: x = %d, y = %d (No change in main)\n", x, y);
+
+    swapByReference(&x, &y);
+    printf("After swapByReference: x = %d, y = %d (Values swapped in main)\n", x, y);
+
     return 0;
 }
+
 
