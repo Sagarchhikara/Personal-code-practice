@@ -102,19 +102,51 @@
 
 //     return 0;
 // }
-void insertElement(int arr[], int *size, int element, int position) {
-    if (position < 0 || position > *size) {
-        printf("Invalid position! Position should be between 0 and %d.\n", *size);
+// void insertElement(int arr[], int *size, int element, int position) {
+//     if (position < 0 || position > *size) {
+//         printf("Invalid position! Position should be between 0 and %d.\n", *size);
+//         return;
+//     }
+//     for (int i = *size; i > position; i--) {
+//         arr[i] = arr[i - 1];
+//     }
+//     arr[position] = element;
+//     (*size)++;
+// }
+// int main() {
+//     int arr[100], size, element, position;
+    
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+    
+//     printf("Enter %d elements: ", size);
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+//     printf("Enter the element to insert: ");
+//     scanf("%d", &element);
+    
+//     printf("Enter the position (0 to %d): ", size);
+//     scanf("%d", &position);
+
+//     insertElement(arr, &size, element, position);
+    
+//     printf("Updated array: ");
+//     for (int i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+    
+//     return 0;
+// }
+void updateElement(int arr[], int size, int position, int newValue) {
+    if (position < 0 || position >= size) {
+        printf("Invalid position! Position should be between 0 and %d.\n", size - 1);
         return;
     }
-    for (int i = *size; i > position; i--) {
-        arr[i] = arr[i - 1];
-    }
-    arr[position] = element;
-    (*size)++;
+    arr[position] = newValue;
 }
 int main() {
-    int arr[100], size, element, position;
+    int arr[100], size, position, newValue;
     
     printf("Enter the size of the array: ");
     scanf("%d", &size);
@@ -123,13 +155,14 @@ int main() {
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
-    printf("Enter the element to insert: ");
-    scanf("%d", &element);
-    
-    printf("Enter the position (0 to %d): ", size);
+
+    printf("Enter the position to update (0 to %d): ", size - 1);
     scanf("%d", &position);
 
-    insertElement(arr, &size, element, position);
+    printf("Enter the new value: ");
+    scanf("%d", &newValue);
+
+    updateElement(arr, size, position, newValue);
     
     printf("Updated array: ");
     for (int i = 0; i < size; i++) {
@@ -138,4 +171,5 @@ int main() {
     
     return 0;
 }
+
 
