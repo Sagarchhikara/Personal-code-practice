@@ -173,39 +173,66 @@
 // }
 
 
-void deleteElement(int arr[], int *size, int position) {
-    if (position < 0 || position >= *size) {
-        printf("Invalid position! Position should be between 0 and %d.\n", *size - 1);
+// void deleteElement(int arr[], int *size, int position) {
+//     if (position < 0 || position >= *size) {
+//         printf("Invalid position! Position should be between 0 and %d.\n", *size - 1);
+//         return;
+//     }
+//     for (int i = position; i < *size - 1; i++) {
+//         arr[i] = arr[i + 1];
+//     }
+
+//     (*size)--; 
+// }
+// int main() {
+//     int arr[100], size, position;
+    
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+    
+//     printf("Enter %d elements: ", size);
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+//     printf("Enter the position to delete (0 to %d): ", size - 1);
+//     scanf("%d", &position);
+
+//     deleteElement(arr, &size, position);
+
+//     printf("Array after deletion: ");
+//     for (int i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+    
+//     return 0;
+// }
+
+void displayArray(int arr[], int size) {
+    if (size == 0) {
+        printf("The array is empty.\n");
         return;
     }
-    for (int i = position; i < *size - 1; i++) {
-        arr[i] = arr[i + 1];
-    }
 
-    (*size)--; 
+    printf("Array elements: [ ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("]\n");
 }
+
 int main() {
-    int arr[100], size, position;
-    
+    int arr[100], size;
+
     printf("Enter the size of the array: ");
     scanf("%d", &size);
-    
+
     printf("Enter %d elements: ", size);
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
-    printf("Enter the position to delete (0 to %d): ", size - 1);
-    scanf("%d", &position);
 
-    deleteElement(arr, &size, position);
+    displayArray(arr, size);
 
-    printf("Array after deletion: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    
     return 0;
 }
-
-
 
