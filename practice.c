@@ -138,15 +138,54 @@
     
 //     return 0;
 // }
-void updateElement(int arr[], int size, int position, int newValue) {
-    if (position < 0 || position >= size) {
-        printf("Invalid position! Position should be between 0 and %d.\n", size - 1);
+// void updateElement(int arr[], int size, int position, int newValue) {
+//     if (position < 0 || position >= size) {
+//         printf("Invalid position! Position should be between 0 and %d.\n", size - 1);
+//         return;
+//     }
+//     arr[position] = newValue;
+// }
+// int main() {
+//     int arr[100], size, position, newValue;
+    
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+    
+//     printf("Enter %d elements: ", size);
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+
+//     printf("Enter the position to update (0 to %d): ", size - 1);
+//     scanf("%d", &position);
+
+//     printf("Enter the new value: ");
+//     scanf("%d", &newValue);
+
+//     updateElement(arr, size, position, newValue);
+    
+//     printf("Updated array: ");
+//     for (int i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+    
+//     return 0;
+// }
+
+
+void deleteElement(int arr[], int *size, int position) {
+    if (position < 0 || position >= *size) {
+        printf("Invalid position! Position should be between 0 and %d.\n", *size - 1);
         return;
     }
-    arr[position] = newValue;
+    for (int i = position; i < *size - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    (*size)--; 
 }
 int main() {
-    int arr[100], size, position, newValue;
+    int arr[100], size, position;
     
     printf("Enter the size of the array: ");
     scanf("%d", &size);
@@ -155,21 +194,18 @@ int main() {
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
-
-    printf("Enter the position to update (0 to %d): ", size - 1);
+    printf("Enter the position to delete (0 to %d): ", size - 1);
     scanf("%d", &position);
 
-    printf("Enter the new value: ");
-    scanf("%d", &newValue);
+    deleteElement(arr, &size, position);
 
-    updateElement(arr, size, position, newValue);
-    
-    printf("Updated array: ");
+    printf("Array after deletion: ");
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
     
     return 0;
 }
+
 
 
