@@ -586,45 +586,67 @@
     
 //     return 0;
 // }
-#include <string.h>
+// #include <string.h>
 
-int countSubstring(const char *str, const char *sub) {
-    int count = 0;
-    int subLen = strlen(sub);
+// int countSubstring(const char *str, const char *sub) {
+//     int count = 0;
+//     int subLen = strlen(sub);
     
-    // Return 0 if substring is empty or longer than the main string
-    if (subLen == 0) {
+//     // Return 0 if substring is empty or longer than the main string
+//     if (subLen == 0) {
+//         return 0;
+//     }
+    
+//     // Search for occurrences of the substring
+//     const char *pos = str;
+//     while ((pos = strstr(pos, sub)) != NULL) {
+//         count++;
+//         pos += 1; // Move past the current match position to find the next occurrence
+//     }
+    
+//     return count;
+// }
+
+// int main() {
+//     char str[1000], sub[100];
+    
+//     // Get the main string from user
+//     printf("Enter the main string: ");
+//     fgets(str, sizeof(str), stdin);
+//     str[strcspn(str, "\n")] = 0; // Remove trailing newline
+    
+//     // Get the substring to search for
+//     printf("Enter the substring to count: ");
+//     fgets(sub, sizeof(sub), stdin);
+//     sub[strcspn(sub, "\n")] = 0; // Remove trailing newline
+    
+//     // Count and display the occurrences
+//     int occurrences = countSubstring(str, sub);
+    
+//     printf("The substring \"%s\" appears %d time(s) in the main string.\n", sub, occurrences);
+    
+//     return 0;
+// }
+int sumOfDigits(int n) {
+    if (n == 0)
         return 0;
-    }
-    
-    // Search for occurrences of the substring
-    const char *pos = str;
-    while ((pos = strstr(pos, sub)) != NULL) {
-        count++;
-        pos += 1; // Move past the current match position to find the next occurrence
-    }
-    
-    return count;
+    else
+        return (n % 10) + sumOfDigits(n / 10);
 }
 
 int main() {
-    char str[1000], sub[100];
-    
-    // Get the main string from user
-    printf("Enter the main string: ");
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str, "\n")] = 0; // Remove trailing newline
-    
-    // Get the substring to search for
-    printf("Enter the substring to count: ");
-    fgets(sub, sizeof(sub), stdin);
-    sub[strcspn(sub, "\n")] = 0; // Remove trailing newline
-    
-    // Count and display the occurrences
-    int occurrences = countSubstring(str, sub);
-    
-    printf("The substring \"%s\" appears %d time(s) in the main string.\n", sub, occurrences);
-    
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        num = -num;  // Handle negative numbers
+    }
+
+    int result = sumOfDigits(num);
+    printf("Sum of digits: %d\n", result);
+
     return 0;
 }
 
