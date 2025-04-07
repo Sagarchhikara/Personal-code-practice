@@ -578,18 +578,40 @@
 //     return *x+*y;
 // }
 // Sum of digits using function
-#include<stdio.h>
-int sum(int a);
+// #include<stdio.h>
+// int sum(int a);
+// int main(){
+//     int n;
+//     printf("Enter a number: ");
+//     scanf("%d",&n);
+//     printf("Sum of digits is %d\n",sum(n));
+//     return 0;
+// }
+// int sum(int a){
+//     if(a==0)
+//         return 0;
+//     else
+//         return a%10+sum(a/10);
+// }
+#include <stdio.h>
 int main(){
-    int n;
-    printf("Enter a number: ");
-    scanf("%d",&n);
-    printf("Sum of digits is %d\n",sum(n));
+    int r,c;
+    printf("Enter the number of rows and columns: \n");
+    scanf("%d%d",&r,&c);
+    int matrix[r][c];
+    printf("Enter the elements of the matrix: \n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("matrix[%d][%d]: ",i,j);
+            scanf("%d",&matrix[i][j]);
+        }
+    }
+    printf("The matrix is: \n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("%d ",matrix[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
-}
-int sum(int a){
-    if(a==0)
-        return 0;
-    else
-        return a%10+sum(a/10);
 }
