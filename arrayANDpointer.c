@@ -453,7 +453,7 @@
 //     int size = 0;
 //     int capacity = 0;
 //     char ch;
-    
+
 //     // Start with an initial allocation
 //     capacity = 16;
 //     text = malloc(capacity * sizeof(char));
@@ -461,7 +461,7 @@
 //         printf("Initial memory allocation failed\n");
 //         return 1;
 //     }
-    
+
 //     // Read input
 //     while ((ch = getchar()) != '\n' && ch != EOF && size < MAX_INPUT_SIZE - 1)
 //     {
@@ -476,20 +476,20 @@
 //             }
 //             text = temp;
 //         }
-        
+
 //         text[size++] = ch;
 //     }
-    
+
 //     // Null terminate
 //     text[size] = '\0';
-    
+
 //     // Check if any input was received
 //     if (size > 0) {
 //         printf("You entered: %s\n", text);
 //     } else {
 //         printf("No input received\n");
 //     }
-    
+
 //     free(text);
 //     return 0;
 // }
@@ -565,7 +565,7 @@
 //     return 0;
 
 // }
-// adding two numbers by pasing argusments  to functions 
+// adding two numbers by pasing argusments  to functions
 // #include<stdio.h>
 // int add(int *,int *);
 // int main(){
@@ -593,25 +593,86 @@
 //     else
 //         return a%10+sum(a/10);
 // }
-#include <stdio.h>
+// #include <stdio.h>
+// int main(){
+//     int r,c;
+//     printf("Enter the number of rows and columns: \n");
+//     scanf("%d%d",&r,&c);
+//     int matrix[r][c];
+//     printf("Enter the elements of the matrix: \n");
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             printf("matrix[%d][%d]: ",i,j);
+//             scanf("%d",&matrix[i][j]);
+//         }
+//     }
+//     printf("The matrix is: \n");
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             printf("%d ",matrix[i][j]);
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+// multilication of two matrices
 int main(){
-    int r,c;
-    printf("Enter the number of rows and columns: \n");
-    scanf("%d%d",&r,&c);
-    int matrix[r][c];
-    printf("Enter the elements of the matrix: \n");
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            printf("matrix[%d][%d]: ",i,j);
-            scanf("%d",&matrix[i][j]);
-        }
-    }
-    printf("The matrix is: \n");
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            printf("%d ",matrix[i][j]);
-        }
-        printf("\n");
-    }
+int mat1[10][10], mat2[10][10], result[10][10];
+int r1, c1, r2, c2;
+printf("Enter rows and columns for first matrix: ");
+scanf("%d%d", &r1, &c1);
+
+printf("Enter rows and columns for second matrix: ");
+scanf("%d%d", &r2, &c2);
+if (c1 != r2)
+{
+    printf("Matrix multiplication not possible!\n");
     return 0;
+}
+printf("Enter elements of first matrix:\n");
+for (int i = 0; i < r1; ++i)
+{
+    for (int j = 0; j < c1; ++j)
+    {
+        printf("mat1[%d][%d]: ", i, j);
+        scanf("%d", &mat1[i][j]);
+    }
+}
+printf("Enter elements of second matrix:\n");
+for (int i = 0; i < r2; ++i)
+{
+    for (int j = 0; j < c2; ++j)
+    {
+        printf("mat2[%d][%d]: ", i, j);
+        scanf("%d", &mat2[i][j]);
+    }
+}
+for (int i = 0; i < r1; ++i)
+{
+    for (int j = 0; j < c2; ++j)
+    {
+        result[i][j] = 0;
+    }
+}
+for (int i = 0; i < r1; ++i)
+{
+    for (int j = 0; j < c2; ++j)
+    {
+        for (int k = 0; k < c1; ++k)
+        {
+            result[i][j] += mat1[i][k] * mat2[k][j];
+        }
+    }
+}
+printf("Resultant matrix:\n");
+for (int i = 0; i < r1; ++i)
+{
+    for (int j = 0; j < c2; ++j)
+    {
+        printf("%d\t", result[i][j]);
+    }
+    printf("\n");
+}
+
+return 0;
 }

@@ -304,6 +304,7 @@
 
 //     return 0;
 // }
+// Multiply two matrices
 // int main() {
 //     int mat1[10][10], mat2[10][10], result[10][10];
 //     int r1, c1, r2, c2;
