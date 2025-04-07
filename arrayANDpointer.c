@@ -529,39 +529,51 @@
 //     printf("Sum = %d\n",sum);
 //     free(arr);
 // }
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
+// int main(){
+//     int *int_ptr;
+//     int_ptr = (int *)malloc(sizeof(int));
+//     if(int_ptr==NULL){
+//         printf("Memory not allocated\n");
+//         return 1;
+//     }
+//     *int_ptr = 50;
+//     printf("Value of int_ptr: %d\n",*int_ptr);
+//     printf("Address of int_ptr: %p\n",int_ptr);
+
+//     //alocate memory for char_ptr
+//     char *char_ptr=(char *)malloc(20*sizeof(char));
+//     if(char_ptr==NULL){
+//         printf("Memory not allocated\n");
+//         return 1;
+//     }
+//     *char_ptr = 'A';
+//     printf("Value of char_ptr: %c\n",*char_ptr);
+//     printf("Address of char_ptr: %p\n",char_ptr);
+
+//     //allocate memory for float_ptr
+//     float *float_ptr = (float *)malloc(sizeof(float));
+//     if(float_ptr==NULL){
+//         printf("Memory not allocated\n");
+//         return 1;
+//     }
+//     *float_ptr = 3.14;
+//     printf("Value of float_ptr: %f\n",*float_ptr);
+//     printf("Address of float_ptr: %p\n",float_ptr);
+//     return 0;
+
+// }
+// adding two numbers by pasing argusments  to functions 
+#include<stdio.h>
+int add(int *,int *);
 int main(){
-    int *int_ptr;
-    int_ptr = (int *)malloc(sizeof(int));
-    if(int_ptr==NULL){
-        printf("Memory not allocated\n");
-        return 1;
-    }
-    *int_ptr = 50;
-    printf("Value of int_ptr: %d\n",*int_ptr);
-    printf("Address of int_ptr: %p\n",int_ptr);
-
-    //alocate memory for char_ptr
-    char *char_ptr=(char *)malloc(20*sizeof(char));
-    if(char_ptr==NULL){
-        printf("Memory not allocated\n");
-        return 1;
-    }
-    *char_ptr = 'A';
-    printf("Value of char_ptr: %c\n",*char_ptr);
-    printf("Address of char_ptr: %p\n",char_ptr);
-
-    //allocate memory for float_ptr
-    float *float_ptr = (float *)malloc(sizeof(float));
-    if(float_ptr==NULL){
-        printf("Memory not allocated\n");
-        return 1;
-    }
-    *float_ptr = 3.14;
-    printf("Value of float_ptr: %f\n",*float_ptr);
-    printf("Address of float_ptr: %p\n",float_ptr);
+    int a=10,b=20;
+    int c=add(&a,&b);
+    printf("Sum of a and b is %d\n",c);
     return 0;
-
+}
+int add(int *x,int *y){
+    return *x+*y;
 }
