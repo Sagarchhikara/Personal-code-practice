@@ -566,14 +566,30 @@
 
 // }
 // adding two numbers by pasing argusments  to functions 
+// #include<stdio.h>
+// int add(int *,int *);
+// int main(){
+//     int a=10,b=20;
+//     int c=add(&a,&b);
+//     printf("Sum of a and b is %d\n",c);
+//     return 0;
+// }
+// int add(int *x,int *y){
+//     return *x+*y;
+// }
+// Sum of digits using function
 #include<stdio.h>
-int add(int *,int *);
+int sum(int a);
 int main(){
-    int a=10,b=20;
-    int c=add(&a,&b);
-    printf("Sum of a and b is %d\n",c);
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    printf("Sum of digits is %d\n",sum(n));
     return 0;
 }
-int add(int *x,int *y){
-    return *x+*y;
+int sum(int a){
+    if(a==0)
+        return 0;
+    else
+        return a%10+sum(a/10);
 }
