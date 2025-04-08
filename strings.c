@@ -126,3 +126,15 @@
 //     printf("%d\n",v);
 //     return 0;
 // }
+// counting the characters in a string 
+// int main (){
+//     char name[20];
+//     int i, count=0;
+//     printf("Enter a string: ");
+//     scanf("%s", name);
+//     for(i=0; name[i]!='\0'; i++){
+//         count++;
+//     }
+//     printf("The length of the string is %d\n", count);  
+//     return 0;
+// }
