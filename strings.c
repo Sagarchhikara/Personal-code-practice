@@ -99,3 +99,15 @@
 // string input 
 // char name[];
 // scanf("%s", name);
+// counting the number of charactes in a string 
+// int main (){
+//     char str[20];
+//     int i, count=0;
+//     printf("Enter a string: ");
+//     scanf("%s", str);
+//     for(i=0; str[i]!='\0'; i++){
+//         count++;
+//     }
+//     printf("The length of the string is %d\n", count);
+//     return 0;
+// }
