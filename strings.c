@@ -111,3 +111,18 @@
 //     printf("The length of the string is %d\n", count);
 //     return 0;
 // }
+// character arithmetic in c 
+// int main() {
+//     char s='a';
+//     char v='z';
+//     char t='z'-'y';
+//     printf("%d\n",s);
+//     printf("%c\n",s);
+//     printf("%d\n",(s+1));
+//     printf("%c\n",(s+1));
+//     printf("%d\n",(s-1));
+//     printf("%c\n",(s-1));
+//     printf("%d\n",t);
+//     printf("%d\n",v);
+//     return 0;
+// }
