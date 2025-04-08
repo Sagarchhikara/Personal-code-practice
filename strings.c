@@ -77,10 +77,25 @@
 //     return 0;
 // }
 // input strings using gets() and puts()
-void main(){
-    char name[20];
-    printf("Enter your name: ");
-    gets(name);
-    printf("Hello ");
-    puts(name);
-}
+// void main(){
+//     char name[20];
+//     printf("Enter your name: ");
+//     gets(name);
+//     printf("Hello ");
+//     puts(name);
+// }
+// various ways of storing string variables 
+// exmaples 
+// char str1[6]="hello"
+// char str2[]="hello"
+// char *str3="hello"
+// char str4[6]={'h','e','l','l','o','\0'}
+//note each variable is considered a constant in that the space it is connected to cannot be changes i.e str1= str2 is not allowded
+// the above exmple is only  valid when we are using pointers 
+// we can change the parts of a string 
+// char str1[6]="hello";
+// char str1[0]='y'
+//  str 1 is now yello
+// string input 
+// char name[];
+// scanf("%s", name);
