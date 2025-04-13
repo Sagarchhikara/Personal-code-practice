@@ -709,51 +709,152 @@
 
 //     return 0;
 // }
-#include <stdio.h>
-struct Employee {
-    int id;
-    char name[50];
-    float salary;
-    int contact[10];  // Array within a structure: contact number as digits
-};
+// #include <stdio.h>
+// struct Employee {
+//     int id;
+//     char name[50];
+//     float salary;
+//     int contact[10];  // Array within a structure: contact number as digits
+// };
 
-int main() {
-    struct Employee emp[3];  // Array of structures for 5 employees
+// int main() {
+//     struct Employee emp[3];  // Array of structures for 5 employees
 
-    printf("Enter information of 3 employees:\n");
+//     printf("Enter information of 3 employees:\n");
 
-    for (int i = 0; i < 3; i++) {
-        printf("\nEmployee %d\n", i + 1);
+//     for (int i = 0; i < 3; i++) {
+//         printf("\nEmployee %d\n", i + 1);
         
-        printf("ID: ");
-        scanf("%d", &emp[i].id);
+//         printf("ID: ");
+//         scanf("%d", &emp[i].id);
 
-        printf("Name: ");
-        scanf(" %[^\n]", emp[i].name);  // Read full name with spaces
+//         printf("Name: ");
+//         scanf(" %[^\n]", emp[i].name);  // Read full name with spaces
 
-        printf("Salary: ");
-        scanf("%f", &emp[i].salary);
+//         printf("Salary: ");
+//         scanf("%f", &emp[i].salary);
 
-        printf("Contact Number (10 digits, space-separated): ");
-        for (int j = 0; j < 10; j++) {
-            scanf("%d", &emp[i].contact[j]);
-        }
+//         printf("Contact Number (10 digits, space-separated): ");
+//         for (int j = 0; j < 10; j++) {
+//             scanf("%d", &emp[i].contact[j]);
+//         }
+//     }
+
+//     // Displaying info
+//     printf("\n----- Employee Information -----\n");
+
+//     for (int i = 0; i < 3; i++) {
+//         printf("\nEmployee %d\n", i + 1);
+//         printf("ID: %d\n", emp[i].id);
+//         printf("Name: %s\n", emp[i].name);
+//         printf("Salary: %.2f\n", emp[i].salary);
+//         printf("Contact: ");
+//         for (int j = 0; j < 10; j++) {
+//             printf("%d", emp[i].contact[j]);
+//         }
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+    FILE *inputFile, *outputFile;
+    char *buffer, *position;
+    char inputFileName[100], outputFileName[100];
+    char searchString[100], replaceString[100];
+    long fileSize;
+    int occurrences = 0;
+    size_t searchLen, replaceLen;
+    
+    // Get input from user
+    printf("Enter the input file name: ");
+    scanf("%s", inputFileName);
+    
+    printf("Enter the output file name: ");
+    scanf("%s", outputFileName);
+    
+    printf("Enter the string to search for: ");
+    scanf("%s", searchString);
+    
+    printf("Enter the string to replace with: ");
+    scanf("%s", replaceString);
+    
+    // Open the input file
+    inputFile = fopen(inputFileName, "r");
+    if (inputFile == NULL) {
+        perror("Error opening input file");
+        return 1;
     }
-
-    // Displaying info
-    printf("\n----- Employee Information -----\n");
-
-    for (int i = 0; i < 3; i++) {
-        printf("\nEmployee %d\n", i + 1);
-        printf("ID: %d\n", emp[i].id);
-        printf("Name: %s\n", emp[i].name);
-        printf("Salary: %.2f\n", emp[i].salary);
-        printf("Contact: ");
-        for (int j = 0; j < 10; j++) {
-            printf("%d", emp[i].contact[j]);
-        }
-        printf("\n");
+    
+    // Get file size
+    fseek(inputFile, 0, SEEK_END);
+    fileSize = ftell(inputFile);
+    rewind(inputFile);
+    
+    // Allocate memory for the file content
+    buffer = (char *)malloc(fileSize + 1);
+    if (buffer == NULL) {
+        perror("Memory allocation failed");
+        fclose(inputFile);
+        return 1;
     }
-
+    
+    // Read the file content
+    size_t result = fread(buffer, 1, fileSize, inputFile);
+    if (result != fileSize) {
+        perror("Error reading file");
+        fclose(inputFile);
+        free(buffer);
+        return 1;
+    }
+    buffer[fileSize] = '\0';
+    fclose(inputFile);
+    
+    // Get the lengths of the search and replace strings
+    searchLen = strlen(searchString);
+    replaceLen = strlen(replaceString);
+    
+    // Open the output file
+    outputFile = fopen(outputFileName, "w");
+    if (outputFile == NULL) {
+        perror("Error opening output file");
+        free(buffer);
+        return 1;
+    }
+    
+    // Find and replace all occurrences
+    char *current = buffer;
+    while ((position = strstr(current, searchString)) != NULL) {
+        // Write the part before the occurrence
+        fwrite(current, 1, position - current, outputFile);
+        
+        // Write the replacement string
+        fwrite(replaceString, 1, replaceLen, outputFile);
+        
+        // Move current position after the search string
+        current = position + searchLen;
+        
+        // Increment occurrences counter
+        occurrences++;
+    }
+    
+    // Write the remaining part of the buffer
+    if (*current != '\0') {
+        fputs(current, outputFile);
+    }
+    
+    // Close file and free memory
+    fclose(outputFile);
+    free(buffer);
+    
+    // Display results
+    printf("\nReplacement completed successfully.\n");
+    printf("The string '%s' was found and replaced %d times.\n", searchString, occurrences);
+    printf("Results saved to %s\n", outputFileName);
+    
     return 0;
 }
