@@ -682,30 +682,78 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+// struct Complex {
+//     float real;
+//     float imag;
+// };
+// int main() {
+//     struct Complex c1, c2, sum;
+
+//     printf("Enter the first complex number:\n");
+//     printf("Real part: ");
+//     scanf("%f", &c1.real);
+//     printf("Imaginary part: ");
+//     scanf("%f", &c1.imag);
+
+//     printf("\nEnter the second complex number:\n");
+//     printf("Real part: ");
+//     scanf("%f", &c2.real);
+//     printf("Imaginary part: ");
+//     scanf("%f", &c2.imag);
+
+//     sum.real = c1.real + c2.real;
+//     sum.imag = c1.imag + c2.imag;
+
+//     printf("\nSum of complex numbers = %.2f + %.2fi\n", sum.real, sum.imag);
+
+//     return 0;
+// }
 #include <stdio.h>
-struct Complex {
-    float real;
-    float imag;
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+    int contact[10];  // Array within a structure: contact number as digits
 };
+
 int main() {
-    struct Complex c1, c2, sum;
+    struct Employee emp[3];  // Array of structures for 5 employees
 
-    printf("Enter the first complex number:\n");
-    printf("Real part: ");
-    scanf("%f", &c1.real);
-    printf("Imaginary part: ");
-    scanf("%f", &c1.imag);
+    printf("Enter information of 3 employees:\n");
 
-    printf("\nEnter the second complex number:\n");
-    printf("Real part: ");
-    scanf("%f", &c2.real);
-    printf("Imaginary part: ");
-    scanf("%f", &c2.imag);
+    for (int i = 0; i < 3; i++) {
+        printf("\nEmployee %d\n", i + 1);
+        
+        printf("ID: ");
+        scanf("%d", &emp[i].id);
 
-    sum.real = c1.real + c2.real;
-    sum.imag = c1.imag + c2.imag;
+        printf("Name: ");
+        scanf(" %[^\n]", emp[i].name);  // Read full name with spaces
 
-    printf("\nSum of complex numbers = %.2f + %.2fi\n", sum.real, sum.imag);
+        printf("Salary: ");
+        scanf("%f", &emp[i].salary);
+
+        printf("Contact Number (10 digits, space-separated): ");
+        for (int j = 0; j < 10; j++) {
+            scanf("%d", &emp[i].contact[j]);
+        }
+    }
+
+    // Displaying info
+    printf("\n----- Employee Information -----\n");
+
+    for (int i = 0; i < 3; i++) {
+        printf("\nEmployee %d\n", i + 1);
+        printf("ID: %d\n", emp[i].id);
+        printf("Name: %s\n", emp[i].name);
+        printf("Salary: %.2f\n", emp[i].salary);
+        printf("Contact: ");
+        for (int j = 0; j < 10; j++) {
+            printf("%d", emp[i].contact[j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }
