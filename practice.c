@@ -628,25 +628,56 @@
     
 //     return 0;
 // }
-int sumOfDigits(int n) {
-    if (n == 0)
-        return 0;
-    else
-        return (n % 10) + sumOfDigits(n / 10);
-}
+// int sumOfDigits(int n) {
+//     if (n == 0)
+//         return 0;
+//     else
+//         return (n % 10) + sumOfDigits(n / 10);
+// }
 
+// int main() {
+//     int num;
+
+//     printf("Enter a number: ");
+//     scanf("%d", &num);
+
+//     if (num < 0) {
+//         num = -num;  // Handle negative numbers
+//     }
+
+//     int result = sumOfDigits(num);
+//     printf("Sum of digits: %d\n", result);
+
+//     return 0;
+// }
+#include <stdio.h>
+struct Distance {
+    int feet;
+    float inches;
+};
 int main() {
-    int num;
+    struct Distance d1, d2, sum;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    printf("Enter first distance:\n");
+    printf("Feet: ");
+    scanf("%d", &d1.feet);
+    printf("Inches: ");
+    scanf("%f", &d1.inches);
 
-    if (num < 0) {
-        num = -num;  // Handle negative numbers
+    printf("\nEnter second distance:\n");
+    printf("Feet: ");
+    scanf("%d", &d2.feet);
+    printf("Inches: ");
+    scanf("%f", &d2.inches);
+
+    sum.feet = d1.feet + d2.feet;
+    sum.inches = d1.inches + d2.inches;
+
+    if (sum.inches >= 12.0) {
+        sum.inches -= 12.0;
+        sum.feet++;
     }
-
-    int result = sumOfDigits(num);
-    printf("Sum of digits: %d\n", result);
+    printf("\nTotal distance = %d feet %.2f inches\n", sum.feet, sum.inches);
 
     return 0;
 }
