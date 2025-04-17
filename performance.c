@@ -32,21 +32,21 @@ int main(){
     }
     printf("Enter your account balance: ");
     scanf("%f",&balance);
-    printf("Enter withdrawl amount:");
-    scanf("%f",&withdrawal_amount);
-    if((int)withdrawal_amount%100!=0){
+while (true) {
+    printf("Enter withdrawal amount: ");
+    scanf("%f", &withdrawal_amount);
+    if ((int)withdrawal_amount % 100 != 0) {
         printf("Error: Withdrawal amount must be a multiple of 100.\n");
-        printf("try again\n");
-        ;
-    }
-    else if(withdrawal_amount>balance){
+    } else if (withdrawal_amount > balance) {
         printf("Error: Insufficient balance.\n");
-    }
-    else{
-        int newbalance=balance-withdrawal_amount;
+    } else {
+        float newbalance = balance - withdrawal_amount;
         printf("Transaction successful!\n");
-        printf("Amount withdrawn: %.2f\n",withdrawal_amount);
-        printf("Remaining balance: %.2f\n",newbalance);
+        printf("Amount withdrawn: %.2f\n", withdrawal_amount);
+        printf("Remaining balance: %.2f\n", newbalance);
+        break;
+    }
+    printf("Please try again.\n");
 }
     return 0;
 }
