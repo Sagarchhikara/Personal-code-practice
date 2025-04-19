@@ -97,7 +97,66 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// struct Process {
+//     int pid;
+//     int arrival_time;
+//     int burst_time;
+//     int completion_time;
+//     int waiting_time;
+//     int turnaround_time;
+// };
+
+// void sortByArrival(struct Process p[], int n) {
+//     for(int i = 0; i < n-1; i++) {
+//         for(int j = 0; j < n-i-1; j++) {
+//             if(p[j].arrival_time > p[j+1].arrival_time) {
+//                 struct Process temp = p[j];
+//                 p[j] = p[j+1];
+//                 p[j+1] = temp;
+//             }
+//         }
+//     }
+// }
+
+// int main() {
+//     int n;
+//     printf("Enter number of processes: ");
+//     scanf("%d", &n);
+
+//     struct Process p[n];
+
+//     for(int i = 0; i < n; i++) {
+//         p[i].pid = i + 1;
+//         printf("Enter arrival time and burst time for P%d: ", p[i].pid);
+//         scanf("%d %d", &p[i].arrival_time, &p[i].burst_time);
+//     }
+
+//     sortByArrival(p, n);
+
+//     int current_time = 0;
+//     for(int i = 0; i < n; i++) {
+//         if(current_time < p[i].arrival_time)
+//             current_time = p[i].arrival_time;
+
+//         p[i].completion_time = current_time + p[i].burst_time;
+//         p[i].turnaround_time = p[i].completion_time - p[i].arrival_time;
+//         p[i].waiting_time = p[i].turnaround_time - p[i].burst_time;
+
+//         current_time = p[i].completion_time;
+//     }
+
+//     printf("\nPID\tAT\tBT\tCT\tTAT\tWT\n");
+//     for(int i = 0; i < n; i++) {
+//         printf("P%d\t%d\t%d\t%d\t%d\t%d\n", p[i].pid, p[i].arrival_time, p[i].burst_time,
+//                p[i].completion_time, p[i].turnaround_time, p[i].waiting_time);
+//     }
+
+//     return 0;
+// }
 #include <stdio.h>
+#include <stdbool.h>
 
 struct Process {
     int pid;
@@ -106,49 +165,50 @@ struct Process {
     int completion_time;
     int waiting_time;
     int turnaround_time;
+    bool is_completed;
 };
 
-void sortByArrival(struct Process p[], int n) {
-    for(int i = 0; i < n-1; i++) {
-        for(int j = 0; j < n-i-1; j++) {
-            if(p[j].arrival_time > p[j+1].arrival_time) {
-                struct Process temp = p[j];
-                p[j] = p[j+1];
-                p[j+1] = temp;
-            }
-        }
-    }
-}
-
 int main() {
-    int n;
+    int n, completed = 0, current_time = 0;
     printf("Enter number of processes: ");
     scanf("%d", &n);
 
     struct Process p[n];
 
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         p[i].pid = i + 1;
         printf("Enter arrival time and burst time for P%d: ", p[i].pid);
         scanf("%d %d", &p[i].arrival_time, &p[i].burst_time);
+        p[i].is_completed = false;
     }
 
-    sortByArrival(p, n);
+    while (completed != n) {
+        int idx = -1;
+        int min_bt = 9999;
 
-    int current_time = 0;
-    for(int i = 0; i < n; i++) {
-        if(current_time < p[i].arrival_time)
-            current_time = p[i].arrival_time;
+        for (int i = 0; i < n; i++) {
+            if (p[i].arrival_time <= current_time && !p[i].is_completed) {
+                if (p[i].burst_time < min_bt) {
+                    min_bt = p[i].burst_time;
+                    idx = i;
+                }
+            }
+        }
 
-        p[i].completion_time = current_time + p[i].burst_time;
-        p[i].turnaround_time = p[i].completion_time - p[i].arrival_time;
-        p[i].waiting_time = p[i].turnaround_time - p[i].burst_time;
-
-        current_time = p[i].completion_time;
+        if (idx != -1) {
+            p[idx].completion_time = current_time + p[idx].burst_time;
+            p[idx].turnaround_time = p[idx].completion_time - p[idx].arrival_time;
+            p[idx].waiting_time = p[idx].turnaround_time - p[idx].burst_time;
+            p[idx].is_completed = true;
+            current_time = p[idx].completion_time;
+            completed++;
+        } else {
+            current_time++; // if no process has arrived yet
+        }
     }
 
     printf("\nPID\tAT\tBT\tCT\tTAT\tWT\n");
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("P%d\t%d\t%d\t%d\t%d\t%d\n", p[i].pid, p[i].arrival_time, p[i].burst_time,
                p[i].completion_time, p[i].turnaround_time, p[i].waiting_time);
     }
