@@ -757,104 +757,124 @@
 
 //     return 0;
 // }
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 
-int main(int argc, char *argv[]) {
-    FILE *inputFile, *outputFile;
-    char *buffer, *position;
-    char inputFileName[100], outputFileName[100];
-    char searchString[100], replaceString[100];
-    long fileSize;
-    int occurrences = 0;
-    size_t searchLen, replaceLen;
+// int main(int argc, char *argv[]) {
+//     FILE *inputFile, *outputFile;
+//     char *buffer, *position;
+//     char inputFileName[100], outputFileName[100];
+//     char searchString[100], replaceString[100];
+//     long fileSize;
+//     int occurrences = 0;
+//     size_t searchLen, replaceLen;
     
-    // Get input from user
-    printf("Enter the input file name: ");
-    scanf("%s", inputFileName);
+//     // Get input from user
+//     printf("Enter the input file name: ");
+//     scanf("%s", inputFileName);
     
-    printf("Enter the output file name: ");
-    scanf("%s", outputFileName);
+//     printf("Enter the output file name: ");
+//     scanf("%s", outputFileName);
     
-    printf("Enter the string to search for: ");
-    scanf("%s", searchString);
+//     printf("Enter the string to search for: ");
+//     scanf("%s", searchString);
     
-    printf("Enter the string to replace with: ");
-    scanf("%s", replaceString);
+//     printf("Enter the string to replace with: ");
+//     scanf("%s", replaceString);
     
-    // Open the input file
-    inputFile = fopen(inputFileName, "r");
-    if (inputFile == NULL) {
-        perror("Error opening input file");
-        return 1;
-    }
+//     // Open the input file
+//     inputFile = fopen(inputFileName, "r");
+//     if (inputFile == NULL) {
+//         perror("Error opening input file");
+//         return 1;
+//     }
     
-    // Get file size
-    fseek(inputFile, 0, SEEK_END);
-    fileSize = ftell(inputFile);
-    rewind(inputFile);
+//     // Get file size
+//     fseek(inputFile, 0, SEEK_END);
+//     fileSize = ftell(inputFile);
+//     rewind(inputFile);
     
-    // Allocate memory for the file content
-    buffer = (char *)malloc(fileSize + 1);
-    if (buffer == NULL) {
-        perror("Memory allocation failed");
-        fclose(inputFile);
-        return 1;
-    }
+//     // Allocate memory for the file content
+//     buffer = (char *)malloc(fileSize + 1);
+//     if (buffer == NULL) {
+//         perror("Memory allocation failed");
+//         fclose(inputFile);
+//         return 1;
+//     }
     
-    // Read the file content
-    size_t result = fread(buffer, 1, fileSize, inputFile);
-    if (result != fileSize) {
-        perror("Error reading file");
-        fclose(inputFile);
-        free(buffer);
-        return 1;
-    }
-    buffer[fileSize] = '\0';
-    fclose(inputFile);
+//     // Read the file content
+//     size_t result = fread(buffer, 1, fileSize, inputFile);
+//     if (result != fileSize) {
+//         perror("Error reading file");
+//         fclose(inputFile);
+//         free(buffer);
+//         return 1;
+//     }
+//     buffer[fileSize] = '\0';
+//     fclose(inputFile);
     
-    // Get the lengths of the search and replace strings
-    searchLen = strlen(searchString);
-    replaceLen = strlen(replaceString);
+//     // Get the lengths of the search and replace strings
+//     searchLen = strlen(searchString);
+//     replaceLen = strlen(replaceString);
     
-    // Open the output file
-    outputFile = fopen(outputFileName, "w");
-    if (outputFile == NULL) {
-        perror("Error opening output file");
-        free(buffer);
-        return 1;
-    }
+//     // Open the output file
+//     outputFile = fopen(outputFileName, "w");
+//     if (outputFile == NULL) {
+//         perror("Error opening output file");
+//         free(buffer);
+//         return 1;
+//     }
     
-    // Find and replace all occurrences
-    char *current = buffer;
-    while ((position = strstr(current, searchString)) != NULL) {
-        // Write the part before the occurrence
-        fwrite(current, 1, position - current, outputFile);
+//     // Find and replace all occurrences
+//     char *current = buffer;
+//     while ((position = strstr(current, searchString)) != NULL) {
+//         // Write the part before the occurrence
+//         fwrite(current, 1, position - current, outputFile);
         
-        // Write the replacement string
-        fwrite(replaceString, 1, replaceLen, outputFile);
+//         // Write the replacement string
+//         fwrite(replaceString, 1, replaceLen, outputFile);
         
-        // Move current position after the search string
-        current = position + searchLen;
+//         // Move current position after the search string
+//         current = position + searchLen;
         
-        // Increment occurrences counter
-        occurrences++;
+//         // Increment occurrences counter
+//         occurrences++;
+//     }
+    
+//     // Write the remaining part of the buffer
+//     if (*current != '\0') {
+//         fputs(current, outputFile);
+//     }
+    
+//     // Close file and free memory
+//     fclose(outputFile);
+//     free(buffer);
+    
+//     // Display results
+//     printf("\nReplacement completed successfully.\n");
+//     printf("The string '%s' was found and replaced %d times.\n", searchString, occurrences);
+//     printf("Results saved to %s\n", outputFileName);
+    
+//     return 0;
+// }
+//program to convert any character to uppercase
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    char ch;
+    clrscr();
+    printf("Enter a character: \n");
+    scanf("%c", &ch);
+    if(ch >= 'a' && ch <= 'z')
+    {
+        ch = ch - 32;
+        printf("Uppercase character is: %c", ch);
     }
-    
-    // Write the remaining part of the buffer
-    if (*current != '\0') {
-        fputs(current, outputFile);
+    else
+    {
+        printf("Character is already in uppercase or not an alphabet.");
     }
-    
-    // Close file and free memory
-    fclose(outputFile);
-    free(buffer);
-    
-    // Display results
-    printf("\nReplacement completed successfully.\n");
-    printf("The string '%s' was found and replaced %d times.\n", searchString, occurrences);
-    printf("Results saved to %s\n", outputFileName);
-    
+    getch();    
     return 0;
 }
