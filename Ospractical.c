@@ -347,87 +347,166 @@
 //     return 0;
 // }
 // RR scheduling 
-#include <stdio.h>
+// #include <stdio.h>
 
-struct Process {
-    int pid;
-    int arrival_time;
-    int burst_time;
-    int remaining_time;
-    int completion_time;
-    int turnaround_time;
-    int waiting_time;
-};
+// struct Process {
+//     int pid;
+//     int arrival_time;
+//     int burst_time;
+//     int remaining_time;
+//     int completion_time;
+//     int turnaround_time;
+//     int waiting_time;
+// };
+
+// int main() {
+//     int n, tq, time = 0, completed = 0;
+//     printf("Enter number of processes: ");
+//     scanf("%d", &n);
+
+//     struct Process p[n];
+
+//     for (int i = 0; i < n; i++) {
+//         p[i].pid = i + 1;
+//         printf("Enter arrival time and burst time for P%d: ", p[i].pid);
+//         scanf("%d %d", &p[i].arrival_time, &p[i].burst_time);
+//         p[i].remaining_time = p[i].burst_time;
+//     }
+
+//     printf("Enter Time Quantum: ");
+//     scanf("%d", &tq);
+
+//     int queue[100], front = 0, rear = 0;
+//     int visited[n];
+//     for (int i = 0; i < n; i++) visited[i] = 0;
+
+//     queue[rear++] = 0;
+//     visited[0] = 1;
+
+//     while (completed < n) {
+//         int idx = queue[front++];
+//         if (p[idx].remaining_time > 0) {
+//             if (p[idx].remaining_time > tq) {
+//                 time += tq;
+//                 p[idx].remaining_time -= tq;
+//             } else {
+//                 time += p[idx].remaining_time;
+//                 p[idx].remaining_time = 0;
+//                 p[idx].completion_time = time;
+//                 p[idx].turnaround_time = time - p[idx].arrival_time;
+//                 p[idx].waiting_time = p[idx].turnaround_time - p[idx].burst_time;
+//                 completed++;
+//             }
+
+//             // Enqueue newly arrived processes
+//             for (int i = 0; i < n; i++) {
+//                 if (i != idx && !visited[i] && p[i].arrival_time <= time) {
+//                     queue[rear++] = i;
+//                     visited[i] = 1;
+//                 }
+//             }
+
+//             // Re-enqueue current process if not done
+//             if (p[idx].remaining_time > 0)
+//                 queue[rear++] = idx;
+//         }
+
+//         // If queue is empty, find next unvisited process
+//         if (front == rear) {
+//             for (int i = 0; i < n; i++) {
+//                 if (p[i].remaining_time > 0) {
+//                     queue[rear++] = i;
+//                     visited[i] = 1;
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+
+//     printf("\nPID\tAT\tBT\tCT\tTAT\tWT\n");
+//     for (int i = 0; i < n; i++) {
+//         printf("P%d\t%d\t%d\t%d\t%d\t%d\n", p[i].pid, p[i].arrival_time, p[i].burst_time,
+//                p[i].completion_time, p[i].turnaround_time, p[i].waiting_time);
+//     }
+
+//     return 0;
+// }
+
+#include <stdio.h>
+#include <stdbool.h>
 
 int main() {
-    int n, tq, time = 0, completed = 0;
+    int n, m; // n = number of processes, m = number of resource types
+
     printf("Enter number of processes: ");
     scanf("%d", &n);
 
-    struct Process p[n];
+    printf("Enter number of resource types: ");
+    scanf("%d", &m);
 
-    for (int i = 0; i < n; i++) {
-        p[i].pid = i + 1;
-        printf("Enter arrival time and burst time for P%d: ", p[i].pid);
-        scanf("%d %d", &p[i].arrival_time, &p[i].burst_time);
-        p[i].remaining_time = p[i].burst_time;
-    }
+    int Allocation[n][m], Max[n][m], Need[n][m], Available[m];
 
-    printf("Enter Time Quantum: ");
-    scanf("%d", &tq);
+    printf("Enter Allocation matrix:\n");
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            scanf("%d", &Allocation[i][j]);
 
-    int queue[100], front = 0, rear = 0;
-    int visited[n];
-    for (int i = 0; i < n; i++) visited[i] = 0;
+    printf("Enter Max matrix:\n");
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            scanf("%d", &Max[i][j]);
 
-    queue[rear++] = 0;
-    visited[0] = 1;
+    printf("Enter Available resources:\n");
+    for (int i = 0; i < m; i++)
+        scanf("%d", &Available[i]);
 
-    while (completed < n) {
-        int idx = queue[front++];
-        if (p[idx].remaining_time > 0) {
-            if (p[idx].remaining_time > tq) {
-                time += tq;
-                p[idx].remaining_time -= tq;
-            } else {
-                time += p[idx].remaining_time;
-                p[idx].remaining_time = 0;
-                p[idx].completion_time = time;
-                p[idx].turnaround_time = time - p[idx].arrival_time;
-                p[idx].waiting_time = p[idx].turnaround_time - p[idx].burst_time;
-                completed++;
-            }
+    // Calculate Need matrix
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            Need[i][j] = Max[i][j] - Allocation[i][j];
 
-            // Enqueue newly arrived processes
-            for (int i = 0; i < n; i++) {
-                if (i != idx && !visited[i] && p[i].arrival_time <= time) {
-                    queue[rear++] = i;
-                    visited[i] = 1;
+    bool Finish[n];
+    for (int i = 0; i < n; i++)
+        Finish[i] = false;
+
+    int safeSequence[n];
+    int count = 0;
+
+    while (count < n) {
+        bool found = false;
+
+        for (int i = 0; i < n; i++) {
+            if (!Finish[i]) {
+                bool canProceed = true;
+
+                for (int j = 0; j < m; j++) {
+                    if (Need[i][j] > Available[j]) {
+                        canProceed = false;
+                        break;
+                    }
+                }
+
+                if (canProceed) {
+                    for (int j = 0; j < m; j++)
+                        Available[j] += Allocation[i][j];
+
+                    safeSequence[count++] = i;
+                    Finish[i] = true;
+                    found = true;
                 }
             }
-
-            // Re-enqueue current process if not done
-            if (p[idx].remaining_time > 0)
-                queue[rear++] = idx;
         }
 
-        // If queue is empty, find next unvisited process
-        if (front == rear) {
-            for (int i = 0; i < n; i++) {
-                if (p[i].remaining_time > 0) {
-                    queue[rear++] = i;
-                    visited[i] = 1;
-                    break;
-                }
-            }
+        if (!found) {
+            printf("\n🔴 Deadlock detected! System is NOT in a safe state.\n");
+            return 1;
         }
     }
 
-    printf("\nPID\tAT\tBT\tCT\tTAT\tWT\n");
-    for (int i = 0; i < n; i++) {
-        printf("P%d\t%d\t%d\t%d\t%d\t%d\n", p[i].pid, p[i].arrival_time, p[i].burst_time,
-               p[i].completion_time, p[i].turnaround_time, p[i].waiting_time);
-    }
+    printf("\n✅ System is in a safe state.\nSafe Sequence: ");
+    for (int i = 0; i < n; i++)
+        printf("P%d ", safeSequence[i]);
+    printf("\n");
 
     return 0;
 }
