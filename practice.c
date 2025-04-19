@@ -859,22 +859,22 @@
 //     return 0;
 // }
 //program to convert any character to uppercase
-#include<stdio.h>
-#include<conio.h>
-int main(){
-    char ch;
-    clrscr();
-    printf("Enter a character: \n");
-    scanf("%c", &ch);
-    if(ch >= 'a' && ch <= 'z')
-    {
-        ch = ch - 32;
-        printf("Uppercase character is: %c", ch);
-    }
-    else
-    {
-        printf("Character is already in uppercase or not an alphabet.");
-    }
-    getch();    
-    return 0;
-}
+// #include<stdio.h>
+// #include<conio.h>
+// int main(){
+//     char ch;
+//     clrscr();
+//     printf("Enter a character: \n");
+//     scanf("%c", &ch);
+//     if(ch >= 'a' && ch <= 'z')
+//     {
+//         ch = ch - 32;
+//         printf("Uppercase character is: %c", ch);
+//     }
+//     else
+//     {
+//         printf("Character is already in uppercase or not an alphabet.");
+//     }
+//     getch();    
+//     return 0;
+// }

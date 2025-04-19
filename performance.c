@@ -52,23 +52,23 @@
 // }
 #include<stdio.h>
 
-int main(){
-    char ch;
+// int main(){
+//     char ch;
     
-    printf("Enter a character: \n");
-    scanf("%c", &ch);
-    if(ch >= 'a' && ch <= 'z')
-    {
-        ch = ch - 32;
-        printf("Uppercase character is: %c", ch);
-    }
-    else
-    {
-        printf("Character is already in uppercase or not an alphabet.");
-    }
-    getch();    
-    return 0;
-}
+//     printf("Enter a character: \n");
+//     scanf("%c", &ch);
+//     if(ch >= 'a' && ch <= 'z')
+//     {
+//         ch = ch - 32;
+//         printf("Uppercase character is: %c", ch);
+//     }
+//     else
+//     {
+//         printf("Character is already in uppercase or not an alphabet.");
+//     }
+//     getch();    
+//     return 0;
+// }
 
 
 
