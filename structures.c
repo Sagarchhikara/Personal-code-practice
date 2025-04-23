@@ -88,14 +88,18 @@ struct vehicle {
 };
 int main() {
     struct vehicle v;
-    int days;
+    int days,n;
     float total_rental;
-    printf("Enter vehicle number: ");
-    scanf("%s", v.vno);
-    printf("Enter model: ");
-    scanf("%s", v.model);
-    printf("Enter per day rental: ");
-    scanf("%f", &v.rental);
+    printf("Enter number of vehicles: ");
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++) {
+        printf("Enter vehicle number: ");
+        scanf("%s", v.vno);
+        printf("Enter model: ");
+        scanf("%s", v.model);
+        printf("Enter per day rental: ");
+        scanf("%f", &v.rental);
+    }
     printf("Enter number of days: ");
     scanf("%d", &days);
     total_rental = v.rental * days;
@@ -104,4 +108,5 @@ int main() {
     printf("Total Rental Cost for %d days: %.2f\n", days, total_rental);
     return 0;
 }
+
 
