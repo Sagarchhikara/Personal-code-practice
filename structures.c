@@ -38,27 +38,44 @@
 // }
 
 // enter records of 5 students using array of structures 
-struct student
-{
-    int rollno;
-    char name[20];
+// struct student
+// {
+//     int rollno;
+//     char name[20];
+//     float marks;
+// };
+// int main()
+// {
+//     struct student s[5];
+//     int i;
+//     FILE *fp;
+//     fp = fopen("students.txt", "w");
+//     if(fp == NULL){
+//         printf("Error opening file!\n");
+//         return 1;
+//     }
+//     for(i=0; i<5; i++){
+//         printf("Enter roll no, name and marks of student %d: ", i+1);
+//         scanf("%d %s %f", &s[i].rollno, s[i].name, &s[i].marks);
+//         fprintf(fp, "%d %s %.2f\n", s[i].rollno, s[i].name, s[i].marks);
+//     }
+//     fclose(fp);
+//     return 0;
+// }
+
+// copy the contents of one structure to another
+#include <stdio.h>
+#include <string.h>
+struct student {
+    int roll;
+    char name[50];
     float marks;
 };
-int main()
-{
-    struct student s[5];
-    int i;
-    FILE *fp;
-    fp = fopen("students.txt", "w");
-    if(fp == NULL){
-        printf("Error opening file!\n");
-        return 1;
-    }
-    for(i=0; i<5; i++){
-        printf("Enter roll no, name and marks of student %d: ", i+1);
-        scanf("%d %s %f", &s[i].rollno, s[i].name, &s[i].marks);
-        fprintf(fp, "%d %s %.2f\n", s[i].rollno, s[i].name, s[i].marks);
-    }
-    fclose(fp);
+struct student st2;
+struct student st1 = {1, "Sagar Chhikara", 90};
+
+int main() {
+    st2 = st1;
+    printf("Roll: %d\n", st2.roll);
     return 0;
 }
