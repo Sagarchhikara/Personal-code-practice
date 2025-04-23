@@ -64,18 +64,44 @@
 // }
 
 // copy the contents of one structure to another
-#include <stdio.h>
-#include <string.h>
-struct student {
-    int roll;
-    char name[50];
-    float marks;
-};
-struct student st2;
-struct student st1 = {1, "Sagar Chhikara", 90};
+// #include <stdio.h>
+// #include <string.h>
+// struct student {
+//     int roll;
+//     char name[50];
+//     float marks;
+// };
+// struct student st2;
+// struct student st1 = {1, "Sagar Chhikara", 90};
 
+// int main() {
+//     st2 = st1;
+//     printf("Roll: %d\n", st2.roll);
+//     return 0;
+// }
+// define a structure vehicle to store vehicle number,its model and per day rental then calculate the total rental cost for n days and display the details of the vehicle
+
+struct vehicle {
+    char vno[20];
+    char model[20];
+    float rental;
+};
 int main() {
-    st2 = st1;
-    printf("Roll: %d\n", st2.roll);
+    struct vehicle v;
+    int days;
+    float total_rental;
+    printf("Enter vehicle number: ");
+    scanf("%s", v.vno);
+    printf("Enter model: ");
+    scanf("%s", v.model);
+    printf("Enter per day rental: ");
+    scanf("%f", &v.rental);
+    printf("Enter number of days: ");
+    scanf("%d", &days);
+    total_rental = v.rental * days;
+    printf("Vehicle Number: %s\n", v.vno);
+    printf("Model: %s\n", v.model);
+    printf("Total Rental Cost for %d days: %.2f\n", days, total_rental);
     return 0;
 }
+
