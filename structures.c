@@ -81,32 +81,94 @@
 // }
 // define a structure vehicle to store vehicle number,its model and per day rental then calculate the total rental cost for n days and display the details of the vehicle
 
+// struct vehicle {
+//     char vno[20];
+//     char model[20];
+//     float rental;
+// };
+// int main() {
+//     struct vehicle v;
+//     int days,n;
+//     float total_rental;
+//     printf("Enter number of vehicles: ");
+//     scanf("%d", &n);
+//     for(int i = 0; i < n; i++) {
+//         printf("Enter vehicle number: ");
+//         scanf("%s", v.vno);
+//         printf("Enter model: ");
+//         scanf("%s", v.model);
+//         printf("Enter per day rental: ");
+//         scanf("%f", &v.rental);
+//     }
+//     printf("Enter number of days: ");
+//     scanf("%d", &days);
+//     total_rental = v.rental * days;
+//     printf("Vehicle Number: %s\n", v.vno);
+//     printf("Model: %s\n", v.model);
+//     printf("Total Rental Cost for %d days: %.2f\n", days, total_rental);
+//     return 0;
+// }
+
+
+#include <stdio.h>
+
 struct vehicle {
     char vno[20];
     char model[20];
     float rental;
 };
+
 int main() {
-    struct vehicle v;
-    int days,n;
+    int n, days, choice;
     float total_rental;
+    
     printf("Enter number of vehicles: ");
     scanf("%d", &n);
+    
+    // Create an array of vehicle structures
+    struct vehicle vehicles[n];
+    
+    // Input data for all vehicles
     for(int i = 0; i < n; i++) {
+        printf("\nVehicle %d:\n", i+1);
         printf("Enter vehicle number: ");
-        scanf("%s", v.vno);
+        scanf("%s", vehicles[i].vno);
         printf("Enter model: ");
-        scanf("%s", v.model);
+        scanf("%s", vehicles[i].model);
         printf("Enter per day rental: ");
-        scanf("%f", &v.rental);
+        scanf("%f", &vehicles[i].rental);
     }
+    
+    // Display all vehicles and let user choose one
+    printf("\nAvailable Vehicles:\n");
+    for(int i = 0; i < n; i++) {
+        printf("%d. Vehicle Number: %s, Model: %s, Per Day Rental: %.2f\n", 
+               i+1, vehicles[i].vno, vehicles[i].model, vehicles[i].rental);
+    }
+    
+    printf("\nEnter the vehicle number (1-%d) you want to rent: ", n);
+    scanf("%d", &choice);
+    
+    // Validate choice
+    if(choice < 1 || choice > n) {
+        printf("Invalid vehicle selection!\n");
+        return 1;
+    }
+    
+    // Adjust index (user enters 1-based, array is 0-based)
+    choice--;
+    
     printf("Enter number of days: ");
     scanf("%d", &days);
-    total_rental = v.rental * days;
-    printf("Vehicle Number: %s\n", v.vno);
-    printf("Model: %s\n", v.model);
+    
+    // Calculate total rental for selected vehicle
+    total_rental = vehicles[choice].rental * days;
+    
+    // Display rental information for selected vehicle
+    printf("\nRental Information:\n");
+    printf("Vehicle Number: %s\n", vehicles[choice].vno);
+    printf("Model: %s\n", vehicles[choice].model);
     printf("Total Rental Cost for %d days: %.2f\n", days, total_rental);
+    
     return 0;
 }
-
-
