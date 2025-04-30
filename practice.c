@@ -878,3 +878,55 @@
 //     getch();    
 //     return 0;
 // }
+//an elevator system has to process the user request depending upon energy usage and safety measures 
+//total floors are 20 if the requested floors is outside the range 1-20 then print invalid floor request 
+//if the requested floor is the same as the current floor then print alrdy here
+//otherwise move the elevator and calculate 
+//1) the movement direction and the no. of floor moved 
+//2)energy usage 2 units per floor moved up
+//3)if the movement is >10 floors print cooling delay pls wait
+//input will be current floor and requested floor 
+//output should be either invalid floor request 
+//output should be the requested floor
+//if moving >10 floor then output should be coling delay pls wait
+//if moving then print direction in form of up down and no. of moves and energy required to move those floors
+#include<stdio.h>
+
+int main(){
+    int current_floor, requested_floor, energy_usage, no_of_moves;
+    char direction[10];
+    
+    printf("Enter the current floor (1-20): ");
+    scanf("%d", &current_floor);
+    
+    printf("Enter the requested floor (1-20): ");
+    scanf("%d", &requested_floor);
+    
+    if(current_floor < 1 || current_floor > 20 || requested_floor < 1 || requested_floor > 20){
+        printf("Invalid floor request\n");
+        return 0;
+    }
+    
+    if(current_floor == requested_floor){
+        printf("Already here\n");
+        return 0;
+    }
+    
+    no_of_moves = abs(requested_floor - current_floor);
+    energy_usage = no_of_moves * 2; // 2 units of energy per floor moved
+    
+    if(requested_floor > current_floor){
+        strcpy(direction, "up");
+    } else {
+        strcpy(direction, "down");
+    }
+    
+    if(no_of_moves > 10){
+        printf("Cooling delay, please wait\n");
+    }
+    
+    printf("Moving %s %d floors\n", direction, no_of_moves);
+    printf("Energy usage: %d units\n", energy_usage);
+    
+    return 0;
+}
