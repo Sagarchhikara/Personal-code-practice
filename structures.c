@@ -180,13 +180,37 @@
 
 #include<stdio.h>
 #include<conio.h>
-struct student 
+struct student
 {
-    int roll_no;
-    char name[80];
-    float fees;
-    char DOB[80];
+    int rollno;
+    char name[20];
+    int fees;
+    int marks;
+};
+
+int main(){
+    struct student stud[50];
+    int n,i;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++)
+    {
+    printf("Enter roll no of the student:\n");
+    scanf("%d", &stud[i].rollno);
+    printf("Enter name of the student:\n");
+    scanf("%s", stud[i].name);
+    printf("Enter fees of the student:\n");
+    scanf("%d", &stud[i].fees);
+    printf("Enter marks of the student:\n");
+    scanf("%d", &stud[i].marks);
+    }
+    for ( i = 0; i < n; i++)
+    {
+        printf("Roll No: %d\n", stud[i].rollno);
+        printf("Name: %s\n", stud[i].name);
+        printf("Fees: %d\n", stud[i].fees);
+        printf("Marks: %d\n", stud[i].marks);
+    }
+    return 0;
+    
 }
-struct student  s1;
-int main
-printf("Enter thr roll no of student:");
