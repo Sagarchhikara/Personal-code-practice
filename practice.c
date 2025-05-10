@@ -890,43 +890,125 @@
 //output should be the requested floor
 //if moving >10 floor then output should be coling delay pls wait
 //if moving then print direction in form of up down and no. of moves and energy required to move those floors
-#include<stdio.h>
+// #include<stdio.h>
 
+// int main(){
+//     int current_floor, requested_floor, energy_usage, no_of_moves;
+//     char direction[10];
+    
+//     printf("Enter the current floor (1-20): ");
+//     scanf("%d", &current_floor);
+    
+//     printf("Enter the requested floor (1-20): ");
+//     scanf("%d", &requested_floor);
+    
+//     if(current_floor < 1 || current_floor > 20 || requested_floor < 1 || requested_floor > 20){
+//         printf("Invalid floor request\n");
+//         return 0;
+//     }
+    
+//     if(current_floor == requested_floor){
+//         printf("Already here\n");
+//         return 0;
+//     }
+    
+//     no_of_moves = abs(requested_floor - current_floor);
+//     energy_usage = no_of_moves * 2; // 2 units of energy per floor moved
+    
+//     if(requested_floor > current_floor){
+//         strcpy(direction, "up");
+//     } else {
+//         strcpy(direction, "down");
+//     }
+    
+//     if(no_of_moves > 10){
+//         printf("Cooling delay, please wait\n");
+//     }
+    
+//     printf("Moving %s %d floors\n", direction, no_of_moves);
+//     printf("Energy usage: %d units\n", energy_usage);
+    
+//     return 0;
+// }
+#include<stdio.h>
 int main(){
-    int current_floor, requested_floor, energy_usage, no_of_moves;
-    char direction[10];
-    
-    printf("Enter the current floor (1-20): ");
-    scanf("%d", &current_floor);
-    
-    printf("Enter the requested floor (1-20): ");
-    scanf("%d", &requested_floor);
-    
-    if(current_floor < 1 || current_floor > 20 || requested_floor < 1 || requested_floor > 20){
-        printf("Invalid floor request\n");
-        return 0;
-    }
-    
-    if(current_floor == requested_floor){
-        printf("Already here\n");
-        return 0;
-    }
-    
-    no_of_moves = abs(requested_floor - current_floor);
-    energy_usage = no_of_moves * 2; // 2 units of energy per floor moved
-    
-    if(requested_floor > current_floor){
-        strcpy(direction, "up");
-    } else {
-        strcpy(direction, "down");
-    }
-    
-    if(no_of_moves > 10){
-        printf("Cooling delay, please wait\n");
-    }
-    
-    printf("Moving %s %d floors\n", direction, no_of_moves);
-    printf("Energy usage: %d units\n", energy_usage);
-    
-    return 0;
+    printf("Lets learn abt poninter\n");
+    int a =10;
+    int* ptra=&a
+    printf("Address of a is %u\n", &a);  
 }
+import argparse
+
+import vertexai
+from vertexai.preview.vision_models import ImageGenerationModel
+
+def generate_bouquet_image(
+    project_id: str, location: str, output_file: str, prompt: str
+) -> vertexai.preview.vision_models.ImageGenerationResponse:
+    """Generate an image using a text prompt.
+    Args:
+      project_id: Google Cloud project ID, used to initialize Vertex AI.
+      location: Google Cloud region, used to initialize Vertex AI.
+      output_file: Local path to the output image file.
+      prompt: The text prompt describing what you want to see."""
+
+    vertexai.init(project=project_id, location=location)
+
+    model = ImageGenerationModel.from_pretrained("imagen-3.0-generate-002")
+
+    images = model.generate_images(
+        prompt=prompt,
+        # Optional parameters
+        number_of_images=1,
+        seed=1,
+        add_watermark=False,
+    )
+
+    images[0].save(location=output_file)
+
+    return images
+
+generate_bouquet_image(
+    project_id='qwiklabs-gcp-03-ca76833a6dd9',
+    location='us-central1',
+    output_file='image.jpeg',
+    prompt=' Create an image containing a bouquet of 2 sunflowers and 3 roses',
+    )
+def analyze_bouquet_image(
+    project_id: 'qwiklabs-gcp-03-ca76833a6dd9', location:'us-central1' , image_path:'us-central1' 
+) -> str:
+    """Analyze a bouquet image and generate birthday wishes based on it.
+    
+    Args:
+      project_id: Google Cloud project ID, used to initialize Vertex AI.
+      location: Google Cloud region, used to initialize Vertex AI.
+      image_path: Path to the local image file to analyze.
+      
+    Returns:
+      Birthday wishes text generated based on the image analysis.
+    """
+    vertexai.init(project=project_id, location=location)
+    
+    # Load the image
+    with open(image_path, "rb") as f:
+        image_data = f.read()
+    
+    # Create a Part object for the image
+    image_part = Part.from_data(data=image_data, mime_type="image/jpeg")
+    
+    # Create a prompt for generating birthday wishes based on the bouquet
+    text_prompt = "This is a bouquet of flowers. Create heartfelt birthday wishes based on this bouquet. Describe the flowers seen in the image and incorporate them into the wishes."
+    
+    # Load the multimodal model
+    model = GenerativeModel("gemini-2.0-flash-001")
+    
+    # Generate content based on the image and prompt
+    response = model.generate_content(
+        [text_prompt, image_part],
+        generation_config={
+            "max_output_tokens": 256,
+            "temperature": 0.4,
+        }
+    )
+    
+    return response.text
