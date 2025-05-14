@@ -94,3 +94,21 @@
     
 //     return 0;
 // }
+// counting first non repeating character in a string 
+// int main(){
+//     char str[100];
+//     printf("Enter a string:\n");
+//     scanf("%s",str);
+//     getchar();
+//     int freq[256]={0};
+//     for(int i=0;str[i]!='\0';i++){
+//         freq[(int)str[i]]++;
+//     }
+//     for (int i = 0; i < 256; i++) {
+//     if (freq[i] > 0) {
+//         printf("%c: %d\n", i, freq[i]);
+//     }
+// }
+// return 0;
+// }
+
