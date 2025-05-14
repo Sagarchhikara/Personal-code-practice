@@ -66,31 +66,31 @@
 //     }
 //     return 0;
 // }
-#include<stdio.h>
-#include<string.h>
+// #include<stdio.h>
+// #include<string.h>
 
-int main() {
-    char str1[100];
-    char str2[100];
+// int main() {
+//     char str1[100];
+//     char str2[100];
     
-    printf("Enter the 1st string:\n");
-    scanf("%s", str1);
-    printf("Enter the 2nd string:\n");
-    scanf("%s", str2);
-    getchar();
+//     printf("Enter the 1st string:\n");
+//     scanf("%s", str1);
+//     printf("Enter the 2nd string:\n");
+//     scanf("%s", str2);
+//     getchar();
     
-    // Issue 1: It should be strcmp, not strcpm
-    // Issue 2: String comparison doesn't work with > operator in C
+//     // Issue 1: It should be strcmp, not strcpm
+//     // Issue 2: String comparison doesn't work with > operator in C
     
-    if(strlen(str1) > strlen(str2)) {
-        printf("String 1 is longer");
-    }
-    else if(strlen(str1) < strlen(str2)) {
-        printf("String 2 is longer");
-    }
-    else {
-        printf("Both strings have the same length");
-    }
+//     if(strlen(str1) > strlen(str2)) {
+//         printf("String 1 is longer");
+//     }
+//     else if(strlen(str1) < strlen(str2)) {
+//         printf("String 2 is longer");
+//     }
+//     else {
+//         printf("Both strings have the same length");
+//     }
     
-    return 0;
-}
+//     return 0;
+// }
