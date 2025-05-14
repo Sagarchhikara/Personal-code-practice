@@ -1,22 +1,27 @@
 #include<stdio.h>
 #include<string.h>
 int main(){
-    char str[100];
-    int len = 0;
-    printf("Enter a sting:\n");
+    char str[100]; 
+    printf("Enter a String: \n");
     scanf("%s",str);
-    while (str[len]!=0)
+    gets(str);
+    int length=0;
+    char vowels,consonants;
+    while (str[length]!='0\n')
     {
-        /* code */
-        len++;
+        length++;
     }
-    for(int i=0; i<len; i++){
-        char temp=str[i];
-        str[i]=str[len-i-1];
-        str[len-i-1]=temp;
-
-
+    
+    for (int  i = 0; i < length; i++)
+    {
+        if(str[i]=='a','e','i','o','u','A','E','I','O','U'){
+            vowels++;
+        }
+        else {
+            consonants++;
+        }
     }
-    printf("Reversed string is %s",str);
+    printf("Number of vowels: %d\n",vowels);
+    printf("Number of consonants: %d\n",consonants);
     return 0;
 }   
