@@ -14,14 +14,29 @@
 //     return 0;
 
 // }
-void changevalue(int *address){
-    *address=345;
+// void changevalue(int *address){
+//     *address=345;
 
+// }
+// int main(){
+//     int a =34,b=36;
+//     printf(" The value of a nw is %d\n",a);
+//     changevalue(&a);
+//     printf(" The value of a nw is %d\n",a);
+//     return 0;
+// }
+int func1(int array[]){
+    for (int i = 0; i < 4; i++)
+    {
+        printf(" The value of array[%d] is %d\n",i,array[i]);
+    }
+    array[0] = 100;
+    return 0;
 }
 int main(){
-    int a =34,b=36;
-    printf(" The value of a nw is %d\n",a);
-    changevalue(&a);
-    printf(" The value of a nw is %d\n",a);
+    int arr[] = {1,2,3,4,5};
+    printf(" The value of array[0] is %d\n",arr[0]);
+    func1(arr);
+    printf(" The value of array[0] is %d\n",arr[0]);
     return 0;
 }
