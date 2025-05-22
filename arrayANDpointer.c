@@ -685,11 +685,11 @@
 //     }
 //     return fact;
 // }
-// int main(){
-//     int n;
-//     printf("Enter a number: ");
-//     int result = printfactorial(n);
-//     printf("Factorial of %d is %d\n",n,result);
-//     return 0;
+int main(){
+    int n;
+    printf("Enter a number: ");
+    int result = printfactorial(n);
+    printf("Factorial of %d is %d\n",n,result);
+    return 0;
 
-// }
+ }
