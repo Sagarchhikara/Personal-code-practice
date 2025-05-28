@@ -49,27 +49,46 @@
 //     return 0;
 // }
 // Online C compiler to run C program online
+// #include <stdio.h>
+
+// int main() {
+//     int n,views[10];
+//     printf("Enter the Number of videos:\n");
+//     scanf("%d",&n);bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+//     for(int i=0;i<=n;i++){
+//         printf("Enter the views of %d:",i);
+//         scanf("%d",&views[i]);
+//     }
+//     for(int i=0;i<=n;i++){
+//         for(int j=)
+//     }
+//     for(int i=0;i<=n;i++){
+//         printf("%d",views[i]);
+//     }
+//     if(n<=5){
+//         for(int i=0;i<=5;i++){
+//             printf("%d",views[i]);
+            
+//         }
+//     }
+//     return 0;
+// }
+// Online C compiler to run C program online
 #include <stdio.h>
 
 int main() {
-    int n,views[10];
-    printf("Enter the Number of videos:\n");
+    // Write C code here
+    int n;
+    int views;
+    int total=0;
+    printf("Enter your number of days:");
     scanf("%d",&n);
-    for(int i=0;i<=n;i++){
-        printf("Enter the views of %d:",i);
-        scanf("%d",&views[i]);
+    for(int i=0;i<n;i++){
+        scanf("%d",&views);
+        total+=views;
     }
-    for(int i=0;i<=n;i++){
-        for(int j=)
-    }
-    for(int i=0;i<=n;i++){
-        printf("%d",views[i]);
-    }
-    if(n<=5){
-        for(int i=0;i<=5;i++){
-            printf("%d",views[i]);
-            
-        }
-    }
+    printf("%d",total);
+    
+
     return 0;
 }
