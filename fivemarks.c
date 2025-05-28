@@ -93,99 +93,116 @@
 // }
 // Online C compiler to run C program online
 
-void findtempratureanalysis(int temp[7][3])
-{
-    float avg[7];
-    int hottestday = 0, coldestday = 0;
-    float maxavg = -1000, minavg = 1000;
-    for (int i = 0; i < 7; i++)
-    {
-        float sum = 0;
-        for (int j = 0; j < 3; j++)
-        {
-            sum += temp[i][j];
-        }
-        avg[i] = sum / 3;
-        printf("%.1f\n", avg[i]);
-        if (avg[i] > maxavg)
-        {
-            maxavg = avg[i];
-            hottestday = i + 1;
-        }
-        if (avg[i] < minavg)
-        {
-            minavg = avg[i];
-            coldestday = i + 1;
-        }
-    }
-    if (maxavg != minavg)
-    {
-        printf("%d\n", hottestday);
-        printf("%d", coldestday);
-    }
-    else
-    {
-        printf("Stable Weather throughtout the weej");
-    }
-}
-int main()
-{
-    int temp[7][3];
-    for (int i = 0; i < 7; i++)
-        for (int j = 0; j < 3; j++)
-            scanf("%d", &temp[i][j]);
+// void findtempratureanalysis(int temp[7][3])
+// {
+//     float avg[7];
+//     int hottestday = 0, coldestday = 0;
+//     float maxavg = -1000, minavg = 1000;
+//     for (int i = 0; i < 7; i++)
+//     {
+//         float sum = 0;
+//         for (int j = 0; j < 3; j++)
+//         {
+//             sum += temp[i][j];
+//         }
+//         avg[i] = sum / 3;
+//         printf("%.1f\n", avg[i]);
+//         if (avg[i] > maxavg)
+//         {
+//             maxavg = avg[i];
+//             hottestday = i + 1;
+//         }
+//         if (avg[i] < minavg)
+//         {
+//             minavg = avg[i];
+//             coldestday = i + 1;
+//         }
+//     }
+//     if (maxavg != minavg)
+//     {
+//         printf("%d\n", hottestday);
+//         printf("%d", coldestday);
+//     }
+//     else
+//     {
+//         printf("Stable Weather throughtout the weej");
+//     }
+// }
+// int main()
+// {
+//     int temp[7][3];
+//     for (int i = 0; i < 7; i++)
+//         for (int j = 0; j < 3; j++)
+//             scanf("%d", &temp[i][j]);
 
-    findtempratureanalysis(temp);
+//     findtempratureanalysis(temp);
 
-    return 0;
+//     return 0;
+// }
+// // Online C compiler to run C program online
+// #include <stdio.h>
+// int gcd(int a,int b);
+// int lcm(int a,int b);
+// int main(){
+//     int a,b;
+//     scanf("%d %d",&a,&b);
+    
+//     printf("%d",lcm(a,b));
+//     return 0;
+    
+// }
+// int gcd(int a, int b) { 
+//     if (b == 0) 
+//         return a; 
+//     return gcd(b, a % b); 
+// } 
+ 
+// // Function to compute LCM 
+// int lcm(int a, int b) { 
+//     return (a / gcd(a, b)) * b; 
+// }
+// #include<stdio.h>
+// #include<ctype.h>
+// #include <stdio.h>
+// #include <ctype.h>
+
+// void countVowelsConsonants(char s[], int v, int c) {
+//     v = 0;
+//     c = 0;
+
+//     for (int i = 0; s[i] != '\0' && s[i] != '@'; i++) {
+//         if (isalpha(s[i])) {
+//             char ch = tolower(s[i]);
+//             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+//                 v++;
+//             else
+//                 c++;
+//         }
+//         printf("%d %d\n", v, c);
+//     }
+//     int main() { 
+//         char email[1000]; 
+//         scanf("%s", email); 
+//         int vowels, consonants; 
+//         countVowelsConsonants(email, &vowels, &consonants); 
+//         printf("%d %d\n", vowels, consonants); 
+//     return 0; 
+// }
+
+int sumofodds(int a,int b){
+    int sum=0;
+    for(int i=a;i<=b;i++){
+        if(i%2!=0){
+            sum+=i;
+        }
+        
+    }
+    return sum;
 }
-// Online C compiler to run C program online
-#include <stdio.h>
-int gcd(int a,int b);
-int lcm(int a,int b);
 int main(){
     int a,b;
     scanf("%d %d",&a,&b);
-    
-    printf("%d",lcm(a,b));
+    printf("%d",sumofodds(a,b));
     return 0;
-    
-}
-int gcd(int a, int b) { 
-    if (b == 0) 
-        return a; 
-    return gcd(b, a % b); 
-} 
- 
-// Function to compute LCM 
-int lcm(int a, int b) { 
-    return (a / gcd(a, b)) * b; 
-}
-#include<stdio.h>
-#include<ctype.h>
-#include <stdio.h>
-#include <ctype.h>
-
-void countVowelsConsonants(char s[], int v, int c) {
-    v = 0;
-    c = 0;
-
-    for (int i = 0; s[i] != '\0' && s[i] != '@'; i++) {
-        if (isalpha(s[i])) {
-            char ch = tolower(s[i]);
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-                v++;
-            else
-                c++;
-        }
-        printf("%d %d\n", v, c);
-    }
-    int main() { 
-        char email[1000]; 
-        scanf("%s", email); 
-        int vowels, consonants; 
-        countVowelsConsonants(email, &vowels, &consonants); 
-        printf("%d %d\n", vowels, consonants); 
-    return 0; 
 }
     
