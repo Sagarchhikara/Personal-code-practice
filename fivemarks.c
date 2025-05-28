@@ -68,7 +68,7 @@
 //     if(n<=5){
 //         for(int i=0;i<=5;i++){
 //             printf("%d",views[i]);
-            
+
 //         }
 //     }
 //     return 0;
@@ -88,7 +88,54 @@
 //         total+=views;
 //     }
 //     printf("%d",total);
-    
 
 //     return 0;
 // }
+// Online C compiler to run C program online
+
+void findtempratureanalysis(int temp[7][3])
+{
+    float avg[7];
+    int hottestday = 0, coldestday = 0;
+    float maxavg = -1000, minavg = 1000;
+    for (int i = 0; i < 7; i++)
+    {
+        float sum = 0;
+        for (int j = 0; j < 3; j++)
+        {
+            sum += temp[i][j];
+        }
+        avg[i] = sum / 3;
+        printf("%.1f\n", avg[i]);
+        if (avg[i] > maxavg)
+        {
+            maxavg = avg[i];
+            hottestday = i + 1;
+        }
+        if (avg[i] < minavg)
+        {
+            minavg = avg[i];
+            coldestday = i + 1;
+        }
+    }
+    if (maxavg != minavg)
+    {
+        printf("%d\n", hottestday);
+        printf("%d", coldestday);
+    }
+    else
+    {
+        printf("Stable Weather throughtout the weej");
+    }
+}
+int main()
+{
+    int temp[7][3];
+    for (int i = 0; i < 7; i++)
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &temp[i][j]);
+
+    findtempratureanalysis(temp);
+
+    return 0;
+}
