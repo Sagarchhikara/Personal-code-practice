@@ -74,21 +74,21 @@
 //     return 0;
 // }
 // Online C compiler to run C program online
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-    // Write C code here
-    int n;
-    int views;
-    int total=0;
-    printf("Enter your number of days:");
-    scanf("%d",&n);
-    for(int i=0;i<n;i++){
-        scanf("%d",&views);
-        total+=views;
-    }
-    printf("%d",total);
+// int main() {
+//     // Write C code here
+//     int n;
+//     int views;
+//     int total=0;
+//     printf("Enter your number of days:");
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&views);
+//         total+=views;
+//     }
+//     printf("%d",total);
     
 
-    return 0;
-}
+//     return 0;
+// }
