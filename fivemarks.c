@@ -161,3 +161,31 @@ int gcd(int a, int b) {
 int lcm(int a, int b) { 
     return (a / gcd(a, b)) * b; 
 }
+#include<stdio.h>
+#include<ctype.h>
+#include <stdio.h>
+#include <ctype.h>
+
+void countVowelsConsonants(char s[], int v, int c) {
+    v = 0;
+    c = 0;
+
+    for (int i = 0; s[i] != '\0' && s[i] != '@'; i++) {
+        if (isalpha(s[i])) {
+            char ch = tolower(s[i]);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+                v++;
+            else
+                c++;
+        }
+        printf("%d %d\n", v, c);
+    }
+    int main() { 
+        char email[1000]; 
+        scanf("%s", email); 
+        int vowels, consonants; 
+        countVowelsConsonants(email, &vowels, &consonants); 
+        printf("%d %d\n", vowels, consonants); 
+    return 0; 
+}
+    
