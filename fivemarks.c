@@ -189,20 +189,40 @@
 //     return 0; 
 // }
 
-int sumofodds(int a,int b){
-    int sum=0;
-    for(int i=a;i<=b;i++){
-        if(i%2!=0){
-            sum+=i;
-        }
+// int sumofodds(int a,int b){
+//     int sum=0;
+//     for(int i=a;i<=b;i++){
+//         if(i%2!=0){
+//             sum+=i;
+//         }
         
-    }
-    return sum;
-}
+//     }
+//     return sum;
+// }
+// int main(){
+//     int a,b;
+//     scanf("%d %d",&a,&b);
+//     printf("%d",sumofodds(a,b));
+//     return 0;
+// }
+    
+#include<stdio.h>
 int main(){
-    int a,b;
-    scanf("%d %d",&a,&b);
-    printf("%d",sumofodds(a,b));
+    int rollno,sum=0;
+    scanf("%d",&rollno);
+    while(rollno!=0){
+        sum+=rollno%10;
+        rollno/=10;
+    }
+    while(sum>26){
+        int temp=sum;
+        sum=0;
+        while(temp!=0){
+            sum+=temp%10;
+            temp/=10;
+        }
+    }
+    printf("%c\n",'A'+(sum-1));
+
     return 0;
 }
-    
