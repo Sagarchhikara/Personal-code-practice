@@ -206,23 +206,44 @@
 //     return 0;
 // }
     
+// #include<stdio.h>
+// int main(){
+//     int rollno,sum=0;
+//     scanf("%d",&rollno);
+//     while(rollno!=0){
+//         sum+=rollno%10;
+//         rollno/=10;
+//     }
+//     while(sum>26){
+//         int temp=sum;
+//         sum=0;
+//         while(temp!=0){
+//             sum+=temp%10;
+//             temp/=10;
+//         }
+//     }
+//     printf("%c\n",'A'+(sum-1));
+
+//     return 0;
+// }
 #include<stdio.h>
 int main(){
-    int rollno,sum=0;
-    scanf("%d",&rollno);
-    while(rollno!=0){
-        sum+=rollno%10;
-        rollno/=10;
+    int n;
+    scanf("%d",&n);
+    if(n<5||n>20){
+        printf("Invalid input");
+        return 0;
     }
-    while(sum>26){
-        int temp=sum;
-        sum=0;
-        while(temp!=0){
-            sum+=temp%10;
-            temp/=10;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i==1||j==1||j==n||i==n){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
         }
+        printf("\n");
     }
-    printf("%c\n",'A'+(sum-1));
-
     return 0;
 }
