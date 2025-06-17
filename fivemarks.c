@@ -264,39 +264,39 @@
 //     }
 //     return 0;
 // }
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-    int distance, fuel, vech_type, road_condition;
-    scanf("%d", &distance);
-    scanf("%d", &fuel);
-    scanf("%d", &vech_type);
-    scanf("%d", &road_condition);
+// int main() {
+//     int distance, fuel, vech_type, road_condition;
+//     scanf("%d", &distance);
+//     scanf("%d", &fuel);
+//     scanf("%d", &vech_type);
+//     scanf("%d", &road_condition);
 
-    if (fuel == 0) {
-        printf("Fuel cannot be zero!\n");
-        return 1; // Exit with error
-    }
+//     if (fuel == 0) {
+//         printf("Fuel cannot be zero!\n");
+//         return 1; // Exit with error
+//     }
 
-    float mileage = (float)distance / fuel;
+//     float mileage = (float)distance / fuel;
 
-    // Adjusting for road condition
-    if (road_condition == 2) {
-        mileage -= mileage * 0.10;
-    } else if (road_condition == 3) {
-        mileage -= mileage * 0.20;
-    }
+//     // Adjusting for road condition
+//     if (road_condition == 2) {
+//         mileage -= mileage * 0.10;
+//     } else if (road_condition == 3) {
+//         mileage -= mileage * 0.20;
+//     }
 
-    printf("Mileage: %.2f\n", mileage);
+//     printf("Mileage: %.2f\n", mileage);
 
-    // Check if it's a fuel-efficient car
-    if ((vech_type == 1 && mileage >= 15) ||
-        (vech_type == 2 && mileage >= 12) ||
-        (vech_type == 3 && mileage >= 8)) {
-        printf("Fuel-efficient car\n");
-    } else {
-        printf("Not Fuel-efficient car\n");
-    }
+//     // Check if it's a fuel-efficient car
+//     if ((vech_type == 1 && mileage >= 15) ||
+//         (vech_type == 2 && mileage >= 12) ||
+//         (vech_type == 3 && mileage >= 8)) {
+//         printf("Fuel-efficient car\n");
+//     } else {
+//         printf("Not Fuel-efficient car\n");
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
