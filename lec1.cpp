@@ -1,10 +1,8 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
-    double price;;
-    cout << "Enter your price: ";
-    cin >> price;
-    cout << "Your price is: " << price << endl;
+int main()
+{
+    cout << "Hello, World!" << endl;
     return 0;
 }

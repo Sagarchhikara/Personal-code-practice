@@ -566,17 +566,19 @@
 
 // }
 // adding two numbers by pasing argusments  to functions
-// #include<stdio.h>
-// int add(int *,int *);
-// int main(){
-//     int a=10,b=20;
-//     int c=add(&a,&b);
-//     printf("Sum of a and b is %d\n",c);
-//     return 0;
-// }
-// int add(int *x,int *y){
-//     return *x+*y;
-// }
+
+int add(int *x, int *y);
+int main()
+{
+    int a = 10, b = 20;
+    int c = add(&a, &b);
+    printf("Sum of a and b is %d\n", c);
+    return 0;
+}
+int add(int *x, int *y)
+{
+    return *x + *y;
+}
 // Sum of digits using function
 // #include<stdio.h>
 // int sum(int a);
@@ -676,8 +678,8 @@
 
 // return 0;
 // }
-// Transpose of matrix 
-// 
+// Transpose of matrix
+//
 // int printfactorial(int n){
 //     int fact=1;
 //     for(int i=1;i<=n;i++){
@@ -685,11 +687,11 @@
 //     }
 //     return fact;
 // }
-int main(){
-    int n;
-    printf("Enter a number: ");
-    int result = printfactorial(n);
-    printf("Factorial of %d is %d\n",n,result);
-    return 0;
+// int main(){
+//     int n;
+//     printf("Enter a number: ");
+//     int result = printfactorial(n);
+//     printf("Factorial of %d is %d\n",n,result);
+//     return 0;
 
- }
+//  }
