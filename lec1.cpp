@@ -68,24 +68,23 @@ using namespace std;
 //     }
 //     return 0;
 // }
+// Display odd and even number in two columns
 int main()
 {
-    int sub1, sub2, sub3, sub4;
-    cout << "Enter the marks of 4 subjects\n";
-    cin >> sub1 >> sub2 >> sub3 >> sub4;
-    float average = (sub1 + sub2 + sub3 + sub4) / 4.0;
-    cout << "The average is:" << average;
-    if (average >= 75)
+    cout << "Odd\tEven\n";
+    int odd = 1, even = 2;
+    while (odd <= 25 || even <= 25)
     {
-        cout << "Distinction";
-    }
-    else if (average >= 60)
-    {
-        cout << "First";
-    }
-    else if (average >= 50)
-    {
-        cout << "Second";
+        if (odd <= 25)
+            cout << odd;
+        else
+            cout << " ";
+        cout << "\t";
+        if (even <= 25)
+            cout << even;
+        cout << endl;
+        odd += 2;
+        even += 2;
     }
     return 0;
 }
