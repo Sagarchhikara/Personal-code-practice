@@ -34,11 +34,16 @@ using namespace std;
 
 // }
 // input a number in cpp
-int main()
+// int main()
+// {
+//     int num;
+//     cout << "Enter a number:";
+//     cin >> num;
+//     cout << "Entered number is" << num;
+//     return 0;
+// }
+int main(int argc, char const *argv[])
 {
-    int num;
-    cout << "Enter a number:";
-    cin >> num;
-    cout << "Entered number is" << num;
+
     return 0;
 }
