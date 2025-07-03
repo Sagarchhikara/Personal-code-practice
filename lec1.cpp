@@ -53,10 +53,6 @@ using namespace std;
 //     cout << "\nDifference is:" << num1 - num2;
 //     return 0;
 // }
-#include <iostream>
-#include <cstdio>
-#include <cmath>
-using namespace std;
 int main()
 {
     int age;
