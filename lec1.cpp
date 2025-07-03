@@ -33,3 +33,12 @@ using namespace std;
 //     cout<<ans;
 
 // }
+// input a number in cpp
+int main()
+{
+    int num;
+    cout << "Enter a number:";
+    cin >> num;
+    cout << "Entered number is" << num;
+    return 0;
+}
