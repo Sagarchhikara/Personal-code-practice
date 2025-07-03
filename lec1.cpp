@@ -42,14 +42,33 @@ using namespace std;
 //     cout << "Entered number is" << num;
 //     return 0;
 // }
-int main(int argc, char const *argv[])
+// int main(int argc, char const *argv[])
+// {
+//     int num1, num2;
+//     cout << "ENter number one:";
+//     cin >> num1;
+//     cout << "Enter number two:";
+//     cin >> num2;
+//     cout << "Sum is:" << num1 + num2;
+//     cout << "\nDifference is:" << num1 - num2;
+//     return 0;
+// }
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+int main()
 {
-    int num1, num2;
-    cout << "ENter number one:";
-    cin >> num1;
-    cout << "Enter number two:";
-    cin >> num2;
-    cout << "Sum is:" << num1 + num2;
-    cout << "\nDifference is:" << num1 - num2;
+    int age;
+    cout << "Enter your age:\n";
+    cin >> age;
+    if (age >= 18)
+    {
+        cout << "You are eligible to drive\n";
+    }
+    else
+    {
+        cout << "You have to be atleast 18 to be eligible.";
+    }
     return 0;
 }
