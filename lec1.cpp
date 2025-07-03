@@ -53,18 +53,39 @@ using namespace std;
 //     cout << "\nDifference is:" << num1 - num2;
 //     return 0;
 // }
+// int main()
+// {
+//     int age;
+//     cout << "Enter your age:\n";
+//     cin >> age;
+//     if (age >= 18)
+//     {
+//         cout << "You are eligible to drive\n";
+//     }
+//     else
+//     {
+//         cout << "You have to be atleast 18 to be eligible.";
+//     }
+//     return 0;
+// }
 int main()
 {
-    int age;
-    cout << "Enter your age:\n";
-    cin >> age;
-    if (age >= 18)
+    int sub1, sub2, sub3, sub4;
+    cout << "Enter the marks of 4 subjects\n";
+    cin >> sub1 >> sub2 >> sub3 >> sub4;
+    float average = (sub1 + sub2 + sub3 + sub4) / 4.0;
+    cout << "The average is:" << average;
+    if (average >= 75)
     {
-        cout << "You are eligible to drive\n";
+        cout << "Distinction";
     }
-    else
+    else if (average >= 60)
     {
-        cout << "You have to be atleast 18 to be eligible.";
+        cout << "First";
+    }
+    else if (average >= 50)
+    {
+        cout << "Second";
     }
     return 0;
 }
