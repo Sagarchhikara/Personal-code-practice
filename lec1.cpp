@@ -44,6 +44,12 @@ using namespace std;
 // }
 int main(int argc, char const *argv[])
 {
-
+    int num1, num2;
+    cout << "ENter number one:";
+    cin >> num1;
+    cout << "Enter number two:";
+    cin >> num2;
+    cout << "Sum is:" << num1 + num2;
+    cout << "\nDifference is:" << num1 - num2;
     return 0;
 }
