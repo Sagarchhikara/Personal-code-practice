@@ -88,19 +88,18 @@ using namespace std;
 //     }
 //     return 0;
 // }
+//
+// To display multiplication table of a given number
 int main()
 {
-    int i;
-    cout << "Even numbers\tOdd numbers\n";
-    for (i = 1; i <= 25; i++)
+    int n;
+    cout << "Enter a number to print table";
+    cin >> n;
+    cout << "The table is\n";
+    for (int i = 0; i <= 10; i++)
     {
-        if (i % 2 == 0)
-            cout << i << "\t";
-        else
-            cout << " \t";
-        if (i % 2 == 1)
-            cout << i;
-        cout << endl;
+
+        cout << n << " * " << i << " = " << n * i << "\n";
     }
     return 0;
 }
