@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+int main(int argc, char const *argv[])
 // To display multiplication table of a given number
 // int main()
 // {
@@ -29,23 +30,38 @@ using namespace std;
 //     }
 //     return 0;
 // }
-int main(int argc, char const *argv[])
+
+// {
+//     int n = 0;
+//     if (n >= 0)
+//     {
+//         if (n == 0)
+//         {
+//             cout << "The number is zero\n";
+//         }
+//         else
+//         {
+//             cout << "The number is positive\n";
+//         }
+//     }
+//     else
+//     {
+//         cout << "The number is negative\n";
+//     }
+//     return 0;
+// }
+// largest of two numbers
 {
-    int n = 0;
-    if (n >= 0)
+    int a, b;
+    cout << "Enter two numbers to find the largest\n";
+    cin >> a >> b;
+    if (a > b)
     {
-        if (n == 0)
-        {
-            cout << "The number is zero\n";
-        }
-        else
-        {
-            cout << "The number is positive\n";
-        }
+        cout << "The largest number is " << a << "\n";
     }
     else
     {
-        cout << "The number is negative\n";
+        cout << "The largest number is " << b << "\n";
     }
     return 0;
 }
