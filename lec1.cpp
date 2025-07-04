@@ -90,16 +90,41 @@ using namespace std;
 // }
 //
 // To display multiplication table of a given number
+// int main()
+// {
+//     int n;
+//     cout << "Enter a number to print table";
+//     cin >> n;
+//     cout << "The table is\n";
+//     for (int i = 0; i <= 10; i++)
+//     {
+
+//         cout << n << " * " << i << " = " << n * i << "\n";
+//     }
+//     return 0;
+// }
 int main()
 {
-    int n;
-    cout << "Enter a number to print table";
-    cin >> n;
-    cout << "The table is\n";
+    int n1, n2, n3;
+    cout << "Enter a numbers to print table:\n";
+    cin >> n1 >> n2 >> n3;
+    cout << "The table is\t The table is\n ";
+
     for (int i = 0; i <= 10; i++)
     {
 
-        cout << n << " * " << i << " = " << n * i << "\n";
+        cout << n1 << " * " << i << " = " << n1 * i << "\n";
+    }
+    for (int i = 0; i <= 10; i++)
+    {
+
+        cout << n2 << " * " << i << " = " << n2 * i << "\n";
+    }
+    for (int i = 0; i <= 10; i++)
+    {
+
+        cout << n3 << " * " << i << " = " << n3 * i << "\n";
+        ;
     }
     return 0;
 }
