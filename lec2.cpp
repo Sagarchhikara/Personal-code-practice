@@ -14,19 +14,18 @@ using namespace std;
 //     }
 //     return 0;
 // }
-int main()
+int main(int argc, char const *argv[])
 {
-    int n1, n2, n3;
-    cout << "Enter a numbers to print table:\n";
-    cin >> n1;
-    cout << "The table is\t The table is\n ";
-    for (int i = 1; i < 10; i++)
+    int n;
+    cout << "ENter a nummber of your choice:\n";
+    cin >> n;
+    if (n > 0)
     {
-        for (int j = 1; j < 20; j++)
-        {
-            cout << i * j << "\t";
-        }
-        cout << endl;
+        cout << "The number is positive\n";
+    }
+    else
+    {
+        cout << "The number is negative or origin \n";
     }
     return 0;
 }
