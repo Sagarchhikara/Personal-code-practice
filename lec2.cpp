@@ -14,18 +14,38 @@ using namespace std;
 //     }
 //     return 0;
 // }
+// int main(int argc, char const *argv[])
+// {
+//     int n;
+//     cout << "ENter a nummber of your choice:\n";
+//     cin >> n;
+//     if (n > 0)
+//     {
+//         cout << "The number is positive\n";
+//     }
+//     else
+//     {
+//         cout << "The number is negative or origin \n";
+//     }
+//     return 0;
+// }
 int main(int argc, char const *argv[])
 {
-    int n;
-    cout << "ENter a nummber of your choice:\n";
-    cin >> n;
-    if (n > 0)
+    int n = 0;
+    if (n >= 0)
     {
-        cout << "The number is positive\n";
+        if (n == 0)
+        {
+            cout << "The number is zero\n";
+        }
+        else
+        {
+            cout << "The number is positive\n";
+        }
     }
     else
     {
-        cout << "The number is negative or origin \n";
+        cout << "The number is negative\n";
     }
     return 0;
 }
