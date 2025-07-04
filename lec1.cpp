@@ -69,22 +69,38 @@ using namespace std;
 //     return 0;
 // }
 // Display odd and even number in two columns
+// int main()
+// {
+//     cout << "Odd\tEven\n";
+//     int odd = 1, even = 2;
+//     while (odd <= 25 || even <= 25)
+//     {
+//         if (odd <= 25)
+//             cout << odd;
+//         else
+//             cout << " ";
+//         cout << "\t";
+//         if (even <= 25)
+//             cout << even;
+//         cout << endl;
+//         odd += 2;
+//         even += 2;
+//     }
+//     return 0;
+// }
 int main()
 {
-    cout << "Odd\tEven\n";
-    int odd = 1, even = 2;
-    while (odd <= 25 || even <= 25)
+    int i;
+    cout << "Even numbers\tOdd numbers\n";
+    for (i = 1; i <= 25; i++)
     {
-        if (odd <= 25)
-            cout << odd;
+        if (i % 2 == 0)
+            cout << i << "\t";
         else
-            cout << " ";
-        cout << "\t";
-        if (even <= 25)
-            cout << even;
+            cout << " \t";
+        if (i % 2 == 1)
+            cout << i;
         cout << endl;
-        odd += 2;
-        even += 2;
     }
     return 0;
 }
