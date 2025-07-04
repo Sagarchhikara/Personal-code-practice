@@ -51,17 +51,23 @@ int main(int argc, char const *argv[])
 //     return 0;
 // }
 // largest of two numbers
+//
+// largest of three numbers
 {
-    int a, b;
-    cout << "Enter two numbers to find the largest\n";
-    cin >> a >> b;
-    if (a > b)
+    int a, b, c;
+    cout << "Enter three numbers:\n";
+    cin >> a >> b >> c;
+    if (a >= b && a >= c)
     {
-        cout << "The largest number is " << a << "\n";
+        cout << "The largest number is: " << a << "\n";
+    }
+    else if (b >= a && b >= c)
+    {
+        cout << "The largest number is: " << b << "\n";
     }
     else
     {
-        cout << "The largest number is " << b << "\n";
+        cout << "The largest number is: " << c << "\n";
     }
     return 0;
 }
