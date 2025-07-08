@@ -1,0 +1,13 @@
+* {
+    background: rgb(222, 220, 215);
+    margin: 12px;
+    padding: 12px;
+}
+
+.navbar {
+    display: flex;
+    padding: 20px;
+    text-decoration: dotted;
+    border: black;
+    background-color: aqua;
+}
