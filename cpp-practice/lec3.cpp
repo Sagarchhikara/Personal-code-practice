@@ -56,12 +56,62 @@ int main(int argc, char const *argv[])
 //     return 0;
 // }
 //   LOOPS
-
 {
-    for (int i = 0; i <= 10; i++)
+    // For loop - Ascending
+    cout << "For loop ascending: ";
+    for (int i = 1; i <= 10; i++)
     {
-        cout << i << endl;
+        cout << i << " ";
     }
+    cout << endl;
+
+    // For loop - Descending
+    cout << "For loop descending: ";
+    for (int i = 10; i >= 1; i--)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    // While loop - Ascending
+    cout
+        << "While loop ascending: ";
+    int i = 1;
+    while (i <= 10)
+    {
+        cout << i << " ";
+        i++;
+    }
+    cout << endl;
+
+    // While loop - Descending
+    cout << "While loop descending: ";
+    i = 10;
+    while (i >= 1)
+    {
+        cout << i << " ";
+        i--;
+    }
+    cout << endl;
+
+    // Do while loop - Ascending
+    cout << "Do while loop ascending: ";
+    i = 1;
+    do
+    {
+        cout << i << " ";
+        i++;
+    } while (i <= 10);
+    cout << endl;
+
+    // Do while loop - Descending
+    cout << "Do while loop descending: ";
+    i = 10;
+    do
+    {
+        cout << i << " ";
+        i--;
+    } while (i >= 1);
+    cout << endl;
 
     return 0;
 }
