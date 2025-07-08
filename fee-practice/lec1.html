@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <title>Simple Navbar Page</title>
-
+    <script>
+        function myFun() {
+            document.getElementById("demo")
+                .innerHTML = "Content changed!";
+        }
+    </script>
 </head>
 
 <body>
@@ -24,7 +29,21 @@
         <h1>Welcome to the Page</h1>
         <p>Click the navbar buttons to navigate.</p>
     </div>
-
+    <h1>Check the console for the message!</h1>
+    <script>
+        // This is our first JavaScript program
+        console.log("Hello,Sagar Chhikara ");
+    </script>
+    <h2>
+        Add JavaScript Code
+        inside Head Section
+    </h2>
+    <h3 id="demo" style="color:green;">
+        GeeksforGeeks
+    </h3>
+    <button type="button" onclick="myFun()">
+        Click Here
+    </button>
 </body>
 
 </html>
