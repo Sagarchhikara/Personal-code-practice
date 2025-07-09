@@ -156,5 +156,6 @@ int main(int argc, char const *argv[])
     //         for (j = 1; j <= 3; j++)
     //             cout << n << " ";
     //         cout << endl;
+    //         n++;
     //     }
     // }
