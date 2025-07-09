@@ -4,22 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <title>Sign Up </title>
     <style>
         body {
             margin: 0;
             font-family: "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, #cee4e6, #2d65b3);
+            background: linear-gradient(135deg, #2d65b3, #cee4e6);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        .login-card {
-            background: rgb(230, 227, 227);
+        .signup-card {
+            background: white;
             border-radius: 1rem;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 2rem;
@@ -28,43 +26,43 @@
             text-align: center;
         }
 
-        .login-card h2 {
+        .signup-card h2 {
             margin-bottom: 1rem;
             color: #333;
         }
 
-        .login-card input {
+        .signup-card input {
             width: 100%;
             padding: 0.75rem;
-            margin: 1rem 0;
-            border: 2px solid #ccc;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
             border-radius: 0.5rem;
         }
 
-        .login-card button {
+        .signup-card button {
             width: 100%;
             padding: 0.75rem;
             border: none;
             border-radius: 0.5rem;
-            background: #030404;
+            background: #0a0909;
             color: white;
             font-size: 1rem;
             cursor: pointer;
             transition: background 0.3s ease;
         }
 
-        .login-card button:hover {
-            background: #5baddc;
+        .signup-card button:hover {
+            background: #3bace1;
         }
 
-        .login-card p {
+        .signup-card p {
             margin-top: 1rem;
             font-size: 0.9rem;
             color: #555;
         }
 
-        .login-card a {
-            color: #66a6ff;
+        .signup-card a {
+            color: #f89c87;
             text-decoration: none;
         }
     </style>
@@ -72,14 +70,16 @@
 
 <body>
 
-    <div class="login-card">
-        <h2>Welcome Back 👋</h2>
+    <div class="signup-card">
+        <h2>Create Account ✨</h2>
         <form>
-            <i class="fa-solid fa-user"></i> <input type="text" placeholder="Email\RollNo" required>
-            <i class="fa-solid fa-lock"></i><input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
         </form>
-        <p>Don’t have an account? <a href="Signup.html"">Sign up</a></p>
+        <p>Already have an account? <a href="#">Login</a></p>
     </div>
 
 </body>
