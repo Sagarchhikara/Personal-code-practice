@@ -16,17 +16,45 @@ int main()
 //     }
 //     return 0;
 // }
+// {
+//     int n;
+//     cout << "Enter the number:" << endl;
+//     cin >> n;
+//     for (int i = n; i >= 0; i--)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << "* ";
+//         }
+//         cout << "\n";
+//     }
+//     return 0;
+// }
+// {
+//     for (int i = 0; i <= 5; i++)
+//     {
+//         for (int j = 0; j <= 5; j++)
+//         {
+//             cout << "* ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
 {
-    int n;
-    cout << "Enter the number:" << endl;
-    cin >> n;
-    for (int i = n; i >= 0; i--)
+    int i, j, s, sp = 4;
+    for (int i = 1; i <= 5; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (s = sp; s > 0; s--)
         {
-            cout << "* ";
+            cout << " ";
         }
-        cout << "\n";
+        for (j = i; j > 0; j--)
+        {
+            cout << "*";
+        }
+        sp--;
+        cout << endl;
     }
     return 0;
 }
