@@ -190,9 +190,6 @@ int main()
 //     return 0;
 // }
 {
-    int num = 10;
+    l int num = 10;
     if (num > 10)
-    {
-        /* code */
-    }
-}
+        if (num > 10)
