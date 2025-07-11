@@ -9,3 +9,11 @@ a {
 div {
     background-color: lightblue;
 }
+
+#firstdiv {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
