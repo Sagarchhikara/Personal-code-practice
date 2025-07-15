@@ -74,27 +74,42 @@ using namespace std;
 //     return 0;                              // Fixed typo 'reutn' to 'return'
 // }
 
-#include <iostream>
-class box
-{
-private:
-    int l, w, area;
+// #include <iostream>
+// class box
+// {
+// private:
+//     int l, w, area;
 
+// public:
+//     void input()
+//     {
+//         cin >> l >> w;
+//     }
+//     void output()
+//     {
+//         area = l * w;
+//         cout << "area :" << area << endl;
+//     }
+// };
+// int main()
+// {
+//     box obj;
+//     obj.input();
+//     obj.output();
+//     return 0;
+// }
+class person
+{
 public:
-    void input()
+    string name;
+    person(string n)
     {
-        cin >> l >> w;
-    }
-    void output()
-    {
-        area = l * w;
-        cout << "area :" << area << endl;
+        name = n;
     }
 };
 int main()
 {
-    box obj;
-    obj.input();
-    obj.output();
+    person p("Sagar");
+    cout << p.name << endl;
     return 0;
 }
