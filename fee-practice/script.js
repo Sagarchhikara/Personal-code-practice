@@ -1,10 +1,45 @@
-let num1 = 50
-let num2 = 50.05
+// var a = 10
+// {
+//     let b = 20
+//     console.log(a)
 
-let str1 = "Geek"
-let str2 = 'Geeks'
+// }
 
-console.log(num1)
-console.log(num2)
-console.log(str1)
-console.log(str2)
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter a number (1 to 7): ", function (dayNumber) {
+    dayNumber = parseInt(dayNumber);
+
+    switch (dayNumber) {
+        case 1:
+            console.log("Monday");
+            break;
+        case 2:
+            console.log("Tuesday");
+            break;
+        case 3:
+            console.log("Wednesday");
+            break;
+        case 4:
+            console.log("Thursday");
+            break;
+        case 5:
+            console.log("Friday");
+            break;
+        case 6:
+            console.log("Saturday");
+            break;
+        case 7:
+            console.log("Sunday");
+            break;
+        default:
+            console.log("Invalid day number. Please enter a number from 1 to 7.");
+    }
+
+    rl.close();
+});

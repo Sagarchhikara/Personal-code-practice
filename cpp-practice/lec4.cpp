@@ -58,22 +58,139 @@ int main()
 //     }
 //     return 0;
 // }
-{
-    int n;
-    cout << "ENter the nuber:\n";
-    cin >> n;
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 1; j <= n - i; j++)
-        {
-            cout << " ";
-        }
-        for (int k = 1; k <= 2 * i - 1; k++)
-        {
-            cout << "*";
-        }
-        cout << "\n";
-    }
+// {
+//     int n;
+//     cout << "ENter the nuber:\n";
+//     cin >> n;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         for (int j = 1; j <= n - i; j++)
+//         {
+//             cout << " ";
+//         }
+//         for (int k = 1; k <= 2 * i - 1; k++)
+//         {
+//             cout << "*";
+//         }
+//         cout << "\n";
+//     }
 
-    return 0;
+//     return 0;
+// }
+// #include <stdio.h>
+
+// {
+//     int n, i, j;
+//     cin >> n;
+//     for (i = 1; i <= n; i++)
+//     {
+//         for (j = i; j < n; j++)
+//         {
+//             cout << " ";
+//         }
+//         for (j = 1; j <= (2 * i - 1); j++)
+//         {
+//             cout << "*";
+//         }
+//         cout << "\n";
+//     }
+//     for (i = n - 1; i >= 1; i--)
+//     {
+//         for (j = n; j > i; j--)
+//         {
+//             cout << " ";
+//         }
+//         for (j = 1; j <= (2 * i - 1); j++)
+//         {
+//             cout << "*";
+//         }
+//         cout << "\n";
+//     }
+
+//     return 0;
+// }
+// {
+//     int n, i, j;
+//     cout << "Enter the number:" << endl;
+//     cin >> n;
+//     for (int i = n; i >= 0; i--)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << "* ";
+//         }
+//         cout << "\n";
+//     }
+//     for (i = 1; i < n; i++)
+//     {
+//         for (j = 1; j <= i; j++)
+//         {
+//             cout << "* ";
+//         }
+//         cout << "\n";
+//     }
+// }
+//     {
+//         for (s = sp; s > 0; s--)
+//         {
+//             /* code */
+//             cout << " ";
+//             sp--;
+//         }
+//         for (int j = 0; j > 0; j--)
+
+// {
+//     int n;
+//     cout << "Enter the size of diamond (number of rows for upper half): ";
+//     cin >> n;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         for (int j = 1; j <= n - i; j++)
+//         {
+//             cout << " ";
+//         }
+//         for (int k = 1; k <= 2 * i - 1; k++)
+//         {
+//             if (k % 2 == 1)
+//             {
+//                 cout << "*";
+//             }
+//             else
+//             {
+//                 cout << "#";
+//             }
+//         }
+//         cout << endl;
+//     }
+
+//     // Lower half of the diamond
+//     for (int i = n - 1; i >= 1; i--)
+//     {
+//         // Print leading spaces
+//         for (int j = 1; j <= n - i; j++)
+//         {
+//             cout << " ";
+//         }
+
+//                 // Print pattern for each row
+//         for (int k = 1; k <= 2 * i - 1; k++)
+//         {
+//             if (k % 2 == 1)
+//             {
+//                 cout << "*";
+//             }
+//             else
+//             {
+//                 cout << "#";
+//             }
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+{
+    l int num = 10;
+    if (num > 10)
+        if (num > 10)
 }
