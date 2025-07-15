@@ -98,18 +98,18 @@ using namespace std;
 //     obj.output();
 //     return 0;
 // }
-class person
-{
-public:
-    string name;
-    person(string n)
-    {
-        name = n;
-    }
-};
-int main()
-{
-    person p("Sagar");
-    cout << p.name << endl;
-    return 0;
-}
+// class person
+// {
+// public:
+//     string name;
+//     person(string n)
+//     {
+//         name = n;
+//     }
+// };
+// int main()
+// {
+//     person p("Sagar");
+//     cout << p.name << endl;
+//     return 0;
+// }
