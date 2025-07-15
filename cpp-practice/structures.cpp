@@ -98,20 +98,20 @@ using namespace std;
 //     obj.output();
 //     return 0;
 // }
-class person
-{
-public:
-    string name;
-    int id;
-    person(string n, int i)
-    {
-        name = n;
-        id = i;
-    }
-};
-int main()
-{
-    person p("Sagar", 10);
-    cout << p.name << " " << p.id << endl;
-    return 0;
-}
+// class person
+// {
+// public:
+//     string name;
+//     int id;
+//     person(string n, int i)
+//     {
+//         name = n;
+//         id = i;
+//     }
+// };
+// int main()
+// {
+//     person p("Sagar", 10);
+//     cout << p.name << " " << p.id << endl;
+//     return 0;
+// }
