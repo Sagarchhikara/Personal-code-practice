@@ -55,21 +55,46 @@ using namespace std;
 // }
 // Wap a program to accept employee id employee name designation salary calculate Da 5 % hra 8 %  and grosssalary of 5 employees
 //          ----- CLass In c -------
+// class box
+// {
+// public:
+//     int l, w;
+//     int area()
+//     {
+//         return l * w;
+//     }
+// }; // Added missing semicolon after class definition
+
+// int main()
+// {
+//     box b1; // Correct object declaration
+//     b1.l = 10;
+//     b1.w = 12;
+//     cout << "Area: " << b1.area() << endl; // Call area() using object b1
+//     return 0;                              // Fixed typo 'reutn' to 'return'
+// }
+
+#include <iostream>
 class box
 {
-public:
-    int l, w;
-    int area()
-    {
-        return l * w;
-    }
-}; // Added missing semicolon after class definition
+private:
+    int l, w, area;
 
+public:
+    void input()
+    {
+        cin >> l >> w;
+    }
+    void output()
+    {
+        area = l * w;
+        cout << "area :" << area << endl;
+    }
+};
 int main()
 {
-    box b1; // Correct object declaration
-    b1.l = 10;
-    b1.w = 12;
-    cout << "Area: " << b1.area() << endl; // Call area() using object b1
-    return 0;                              // Fixed typo 'reutn' to 'return'
+    box obj;
+    obj.input();
+    obj.output();
+    return 0;
 }
