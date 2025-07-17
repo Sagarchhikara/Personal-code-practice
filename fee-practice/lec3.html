@@ -8,12 +8,23 @@
 <body>
     <h1 class="heading">Dom Manipluation </h1>
     <h1 class="heading">Dom Manipluation second </h1>
-
+    <li id="list">
+    
+    <ul>Sagar</ul>
+    <ul>Sagar</ul>
+    <ul>Sagar</ul>
+    <ul>Sagar</ul>
+    </li>
     <script>
         let heading = document.querySelectorAll('.heading');
         heading.forEach((element) => {
             element.style.color = "green";
         });
+        let list_item=document.getElementById(list);
+        let first_element=list_item.firstElementChild;
+        let last_element=list_item.lastElementChild;
+        first_element.style.color="yellow";
+        last_element.style.color="blue";
     </script>
 </body>
 </html>
