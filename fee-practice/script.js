@@ -43,5 +43,9 @@
 
 //     rl.close();
 // });
-var a = prompt("Enter a number: ");
-console.log("You entered: " + a);
+// var a = prompt("Enter a number: ");
+// console.log("You entered: " + a);
+var a = 10;
+var b = 20;
+var c = "Sagar";
+console.log(a + b);
