@@ -189,12 +189,12 @@ int main()
 
 //     return 0;
 // }
-{
-    int length;
-    int width;
-    cout<<"Enter the length and width of the rectangle: ";
-    cin >> length >> width;
-    cout << "Area of the rectangle: " << length * width << endl;
-    cout << "Perimeter of the rectangle: " << 2 * (length + width) << endl;
-    return 0;
-}
+// {
+//     int length;
+//     int width;
+//     cout<<"Enter the length and width of the rectangle: ";
+//     cin >> length >> width;
+//     cout << "Area of the rectangle: " << length * width << endl;
+//     cout << "Perimeter of the rectangle: " << 2 * (length + width) << endl;
+//     return 0;
+// }
