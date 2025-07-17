@@ -10,12 +10,10 @@
     <h1 class="heading">Dom Manipluation second </h1>
 
     <script>
-        let heading =document.getElementsByClassName('heading');
-        for (let i = 0; i< heading.length; i++) {
-            heading[i].style.color="green";
-            heading[i].style.backgroundcolor="black"
-            
-        }
+        let heading = document.querySelectorAll('.heading');
+        heading.forEach((element) => {
+            element.style.color = "green";
+        });
     </script>
 </body>
 </html>
