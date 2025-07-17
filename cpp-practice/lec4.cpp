@@ -198,3 +198,17 @@ int main()
 //     cout << "Perimeter of the rectangle: " << 2 * (length + width) << endl;
 //     return 0;
 // }
+{
+    int n;
+    cout << "Enter your number: ";
+    cin >> n;
+    if (n > 10 && n < 100)
+    {
+        cout << "Number is Range.";
+    }
+    else
+    {
+        cout << "Number not in range";
+    }
+    return 0;
+}
