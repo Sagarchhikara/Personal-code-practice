@@ -92,3 +92,36 @@ using namespace std;
 //     obj.showc();
 //     return 0;
 // }
+// Multiple Inheritance
+class A
+{
+public:
+    void showA()
+    {
+        cout << "Class A function called\n";
+    }
+};
+class B
+{
+public:
+    void showB()
+    {
+        cout << "Class B function called\n";
+    }
+};
+class C : public A, public B
+{
+public:
+    void showC()
+    {
+        cout << "Message from C\n";
+    }
+};
+int main(int argc, char const *argv[])
+{
+    C obj;
+    obj.showA();
+    obj.showB();
+    obj.showC();
+    return 0;
+}
