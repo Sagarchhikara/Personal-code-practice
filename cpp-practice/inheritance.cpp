@@ -69,26 +69,26 @@ using namespace std;
 //     obj.showc();
 //     return 0;
 // }
-class a
-{
-public:
-    void showa() { cout << " Class A function called\n"; }
-};
-class b : public a
-{
-public:
-    void showb() { cout << " Class B function called\n"; }
-};
-class c : public b
-{
-public:
-    void showc() { cout << " Class C function called\n"; }
-};
-int main(int argc, char const *argv[])
-{
-    c obj;
-    obj.showa();
-    obj.showb();
-    obj.showc();
-    return 0;
-}
+// class a
+// {
+// public:
+//     void showa() { cout << " Class A function called\n"; }
+// };
+// class b : public a
+// {
+// public:
+//     void showb() { cout << " Class B function called\n"; }
+// };
+// class c : public b
+// {
+// public:
+//     void showc() { cout << " Class C function called\n"; }
+// };
+// int main(int argc, char const *argv[])
+// {
+//     c obj;
+//     obj.showa();
+//     obj.showb();
+//     obj.showc();
+//     return 0;
+// }
