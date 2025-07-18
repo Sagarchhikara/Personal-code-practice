@@ -125,3 +125,31 @@ using namespace std;
 //     obj.showC();
 //     return 0;
 // }
+// private Inheritance
+class A
+{
+public:
+    void showA()
+    {
+        cout << "Private inheritance\n";
+    }
+};
+class B : private A
+{
+public:
+    void showB()
+    {
+        cout << "Class B function called\n";
+    }
+    void accessA()
+    {
+        showA(); // Accessing A's method within B
+    }
+};
+int main(int argc, char const *argv[])
+{
+    B obj;
+    obj.showB();
+    obj.accessA(); // Accessing A's method through B
+    return 0;
+}
