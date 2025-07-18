@@ -1,25 +1,48 @@
 #include <iostream>
 using namespace std;
-class Animal
+// class Animal
+// {
+// public:
+//     void sound()
+//     {
+//         cout << " Animals make sound \n";
+//     }
+// };
+// class dog : public Animal
+// {
+// public:
+//     void bark()
+//     {
+//         cout << "Dogs bark";
+//     }
+// };
+// int main(int argc, char const *argv[])
+// {
+//     dog d;
+//     d.sound();
+//     d.bark();
+//     return 0;
+class person
 {
 public:
-    void sound()
+    void display(/* args */)
     {
-        cout << " Animals make sound \n";
+        cout << "I am a person\n";
     }
 };
-class dog : public Animal
+
+class student : public person
 {
 public:
-    void bark()
+    void show()
     {
-        cout << "Dogs bark";
+        cout << "I am a student.";
     }
 };
 int main(int argc, char const *argv[])
 {
-    dog d;
-    d.sound();
-    d.bark();
+    student a;
+    a.display();
+    a.show();
     return 0;
 }
