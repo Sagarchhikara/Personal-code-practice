@@ -51,3 +51,11 @@
 //     }
 // }
 // console.log("Maximum value in the array is:", max);
+// const a1 = 6;
+// a1 = a1 + 1; //Not allowed because a1 is consats 
+let a = 5;
+{
+    let a = 66
+    console.log(a)
+}
+co

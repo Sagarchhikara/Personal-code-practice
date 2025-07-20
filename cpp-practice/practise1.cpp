@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // #include <conio.h>
@@ -149,42 +150,11 @@ using namespace std;
 //     return 0;
 // }
 // SWAP MAX AND MIN OF TWO ARRAYS
-void swapmaxmin(int arr[], int size)
-{
-    int maxIndex = 0, minIndex = 0;
-    for (int i = 1; i < size; i++)
-    {
-        if (arr[i] > arr[maxIndex])
-        {
-            maxIndex = i;
-        }
-        if (arr[i] < arr[minIndex])
-        {
-            minIndex = i;
-        }
-    }
-    swap(arr[maxIndex], arr[minIndex]);
-}
+//
 int main(int argc, char const *argv[])
 {
-    int arr[] = {3, 1, 4, 1, 5, 9, 2};
-    int size = sizeof(arr) / sizeof(arr[0]);
-
-    cout << "Original array: ";
-    for (int i = 0; i < size; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-
-    swapmaxmin(arr, size);
-
-    cout << "Array after swapping max and min: ";
-    for (int i = 0; i < size; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-
+    vector<int> vec;
+    vector<int> vec1 = {1, 2, 3};
+    cout << vec1[0] << endl;
     return 0;
 }
