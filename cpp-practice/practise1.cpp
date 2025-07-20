@@ -55,20 +55,42 @@ using namespace std;
 
 //     return 0;
 // }
-int main(int argc, char const *argv[])
+// int main(int argc, char const *argv[])
+// {
+//     int nums[] = {3, 4, 5, 6, 7, 8, 9};
+//     int size = sizeof(nums) / sizeof(int);
+//     int smallest = INT16_MAX;
+//     for (int i = 0; i < size; i++)
+//     {
+//         /* code */
+//         if (nums[i] < INT16_MAX)
+//         {
+//             smallest = nums[i];
+//         }
+//     }
+//     cout << "Smallest= " << smallest << endl;
+
+//     return 0;
+// }
+void changearr(int arr[], int size)
 {
-    int nums[] = {3, 4, 5, 6, 7, 8, 9};
-    int size = sizeof(nums) / sizeof(int);
-    int smallest = INT16_MAX;
+    cout << "In function\n";
     for (int i = 0; i < size; i++)
     {
         /* code */
-        if (nums[i] < INT16_MAX)
-        {
-            smallest = nums[i];
-        }
+        arr[i] = 2 * arr[i];
     }
-    cout << "Smallest= " << smallest << endl;
-
+}
+int main(int argc, char const *argv[])
+{
+    int arr[] = {1, 2, 3};
+    changearr(arr, 3);
+    cout << "In main\n";
+    for (int i = 0; i < 3; i++)
+    {
+        /* code */
+        cout << arr[i] << " ";
+    }
+    cout << endl;
     return 0;
 }
