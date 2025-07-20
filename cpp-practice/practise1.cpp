@@ -42,6 +42,8 @@ int main(int argc, char const *argv[])
 {
     int marks[5] = {99, 100, 200, 300};
     int price[] = {200, 300};
+    int size = sizeof(marks) / sizeof(int); // memory of array
     cout << marks[0] << endl;
+    cout << size << endl;
     return 0;
 }
