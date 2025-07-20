@@ -52,10 +52,18 @@
 // }
 // console.log("Maximum value in the array is:", max);
 // const a1 = 6;
-// a1 = a1 + 1; //Not allowed because a1 is consats 
-let a = 5;
-{
-    let a = 66
-    console.log(a)
-}
-co
+// a1 = a1 + 1; //Not allowed because a1 is consats
+// let a = 5;
+// {
+//     let a = 66
+//     console.log(a)
+// }
+// console.log(a)
+let x = "harry bhai";
+let y = 22;
+let z = 3.55;
+const p = true;
+let q = undefined;
+let r = null;
+console.log(x, y, p, q, r)
+console.log(typeof x, typeof y, typeof p, typeof q, typeof r)
