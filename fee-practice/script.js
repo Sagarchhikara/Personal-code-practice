@@ -67,3 +67,13 @@ let q = undefined;
 let r = null;
 console.log(x, y, p, q, r)
 console.log(typeof x, typeof y, typeof p, typeof q, typeof r)
+let o = {
+    "name": "Harry",
+    "job code": 5600,
+    "is_handsome": true
+}
+console.log(o)
+o.salary = "1000 crore"
+console.log(o)
+o.salary = "500 crore"
+console.log(o)
