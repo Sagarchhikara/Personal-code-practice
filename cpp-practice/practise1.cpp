@@ -45,5 +45,11 @@ int main(int argc, char const *argv[])
     int size = sizeof(marks) / sizeof(int); // memory of array
     cout << marks[0] << endl;
     cout << size << endl;
+    for (int i = 0; i < size; i++)
+    {
+        /* code */
+        cout << marks[i] << endl;
+    }
+
     return 0;
 }
