@@ -94,3 +94,22 @@ using namespace std;
 //     cout << endl;
 //     return 0;
 // }
+int linearsearch(int arr[], int size, int target)
+{
+    for (int i = 0; i < size; i++)
+    {
+        /* code */
+        if (arr[i] == target)
+            return i;
+    }
+    return -1;
+}
+int main(int argc, char const *argv[])
+{
+    int arr[] = {4, 7, 3, 1, 2, 9};
+    int size = 6;
+    int target = 2;
+    cout << "Searching for " << target << " in the array...\n";
+    cout << linearsearch(arr, size, target);
+    return 0;
+}
