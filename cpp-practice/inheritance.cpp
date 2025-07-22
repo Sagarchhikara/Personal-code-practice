@@ -175,32 +175,61 @@ using namespace std;
 
 //     return 0;
 // }
-class landvehicle
+// class landvehicle
+// {
+// public:
+//     landvehicle()
+//     {
+//         cout << "This is a land vehicle\n";
+//     }
+// };
+// class watervehicle
+// {
+// public:
+//     watervehicle()
+//     {
+//         cout << "This is a water vehicle\n";
+//     }
+// };
+// class amphibiousvehicle : public landvehicle, public watervehicle
+// {
+// public:
+//     amphibiousvehicle()
+//     {
+//         cout << "This is an amphibious vehicle\n";
+//     }
+// };
+// int main(int argc, char const *argv[])
+// {
+//     amphibiousvehicle obj;
+//     return 0;
+// }
+class vehicle
 {
 public:
-    landvehicle()
+    vehicle()
     {
-        cout << "This is a land vehicle\n";
+        cout << "This is a vehicle\n";
     }
 };
-class watervehicle
+class fourwheeler : public vehicle
 {
 public:
-    watervehicle()
+    fourwheeler()
     {
-        cout << "This is a water vehicle\n";
+        cout << "This is a four wheeler\n";
     }
 };
-class amphibiousvehicle : public landvehicle, public watervehicle
+class car : public fourwheeler
 {
 public:
-    amphibiousvehicle()
+    car()
     {
-        cout << "This is an amphibious vehicle\n";
+        cout << "This is a car";
     }
 };
-int main(int argc, char const *argv[])
+int main()
 {
-    amphibiousvehicle obj;
+    car();
     return 0;
 }
