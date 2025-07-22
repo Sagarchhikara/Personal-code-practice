@@ -233,3 +233,36 @@ using namespace std;
 //     car();
 //     return 0;
 // }
+// hierarchical inheritance
+class vehicle
+{
+public:
+    vehicle()
+    {
+        cout << "This is a vehicle\n";
+    }
+};
+class car : public vehicle
+{
+public:
+    car()
+    {
+        cout << "This is a car\n";
+    }
+};
+
+class bus : public vehicle
+{
+public:
+    bus()
+    {
+        cout << "This is a bus\n";
+    }
+};
+
+int main()
+{
+    car();
+    bus();
+    return 0;
+}
