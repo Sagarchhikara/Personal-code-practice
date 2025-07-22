@@ -153,25 +153,28 @@ using namespace std;
 //     obj.accessA(); // Accessing A's method through B
 //     return 0;
 // }
-class vehicle
-{
-public:
-    vehicle()
-    {
-        cout << "This is a vehicle";
-    }
-};
-class car : public vehicle
-{
-public:
-    car()
-    {
-        cout << "This is a car";
-    }
-};
-int main(int argc, char const *argv[])
-{
-    car obj;
+// class vehicle
+// {
+// public:
+//     vehicle()
+//     {
+//         cout << "This is a vehicle";
+//     }
+// };
+// class car : public vehicle
+// {
+// public:
+//     car()
+//     {
+//         cout << "This is a car";
+//     }
+// };
+// int main(int argc, char const *argv[])
+// {
+//     car obj;
 
-    return 0;
+//     return 0;
+// }
+class vehicle{
+    
 }
