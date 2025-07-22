@@ -175,6 +175,32 @@ using namespace std;
 
 //     return 0;
 // }
-class vehicle{
-    
+class landvehicle
+{
+public:
+    landvehicle()
+    {
+        cout << "This is a land vehicle\n";
+    }
+};
+class watervehicle
+{
+public:
+    watervehicle()
+    {
+        cout << "This is a water vehicle\n";
+    }
+};
+class amphibiousvehicle : public landvehicle, public watervehicle
+{
+public:
+    amphibiousvehicle()
+    {
+        cout << "This is an amphibious vehicle\n";
+    }
+};
+int main(int argc, char const *argv[])
+{
+    amphibiousvehicle obj;
+    return 0;
 }
