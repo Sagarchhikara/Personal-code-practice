@@ -204,32 +204,32 @@ using namespace std;
 //     amphibiousvehicle obj;
 //     return 0;
 // }
-class vehicle
-{
-public:
-    vehicle()
-    {
-        cout << "This is a vehicle\n";
-    }
-};
-class fourwheeler : public vehicle
-{
-public:
-    fourwheeler()
-    {
-        cout << "This is a four wheeler\n";
-    }
-};
-class car : public fourwheeler
-{
-public:
-    car()
-    {
-        cout << "This is a car";
-    }
-};
-int main()
-{
-    car();
-    return 0;
-}
+// class vehicle
+// {
+// public:
+//     vehicle()
+//     {
+//         cout << "This is a vehicle\n";
+//     }
+// };
+// class fourwheeler : public vehicle
+// {
+// public:
+//     fourwheeler()
+//     {
+//         cout << "This is a four wheeler\n";
+//     }
+// };
+// class car : public fourwheeler
+// {
+// public:
+//     car()
+//     {
+//         cout << "This is a car";
+//     }
+// };
+// int main()
+// {
+//     car();
+//     return 0;
+// }
