@@ -85,3 +85,4 @@
 // else {
 //     console.log("You cannot drive")
 // }
+<button onclick="alert('Button clicked!')">Click Me</button>

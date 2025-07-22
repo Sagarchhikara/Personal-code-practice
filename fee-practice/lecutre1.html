@@ -1,21 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>My Web Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML document.</p>
-    <p>Here is a list of my favorite fruits:</p>
-    <ul>
-        <h1>
-            <li>Apple</li>
-            <li>Banana</li>
-            <li>Cherry</li>
-    </ul>
-    <p>Thank you for visiting!</p>
 
+    <button id="'btn2">Click</button>
+    <script>
+        document.getElementById('btn2').addEventListener('click', function () {
+            alert('Button 2 clicked!');
+        });
+
+        // Example of a simple function
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+
+        console.log(greet('World')); // Outputs: Hello, World!
+    </script>
 </body>
 
 </html>
