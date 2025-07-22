@@ -266,3 +266,50 @@ using namespace std;
 //     bus();
 //     return 0;
 // }
+// hybrid inheritance
+
+// Base class
+class Vehicle
+{
+public:
+    Vehicle()
+    {
+        cout << "This is a Vehicle\n";
+    }
+};
+
+// First derived class (single inheritance)
+class Car : public Vehicle
+{
+public:
+    Car()
+    {
+        cout << "This is a Car\n";
+    }
+};
+
+// Second base class
+class Brand
+{
+public:
+    Brand()
+    {
+        cout << "This is a Brand\n";
+    }
+};
+
+// Derived class with multiple inheritance (hybrid)
+class SportsCar : public Car, public Brand
+{
+public:
+    SportsCar()
+    {
+        cout << "This is a Sports Car\n";
+    }
+};
+
+int main()
+{
+    SportsCar obj;
+    return 0;
+}
