@@ -1,7 +1,25 @@
-/* it takes townumbers as inout from the use 
-+ --> -
-*--> +
-- --> /
-/-->>**
+const faultyCalculator = (a, b) => {
+    console.log("a is " + a);
+    console.log("b is " + b);
 
-performs wrong ops 10% of the times */
+    let random = Math.random();
+    let Addition = a + b;
+    let Subtraction = a - b;
+    let Multiplication = a * b;
+    let Division = a / b;
+    let Exponentiation = a ** b;
+
+    if (random < 0.1) {
+        Addition = a - b;
+        Subtraction = a / b;
+        Multiplication = a + b;
+        Division = a ** b;
+    }
+
+    console.log("Addition Result after faulty calculation: " + Addition);
+    console.log("SubtractionResult after faulty calculation: " + Subtraction);
+    console.log("MultiplicationResult after faulty calculation: " + Multiplication);
+    console.log("DivisionResult after faulty calculation: " + Division);
+    console.log("ExponentiationResult after faulty calculation: " + Exponentiation);
+};
+faultyCalculator(1, 1);
