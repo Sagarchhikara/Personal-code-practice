@@ -151,26 +151,37 @@ using namespace std;
 // }
 // SWAP MAX AND MIN OF TWO ARRAYS
 //
+// int main(int argc, char const *argv[])
+// {
+//     // vector<int> vec;
+//     // vector<int> vec = {1, 2, 3};
+//     // cout << vec[0] << endl;
+//     // vector<int> vec(3, 0);
+//     // vector<char> vec = {'a', 'b', 'c', 'd', 'e'};
+//     // cout << "Size= " << vec.size() << endl;
+//     // for (char val : vec)
+//     // {
+//     //     cout << val << endl;
+//     // }
+//     vector<int> vec;
+//     cout << "Size= " << vec.size() << endl;
+//     vec.push_back(25);
+//     vec.push_back(35);
+//     vec.pop_back();
+//     cout << "After push back " << vec.size() << endl;
+//     for (int i : vec)
+//     {
+//         cout << i << endl;
+//     }
+//     return 0;
+// }
 int main(int argc, char const *argv[])
 {
-    // vector<int> vec;
-    // vector<int> vec = {1, 2, 3};
-    // cout << vec[0] << endl;
-    // vector<int> vec(3, 0);
-    // vector<char> vec = {'a', 'b', 'c', 'd', 'e'};
-    // cout << "Size= " << vec.size() << endl;
-    // for (char val : vec)
-    // {
-    //     cout << val << endl;
-    // }
     vector<int> vec;
-    cout << "Size= " << vec.size() << endl;
-    vec.push_back(25);
-    vec.push_back(35);
-    cout << "After push back " << vec.size() << endl;
-    for (int i : vec)
-    {
-        cout << i << endl;
-    }
+    vec.push_back(0);
+    vec.push_back(1);
+    vec.push_back(2);
+    cout << "Soze=" << vec.size() << endl;
+    cout << "Capacity" << vec.capacity() << endl;
     return 0;
 }
