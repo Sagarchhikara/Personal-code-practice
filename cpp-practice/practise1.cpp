@@ -206,20 +206,20 @@ using namespace std;
 //     return 0;
 // }
 
-int main(int argc, char const *argv[])
-{
-    int n = 5;
-    int arr[5] = {1, 2, 3, 4, 5};
-    int maxsum = INT16_MIN;
-    for (int st = 0; st < n; st++)
-    {
-        int currsum = 0;
-        for (int ed = st; ed < n; ed++)
-        {
-            currsum = arr[ed];
-            maxsum = max(currsum, maxsum);
-        }
-    }
-    cout << "Max=" << maxsum;
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     int n = 5;
+//     int arr[5] = {1, 2, 3, 4, 5};
+//     int maxsum = INT16_MIN;
+//     for (int st = 0; st < n; st++)
+//     {
+//         int currsum = 0;
+//         for (int ed = st; ed < n; ed++)
+//         {
+//             currsum = arr[ed];
+//             maxsum = max(currsum, maxsum);
+//         }
+//     }
+//     cout << "Max=" << maxsum;
+//     return 0;
+// }
