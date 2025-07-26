@@ -156,10 +156,12 @@ int main(int argc, char const *argv[])
     // vector<int> vec;
     // vector<int> vec = {1, 2, 3};
     // cout << vec[0] << endl;
-    vector<int> vec(3, 0);
-    for (int i : vec)
+    // vector<int> vec(3, 0);
+    vector<char> vec = {'a', 'b', 'c', 'd', 'e'};
+    cout << "Size= " << vec.size() << endl;
+    for (char val : vec)
     {
-        cout << i << endl;
+        cout << val << endl;
     }
     return 0;
 }
