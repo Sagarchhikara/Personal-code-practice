@@ -153,8 +153,13 @@ using namespace std;
 //
 int main(int argc, char const *argv[])
 {
-    vector<int> vec;
-    vector<int> vec1 = {1, 2, 3};
-    cout << vec1[0] << endl;
+    // vector<int> vec;
+    // vector<int> vec = {1, 2, 3};
+    // cout << vec[0] << endl;
+    vector<int> vec(3, 0);
+    for (int i : vec)
+    {
+        cout << i << endl;
+    }
     return 0;
 }
