@@ -185,4 +185,23 @@ using namespace std;
 //     cout << "Capacity" << vec.capacity() << endl;
 //     return 0;
 // }
-// SINGLE NUMBER PROBLEM
+
+int main(int argc, char const *argv[])
+{
+    int n = 5;
+    int arr[5] = {1, 2, 3, 4, 5};
+    for (int st = 0; st < n; st++)
+    {
+        for (int ed = st; ed < n; ed++)
+        {
+            for (int i = st; i <= ed; i++)
+            {
+                /* code */
+                cout << arr[i];
+            }
+            cout << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
