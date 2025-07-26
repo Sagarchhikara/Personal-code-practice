@@ -175,13 +175,14 @@ using namespace std;
 //     }
 //     return 0;
 // }
-int main(int argc, char const *argv[])
-{
-    vector<int> vec;
-    vec.push_back(0);
-    vec.push_back(1);
-    vec.push_back(2);
-    cout << "Soze=" << vec.size() << endl;
-    cout << "Capacity" << vec.capacity() << endl;
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     vector<int> vec;
+//     vec.push_back(0);
+//     vec.push_back(1);
+//     vec.push_back(2);
+//     cout << "Soze=" << vec.size() << endl;
+//     cout << "Capacity" << vec.capacity() << endl;
+//     return 0;
+// }
+// SINGLE NUMBER PROBLEM
