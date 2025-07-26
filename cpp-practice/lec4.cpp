@@ -189,8 +189,42 @@ int main()
 
 //     return 0;
 // }
+// {
+//     int length;
+//     int width;
+//     cout<<"Enter the length and width of the rectangle: ";
+//     cin >> length >> width;
+//     cout << "Area of the rectangle: " << length * width << endl;
+//     cout << "Perimeter of the rectangle: " << 2 * (length + width) << endl;
+//     return 0;
+// }
+// {
+//     int n;
+//     cout << "Enter your number: ";
+//     cin >> n;
+//     if (n > 10 && n < 100)
+//     {
+//         cout << "Number is Range.";
+//     }
+//     else
+//     {
+//         cout << "Number not in range";
+//     }
+//     return 0;
+// }
 {
-    l int num = 10;
-    if (num > 10)
-        if (num > 10)
+    int a, b;
+    cout << "Enter two numbers to swap: ";
+    cin >> a >> b;
+
+    // Swapping using XOR
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+
+    cout << "After swapping:" << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    return 0;
 }
