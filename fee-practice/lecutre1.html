@@ -1,21 +1,74 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>My Web Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dark/Light Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: white;
+            color: black;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: 2px solid;
+            cursor: pointer;
+        }
+
+        #darkBtn {
+            background-color: white;
+            color: black;
+            border-color: black;
+        }
+
+        #lightBtn {
+            background-color: black;
+            color: white;
+            border-color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML document.</p>
-    <p>Here is a list of my favorite fruits:</p>
-    <ul>
-        <h1>
-            <li>Apple</li>
-            <li>Banana</li>
-            <li>Cherry</li>
-    </ul>
-    <p>Thank you for visiting!</p>
+    <div class="container">
+        <h1>Click To Toggle</h1>
+        <button id="darkBtn">Dark</button>
+        <button id="lightBtn">Light</button>
+    </div>
 
+    <script>
+        const darkBtn = document.getElementById('darkBtn');
+        const lightBtn = document.getElementById('lightBtn');
+        const body = document.body;
+
+        darkBtn.addEventListener('mouseover', function () {
+            body.classList.add('dark-mode');
+        });
+
+        lightBtn.addEventListener('mouseover', function () {
+            body.classList.remove('dark-mode');
+        });
+    </script>
 </body>
 
 </html>

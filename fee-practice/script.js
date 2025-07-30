@@ -42,10 +42,50 @@
 //     }
 
 //     rl.close();
-// });
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let max = arr[0];
+// for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//         max = arr[i];
+//     }
+// }
+// console.log("Maximum value in the array is:", max);
+// const a1 = 6;
+// a1 = a1 + 1; //Not allowed because a1 is consats
+// let a = 5;
+// {
+//     let a = 66
+//     console.log(a)
+// }
+// console.log(a)
+// let x = "harry bhai";
+// let y = 22;
+// let z = 3.55;
+// const p = true;
+// let q = undefined;
+// let r = null;
+// console.log(x, y, p, q, r)
+// console.log(typeof x, typeof y, typeof p, typeof q, typeof r)
+// let o = {
+//     "name": "Harry",
+//     "job code": 5600,
+//     "is_handsome": true
+// }
+// console.log(o)
+// o.salary = "1000 crore"
+// console.log(o)
+// o.salary = "500 crore"
+// console.log(o)
+// console.log("Hello I am conditional tutorial")
+// let age = 45;
+// if (age > 18) {
+//     console.log("You can drive")
+// }
+// else {
+//     console.log("You cannot drive")
+// }
+<button onclick="alert('Button clicked!')">Click Me</button>
+
 // var a = prompt("Enter a number: ");
-// console.log("You entered: " + a);
-var a = 10;
-var b = 20;
-var c = "Sagar";
-console.log(a + b);
+// console.log(
