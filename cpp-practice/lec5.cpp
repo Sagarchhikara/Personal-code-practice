@@ -95,3 +95,24 @@ using namespace std;
 //     // Call the show() function to print the value of 'a'
 //     return 0;
 // }
+class Demo
+{
+    int a;
+
+public:
+    /* Constructor with an initializer list to initialize 'a' with value ‘x’ */
+    Demo(int x) : a(x) {}
+    /* Constant member function which guarantees not to modify any class members*/
+    void show() const
+    {
+        cout << "Value: " << a << endl;
+    }
+};
+int main()
+{
+    Demo d(10);
+    /* Create an object 'd' of class Demo and initialize with value 10*/
+    d.show();
+    // Call the show() function to print the value of 'a'
+    return 0;
+}
