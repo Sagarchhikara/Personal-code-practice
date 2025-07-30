@@ -59,3 +59,18 @@ using namespace std;
 //     // Call show() on object c — all objects share the same static count
 //     return 0; // Indicate successful program termination
 // }
+// STATIC OBJECT
+// Function definition
+void create()
+{
+    static int x = 0; // Static variable retains its value across function calls
+    x++;              // Increment the static variable
+    cout << "x: " << x << endl;
+    // Display the value of x
+}
+int main()
+{
+    create(); // First call: x becomes 1, output -> x: 1
+    create(); // Second call: x becomes 2, output -> x: 2
+    return 0; // End of program
+}
