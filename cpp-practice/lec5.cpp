@@ -95,24 +95,43 @@ using namespace std;
 //     // Call the show() function to print the value of 'a'
 //     return 0;
 // }
+// class Demo
+// {
+//     int a;
+
+// public:
+//     /* Constructor with an initializer list to initialize 'a' with value ‘x’ */
+//     Demo(int x) : a(x) {}
+//     /* Constant member function which guarantees not to modify any class members*/
+//     void show() const
+//     {
+//         cout << "Value: " << a << endl;
+//     }
+// };
+// int main()
+// {
+//     Demo d(10);
+//     /* Create an object 'd' of class Demo and initialize with value 10*/
+//     d.show();
+//     // Call the show() function to print the value of 'a'
+//     return 0;
+// }
 class Demo
 {
-    int a;
-
-public:
-    /* Constructor with an initializer list to initialize 'a' with value ‘x’ */
-    Demo(int x) : a(x) {}
-    /* Constant member function which guarantees not to modify any class members*/
-    void show() const
-    {
-        cout << "Value: " << a << endl;
-    }
+    int a = 10; // Private data member initialized to 10
+    /* Declare a friend function to allow it access to private members*/
+    friend void show(Demo); // Friend function declaration
 };
+/* Friend function definition that can access private members of class Demo */
+void show(Demo d)
+{
+    cout << "Value: " << d.a << endl;
+    // Output the value of private member 'a'
+}
 int main()
 {
-    Demo d(10);
-    /* Create an object 'd' of class Demo and initialize with value 10*/
-    d.show();
-    // Call the show() function to print the value of 'a'
+    Demo d; // Create an object of class Demo
+    show(d);
+    // Call the friend function 'show' with object 'd'
     return 0;
 }
