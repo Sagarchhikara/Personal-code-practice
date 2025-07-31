@@ -197,8 +197,10 @@ int main()
 {
     shared_ptr<MyClass> ptr1(new MyClass());
     {
+        shared_ptr<MyClass> ptr1 = make_shared<MyClass>();
         shared_ptr<MyClass> ptr2 = ptr1;
         ptr2->display();
+        ptr1->display();
     }
     return 0;
 }
