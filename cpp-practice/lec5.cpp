@@ -204,3 +204,45 @@ using namespace std;
 //     }
 //     return 0;
 // }
+class calc
+{
+    int a, b;
+    char op;
+
+public:
+    void run()
+    {
+        cout << "Enter first number:";
+        cin >> a;
+        cout << "Enter second number:";
+        cin >> b;
+        cout << "Enter operator:";
+        cin >> op;
+        switch (op)
+        {
+        case '+':
+            cout << "Result: " << (a + b);
+            break;
+        case '-':
+            cout << "Result: " << (a - b);
+            break;
+        case '*':
+            cout << "Result: " << (a * b);
+            break;
+        case '/':
+            if (b != 0)
+                cout << "Result: " << (a / b);
+            else
+                cout << "Division by zero error";
+            break;
+        default:
+            cout << "Invalid operator";
+        }
+    }
+};
+int main()
+{
+    calc c;
+    c.run();
+    return 0;
+}
