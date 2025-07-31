@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 using namespace std;
 
 // class demo
@@ -116,22 +117,90 @@ using namespace std;
 //     // Call the show() function to print the value of 'a'
 //     return 0;
 // }
-class Demo
+// class Demo
+// {
+//     int a = 10; // Private data member initialized to 10
+//     /* Declare a friend function to allow it access to private members*/
+//     friend void show(Demo); // Friend function declaration
+// };
+// /* Friend function definition that can access private members of class Demo */
+// void show(Demo d)
+// {
+//     cout << "Value: " << d.a << endl;
+//     // Output the value of private member 'a'
+// }
+// int main()
+// {
+//     Demo d; // Create an object of class Demo
+//     show(d);
+//     // Call the friend function 'show' with object 'd'
+//     return 0;
+// }
+// class a
+// {
+// public:
+//     a()
+//     {
+//         cout << "Constructor\n";
+//     }
+//     ~a()
+//     {
+//         cout << "Destructor\n";
+//     }
+// };
+// int main()
+// {
+//     unique_ptr<a> A(new a());
+//     return 0;
+// }
+// unique_ptr with custom class
+// class myclass
+// {
+// public:
+//     myclass()
+//     {
+//         cout << "Constructor called" << endl;
+//     }
+//     void display()
+//     {
+//         cout << "Display function called" << endl;
+//     }
+//     ~myclass()
+//     {
+//         cout << "Destructor called" << endl;
+//     }
+// };
+// int main()
+// {
+//     unique_ptr<myclass> ptr(new myclass());
+//     ptr->display(); // Call display function using unique_ptr
+//     return 0;       // Unique_ptr will automatically call the destructor when it goes out of scope
+// }
+// shared pointer with custom class
+class MyClass
 {
-    int a = 10; // Private data member initialized to 10
-    /* Declare a friend function to allow it access to private members*/
-    friend void show(Demo); // Friend function declaration
+public:
+    MyClass()
+    {
+        cout << "Constructor called" << endl;
+    }
+    void display()
+    {
+        cout << "Display function called" << endl;
+    }
+    ~MyClass()
+    {
+        cout << "Destructor called" << endl;
+    }
 };
-/* Friend function definition that can access private members of class Demo */
-void show(Demo d)
-{
-    cout << "Value: " << d.a << endl;
-    // Output the value of private member 'a'
-}
 int main()
 {
-    Demo d; // Create an object of class Demo
-    show(d);
-    // Call the friend function 'show' with object 'd'
+    shared_ptr<MyClass> ptr1(new MyClass());
+    {
+        shared_ptr<MyClass> ptr1 = make_shared<MyClass>();
+        shared_ptr<MyClass> ptr2 = ptr1;
+        ptr2->display();
+        ptr1->display();
+    }
     return 0;
 }
