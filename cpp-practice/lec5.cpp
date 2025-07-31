@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 using namespace std;
 
 // class demo
@@ -116,22 +117,39 @@ using namespace std;
 //     // Call the show() function to print the value of 'a'
 //     return 0;
 // }
-class Demo
+// class Demo
+// {
+//     int a = 10; // Private data member initialized to 10
+//     /* Declare a friend function to allow it access to private members*/
+//     friend void show(Demo); // Friend function declaration
+// };
+// /* Friend function definition that can access private members of class Demo */
+// void show(Demo d)
+// {
+//     cout << "Value: " << d.a << endl;
+//     // Output the value of private member 'a'
+// }
+// int main()
+// {
+//     Demo d; // Create an object of class Demo
+//     show(d);
+//     // Call the friend function 'show' with object 'd'
+//     return 0;
+// }
+class a
 {
-    int a = 10; // Private data member initialized to 10
-    /* Declare a friend function to allow it access to private members*/
-    friend void show(Demo); // Friend function declaration
+public:
+    a()
+    {
+        cout << "Constructor\n";
+    }
+    ~a()
+    {
+        cout << "Destructor\n";
+    }
 };
-/* Friend function definition that can access private members of class Demo */
-void show(Demo d)
-{
-    cout << "Value: " << d.a << endl;
-    // Output the value of private member 'a'
-}
 int main()
 {
-    Demo d; // Create an object of class Demo
-    show(d);
-    // Call the friend function 'show' with object 'd'
+    unique_ptr<a> A(new a());
     return 0;
 }
