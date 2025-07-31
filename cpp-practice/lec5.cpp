@@ -177,30 +177,30 @@ using namespace std;
 //     return 0;       // Unique_ptr will automatically call the destructor when it goes out of scope
 // }
 // shared pointer with custom class
-class MyClass
-{
-public:
-    MyClass()
-    {
-        cout << "Constructor called" << endl;
-    }
-    void display()
-    {
-        cout << "Display function called" << endl;
-    }
-    ~MyClass()
-    {
-        cout << "Destructor called" << endl;
-    }
-};
-int main()
-{
-    shared_ptr<MyClass> ptr1(new MyClass());
-    {
-        shared_ptr<MyClass> ptr1 = make_shared<MyClass>();
-        shared_ptr<MyClass> ptr2 = ptr1;
-        ptr2->display();
-        ptr1->display();
-    }
-    return 0;
-}
+// class MyClass
+// {
+// public:
+//     MyClass()
+//     {
+//         cout << "Constructor called" << endl;
+//     }
+//     void display()
+//     {
+//         cout << "Display function called" << endl;
+//     }
+//     ~MyClass()
+//     {
+//         cout << "Destructor called" << endl;
+//     }
+// };
+// int main()
+// {
+//     shared_ptr<MyClass> ptr1(new MyClass());
+//     {
+//         shared_ptr<MyClass> ptr1 = make_shared<MyClass>();
+//         shared_ptr<MyClass> ptr2 = ptr1;
+//         ptr2->display();
+//         ptr1->display();
+//     }
+//     return 0;
+// }
