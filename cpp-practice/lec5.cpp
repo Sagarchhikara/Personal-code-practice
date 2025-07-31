@@ -204,45 +204,140 @@ using namespace std;
 //     }
 //     return 0;
 // }
-class calc
-{
-    int a, b;
-    char op;
+// class calc
+// {
+//     int a, b;
+//     char op;
 
+// public:
+//     void run()
+//     {
+//         cout << "Enter first number:";
+//         cin >> a;
+//         cout << "Enter second number:";
+//         cin >> b;
+//         cout << "Enter operator:";
+//         cin >> op;
+//         switch (op)
+//         {
+//         case '+':
+//             cout << "Result: " << (a + b);
+//             break;
+//         case '-':
+//             cout << "Result: " << (a - b);
+//             break;
+//         case '*':
+//             cout << "Result: " << (a * b);
+//             break;
+//         case '/':
+//             if (b != 0)
+//                 cout << "Result: " << (a / b);
+//             else
+//                 cout << "Division by zero error";
+//             break;
+//         default:
+//             cout << "Invalid operator";
+//         }
+//     }
+// };
+// int main()
+// {
+//     calc c;
+//     c.run();
+//     return 0;
+// }
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+
+using namespace std;
+
+class Calculator
+{
 public:
-    void run()
+    Calculator(double a, double b)
     {
-        cout << "Enter first number:";
-        cin >> a;
-        cout << "Enter second number:";
-        cin >> b;
-        cout << "Enter operator:";
-        cin >> op;
-        switch (op)
-        {
-        case '+':
-            cout << "Result: " << (a + b);
-            break;
-        case '-':
-            cout << "Result: " << (a - b);
-            break;
-        case '*':
-            cout << "Result: " << (a * b);
-            break;
-        case '/':
-            if (b != 0)
-                cout << "Result: " << (a / b);
-            else
-                cout << "Division by zero error";
-            break;
-        default:
-            cout << "Invalid operator";
-        }
+        num1 = make_shared<double>(a);
+        num2 = make_shared<double>(b);
     }
+
+    // Set new values for the numbers
+    void setNumbers(double a, double b)
+    {
+        *num1 = a;
+        *num2 = b;
+    }
+
+    // Basic arithmetic operations
+    double add() const
+    {
+        return *num1 + *num2;
+    }
+
+    double subtract() const
+    {
+        return *num1 - *num2;
+    }
+
+    double multiply() const
+    {
+        return *num1 * *num2;
+    }
+
+    double divide() const
+    {
+        if (*num2 == 0)
+        {
+            throw runtime_error("Division by zero error");
+        }
+        return *num1 / *num2;
+    }
+
+    // Display the current numbers
+    void displayNumbers() const
+    {
+        cout << "Current numbers: " << *num1 << " and " << *num2 << endl;
+    }
+
+private:
+    shared_ptr<double> num1;
+    shared_ptr<double> num2;
 };
+
 int main()
 {
-    calc c;
-    c.run();
+    try
+    {
+        // Create a calculator with initial values
+        Calculator calc(10.0, 5.0);
+
+        cout << "Simple Calculator using shared_ptr" << endl;
+        cout << "---------------------------------" << endl;
+
+        calc.displayNumbers();
+
+        // Perform operations
+        cout << "Addition: " << calc.add() << endl;
+        cout << "Subtraction: " << calc.subtract() << endl;
+        cout << "Multiplication: " << calc.multiply() << endl;
+        cout << "Division: " << calc.divide() << endl;
+
+        // Change numbers and perform operations again
+        calc.setNumbers(12.5, 2.5);
+        cout << "\nAfter changing numbers:" << endl;
+        calc.displayNumbers();
+
+        cout << "Addition: " << calc.add() << endl;
+        cout << "Subtraction: " << calc.subtract() << endl;
+
+        // Test division by zero (will throw exception)
+        // calc.setNumbers(10, 0);
+        // cout << "Division: " << calc.divide() << endl;
+    }
+    catch (const exception &e)
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
+
     return 0;
 }
