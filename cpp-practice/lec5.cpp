@@ -136,20 +136,20 @@ using namespace std;
 //     // Call the friend function 'show' with object 'd'
 //     return 0;
 // }
-class a
-{
-public:
-    a()
-    {
-        cout << "Constructor\n";
-    }
-    ~a()
-    {
-        cout << "Destructor\n";
-    }
-};
-int main()
-{
-    unique_ptr<a> A(new a());
-    return 0;
-}
+// class a
+// {
+// public:
+//     a()
+//     {
+//         cout << "Constructor\n";
+//     }
+//     ~a()
+//     {
+//         cout << "Destructor\n";
+//     }
+// };
+// int main()
+// {
+//     unique_ptr<a> A(new a());
+//     return 0;
+// }
