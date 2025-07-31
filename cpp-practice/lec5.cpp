@@ -154,25 +154,25 @@ using namespace std;
 //     return 0;
 // }
 // unique_ptr with custom class
-class myclass
-{
-public:
-    myclass()
-    {
-        cout << "Constructor called" << endl;
-    }
-    void display()
-    {
-        cout << "Display function called" << endl;
-    }
-    ~myclass()
-    {
-        cout << "Destructor called" << endl;
-    }
-};
-int main()
-{
-    unique_ptr<myclass> ptr(new myclass());
-    ptr->display(); // Call display function using unique_ptr
-    return 0;       // Unique_ptr will automatically call the destructor when it goes out of scope
-}
+// class myclass
+// {
+// public:
+//     myclass()
+//     {
+//         cout << "Constructor called" << endl;
+//     }
+//     void display()
+//     {
+//         cout << "Display function called" << endl;
+//     }
+//     ~myclass()
+//     {
+//         cout << "Destructor called" << endl;
+//     }
+// };
+// int main()
+// {
+//     unique_ptr<myclass> ptr(new myclass());
+//     ptr->display(); // Call display function using unique_ptr
+//     return 0;       // Unique_ptr will automatically call the destructor when it goes out of scope
+// }
