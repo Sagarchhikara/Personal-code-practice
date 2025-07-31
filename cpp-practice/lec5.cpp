@@ -341,13 +341,3 @@ using namespace std;
 
 //     return 0;
 // }
-int *unsafeleak()
-{
-    uni = new int(10);
-    return p;
-}
-int main()
-{
-    int *ptr = unsafeleak();
-    cout
-}
