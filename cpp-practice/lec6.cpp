@@ -24,24 +24,24 @@ using namespace std;
 //     counter::displaycount();
 //     return 0;
 // }
-class book
-{
-    string title;
-    string author;
-    int pages;
+// class book
+// {
+//     string title;
+//     string author;
+//     int pages;
 
-public:
-    book(string t, string a, int p) : title(t), author(a), pages(p) {}
-    void display() const
-    {
-        cout << "Book title: " << title << endl;
-        cout << "Author: " << author << endl;
-        cout << "Pages: " << pages << endl;
-    }
-};
-int main()
-{
-    const book mybook("The alchemist", "Paulo coehlo", 208);
-    mybook.display();
-    return 0;
-}
+// public:
+//     book(string t, string a, int p) : title(t), author(a), pages(p) {}
+//     void display() const
+//     {
+//         cout << "Book title: " << title << endl;
+//         cout << "Author: " << author << endl;
+//         cout << "Pages: " << pages << endl;
+//     }
+// };
+// int main()
+// {
+//     const book mybook("The alchemist", "Paulo coehlo", 208);
+//     mybook.display();
+//     return 0;
+// }
