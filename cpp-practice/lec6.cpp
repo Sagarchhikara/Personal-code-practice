@@ -46,28 +46,28 @@ using namespace std;
 //     return 0;
 // }
 // write two classes box and printer make printer a friend class of box so it can acess and print private volume of the box
-class printer;
-class box
-{
-    int length, width, height;
+// class printer;
+// class box
+// {
+//     int length, width, height;
 
-public:
-    box(int l, int w, int h) : length(l), width(w), height(h) {}
-    friend class printer;
-};
-class printer
-{
-public:
-    void printvolume(const box &b)
-    {
-        int volume = b.length * b.width * b.height;
-        cout << "Voulume of the box: " << volume << endl;
-    }
-};
-int main()
-{
-    box mybox(3, 4, 5);
-    printer p;
-    p.printvolume(mybox);
-    return 0;
-}
+// public:
+//     box(int l, int w, int h) : length(l), width(w), height(h) {}
+//     friend class printer;
+// };
+// class printer
+// {
+// public:
+//     void printvolume(const box &b)
+//     {
+//         int volume = b.length * b.width * b.height;
+//         cout << "Voulume of the box: " << volume << endl;
+//     }
+// };
+// int main()
+// {
+//     box mybox(3, 4, 5);
+//     printer p;
+//     p.printvolume(mybox);
+//     return 0;
+// }
