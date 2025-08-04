@@ -71,3 +71,13 @@ using namespace std;
 //     p.printvolume(mybox);
 //     return 0;
 // }
+void printmessage()
+{
+    cout << "Hello Guys! Good morning \n";
+}
+int main()
+{
+    printmessage();
+    printmessage();
+    return 0;
+}
