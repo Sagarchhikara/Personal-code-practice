@@ -117,37 +117,37 @@ using namespace std;
 //     cout << "Divide: " << result;
 //     return 0;
 // }
-void add(int a, int b)
-{
-    cout << "Sum: " << a + b << endl;
-}
-void subtract(int a, int b)
-{
-    cout << "Subtract: " << a - b << endl;
-}
-void multiply(int a, int b)
-{
-    cout << "Multiply: " << a * b << endl;
-}
-void divide(int a, int b)
-{
-    if (b == 0)
-    {
-        cout << "Error: Division by zero!" << endl;
-        return; // or handle error appropriately
-    }
-    cout << "Divide: " << a / b << endl;
-}
-int main()
-{
-    int a, b;
-    cout << "Enter two integers: ";
-    cin >> a >> b;
+// void add(int a, int b)
+// {
+//     cout << "Sum: " << a + b << endl;
+// }
+// void subtract(int a, int b)
+// {
+//     cout << "Subtract: " << a - b << endl;
+// }
+// void multiply(int a, int b)
+// {
+//     cout << "Multiply: " << a * b << endl;
+// }
+// void divide(int a, int b)
+// {
+//     if (b == 0)
+//     {
+//         cout << "Error: Division by zero!" << endl;
+//         return; // or handle error appropriately
+//     }
+//     cout << "Divide: " << a / b << endl;
+// }
+// int main()
+// {
+//     int a, b;
+//     cout << "Enter two integers: ";
+//     cin >> a >> b;
 
-    add(a, b);
-    subtract(a, b);
-    multiply(a, b);
-    divide(a, b);
+//     add(a, b);
+//     subtract(a, b);
+//     multiply(a, b);
+//     divide(a, b);
 
-    return 0;
-}
+//     return 0;
+// }
