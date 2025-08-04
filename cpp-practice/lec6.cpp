@@ -85,10 +85,35 @@ int sum(int a, int b)
 {
     return a + b;
 }
+int subtract(int a, int b)
+{
+    return a - b;
+}
+int multiply(int a, int b)
+{
+    return a * b;
+}
+int divide(int a, int b)
+{
+    if (b == 0)
+    {
+        cout << "Error: Division by zero!" << endl;
+        return 0; // or handle error appropriately
+    }
+    return a / b;
+}
 int main()
 {
-    int a = 1, b = 3;
+    int a, b;
+    cout << "Enter two integers: ";
+    cin >> a >> b;
     int result = sum(a, b);
-    cout << "Sum: " << result;
+    cout << "Sum: " << result << endl;
+    result = subtract(a, b);
+    cout << "Subtract: " << result << endl;
+    result = multiply(a, b);
+    cout << "Multiply: " << result << endl;
+    result = divide(a, b);
+    cout << "Divide: " << result;
     return 0;
 }
