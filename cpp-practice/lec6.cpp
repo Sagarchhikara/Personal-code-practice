@@ -71,13 +71,24 @@ using namespace std;
 //     p.printvolume(mybox);
 //     return 0;
 // }
-void printmessage()
+// void printmessage()
+// {
+//     cout << "Hello Guys! Good morning \n";
+// }
+// int main()
+// {
+//     printmessage();
+//     printmessage();
+//     return 0;
+// }
+int sum(int a, int b)
 {
-    cout << "Hello Guys! Good morning \n";
+    return a + b;
 }
 int main()
 {
-    printmessage();
-    printmessage();
+    int a = 1, b = 3;
+    int result = sum(a, b);
+    cout << "Sum: " << result;
     return 0;
 }
