@@ -191,16 +191,16 @@ using namespace std;
 //     return 0;
 // }
 // pass by pointer
-void check(int *x)
-{
-    *x = 10;
-    cout << "Value of x inside function: " << *x << endl;
-}
-int main()
-{
-    int x = 5;
-    cout << "Value of x before function call: " << x << endl;
-    check(&x);
-    cout << "Value of x after function call: " << x << endl;
-    return 0;
-}
+// void check(int *x)
+// {
+//     *x = 10;
+//     cout << "Value of x inside function: " << *x << endl;
+// }
+// int main()
+// {
+//     int x = 5;
+//     cout << "Value of x before function call: " << x << endl;
+//     check(&x);
+//     cout << "Value of x after function call: " << x << endl;
+//     return 0;
+// }
