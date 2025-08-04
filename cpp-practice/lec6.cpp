@@ -81,39 +81,73 @@ using namespace std;
 //     printmessage();
 //     return 0;
 // }
-int sum(int a, int b)
+// int sum(int a, int b)
+// {
+//     return a + b;
+// }
+// int subtract(int a, int b)
+// {
+//     return a - b;
+// }
+// int multiply(int a, int b)
+// {
+//     return a * b;
+// }
+// int divide(int a, int b)
+// {
+//     if (b == 0)
+//     {
+//         cout << "Error: Division by zero!" << endl;
+//         return 0; // or handle error appropriately
+//     }
+//     return a / b;
+// }
+// int main()
+// {
+//     int a, b;
+//     cout << "Enter two integers: ";
+//     cin >> a >> b;
+//     int result = sum(a, b);
+//     cout << "Sum: " << result << endl;
+//     result = subtract(a, b);
+//     cout << "Subtract: " << result << endl;
+//     result = multiply(a, b);
+//     cout << "Multiply: " << result << endl;
+//     result = divide(a, b);
+//     cout << "Divide: " << result;
+//     return 0;
+// }
+void add(int a, int b)
 {
-    return a + b;
+    cout << "Sum: " << a + b << endl;
 }
-int subtract(int a, int b)
+void subtract(int a, int b)
 {
-    return a - b;
+    cout << "Subtract: " << a - b << endl;
 }
-int multiply(int a, int b)
+void multiply(int a, int b)
 {
-    return a * b;
+    cout << "Multiply: " << a * b << endl;
 }
-int divide(int a, int b)
+void divide(int a, int b)
 {
     if (b == 0)
     {
         cout << "Error: Division by zero!" << endl;
-        return 0; // or handle error appropriately
+        return; // or handle error appropriately
     }
-    return a / b;
+    cout << "Divide: " << a / b << endl;
 }
 int main()
 {
     int a, b;
     cout << "Enter two integers: ";
     cin >> a >> b;
-    int result = sum(a, b);
-    cout << "Sum: " << result << endl;
-    result = subtract(a, b);
-    cout << "Subtract: " << result << endl;
-    result = multiply(a, b);
-    cout << "Multiply: " << result << endl;
-    result = divide(a, b);
-    cout << "Divide: " << result;
+
+    add(a, b);
+    subtract(a, b);
+    multiply(a, b);
+    divide(a, b);
+
     return 0;
 }
