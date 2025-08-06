@@ -215,12 +215,20 @@ using namespace std;
 //     cout<<sum(2.5,3.5)<<endl;
 //     return 0;
 // }
-int sum(int a,double b){
-    return a+b;
-}
+// int sum(int a,double b){
+//     return a+b;
+// }
+// int main(){
+//     cout<<sum(2,2.5)<<endl;
+//     cout<< sum(2.5,2)<<endl;
+//     cout<<sum(2,3)<<endl;
+//     return 0;
+// }
+// lambda functions 
 int main(){
-    cout<<sum(2,2.5)<<endl;
-    cout<< sum(2.5,2)<<endl;
-    cout<<sum(2,3)<<endl;
+    auto greet = []() {
+        cout << "Hello, World!" << endl;
+    };
+    greet();
     return 0;
 }
