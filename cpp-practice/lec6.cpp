@@ -225,10 +225,17 @@ using namespace std;
 //     return 0;
 // }
 // lambda functions 
+// int main(){
+//     auto greet = []() {
+//         cout << "Hello, World!" << endl;
+//     };
+//     greet();
+//     return 0;
+// }
 int main(){
-    auto greet = []() {
-        cout << "Hello, World!" << endl;
+    auto add=[](int a, int b) {
+        return a + b;
     };
-    greet();
+    cout << "Sum: " << add(5, 3) << endl;
     return 0;
 }
