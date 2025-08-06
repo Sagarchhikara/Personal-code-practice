@@ -232,10 +232,10 @@ using namespace std;
 //     greet();
 //     return 0;
 // }
-int main(){
-    auto add=[](int a, int b) {
-        return a + b;
-    };
-    cout << "Sum: " << add(5, 3) << endl;
-    return 0;
-}
+// int main(){
+//     auto add=[](int a, int b) {
+//         return a + b;
+//     };
+//     cout << "Sum: " << add(5, 3) << endl;
+//     return 0;
+// }
