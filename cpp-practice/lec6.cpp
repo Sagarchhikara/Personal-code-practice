@@ -239,3 +239,11 @@ using namespace std;
 //     cout << "Sum: " << add(5, 3) << endl;
 //     return 0;
 // }
+int main(){
+    int x=10;
+    auto show=[x](){
+        cout<< "Value of x: " << x << endl;
+    };
+    show();
+    return 0;
+}
