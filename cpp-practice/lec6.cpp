@@ -217,16 +217,31 @@ using namespace std;
 //     cout << "After function call: " << number << endl;
 //     return 0;
 // }
-void incrementbyrefrence(int &num)
+// void incrementbyrefrence(int &num)
+// {
+//     num += 10;
+//     cout << "Inside function(by refrence): " << num << endl;
+// }
+// int main()
+// {
+//     int number = 5;
+//     cout << "Before function call: " << number << endl;
+//     incrementbyrefrence(number);
+//     cout << "After function call:" << number << endl;
+//     return 0;
+// }
+int globalvar = 100;
+int &returnreference()
 {
-    num += 10;
-    cout << "Inside function(by refrence): " << num << endl;
+    return globalvar;
 }
 int main()
 {
-    int number = 5;
-    cout << "Before function call: " << number << endl;
-    incrementbyrefrence(number);
-    cout << "After function call:" << number << endl;
+    cout << "Original value: " << globalvar << endl;
+    returnreference() = 200;
+    cout << "Modified value:" << globalvar << endl;
+    int &ref = returnreference();
+    ref = 300;
+    cout << "Modified again " << globalvar << endl;
     return 0;
 }
