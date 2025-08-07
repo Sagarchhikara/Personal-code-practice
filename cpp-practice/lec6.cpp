@@ -204,3 +204,16 @@ using namespace std;
 //     cout << "Value of x after function call: " << x << endl;
 //     return 0;
 // }
+void incrementbyvalue(int num)
+{
+    num += 10;
+    cout << "Inside function (by value): " << num << endl;
+}
+int main(int argc, char const *argv[])
+{
+    int number = 5;
+    cout << "Before function call: " << number << endl;
+    incrementbyvalue(number);
+    cout << "After function call: " << number << endl;
+    return 0;
+}
