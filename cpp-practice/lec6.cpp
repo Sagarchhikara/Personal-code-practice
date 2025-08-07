@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 // class counter
 // {
@@ -230,18 +232,42 @@ using namespace std;
 //     cout << "After function call:" << number << endl;
 //     return 0;
 // }
-int globalvar = 100;
-int &returnreference()
+// int globalvar = 100;
+// int &returnreference()
+// {
+//     return globalvar;
+// }
+// int main()
+// {
+//     cout << "Original value: " << globalvar << endl;
+//     returnreference() = 200;
+//     cout << "Modified value:" << globalvar << endl;
+//     int &ref = returnreference();
+//     ref = 300;
+//     cout << "Modified again " << globalvar << endl;
+//     return 0;
+// }
+
+// Overloaded functions
+void print(int i)
 {
-    return globalvar;
+    cout << "Printing int: " << i << endl;
 }
+
+void print(double f)
+{
+    cout << "Printing float: " << f << endl;
+}
+
+void print(const string &s)
+{
+    cout << "Printing string: " << s << endl;
+}
+
 int main()
 {
-    cout << "Original value: " << globalvar << endl;
-    returnreference() = 200;
-    cout << "Modified value:" << globalvar << endl;
-    int &ref = returnreference();
-    ref = 300;
-    cout << "Modified again " << globalvar << endl;
+    print(5);
+    print(3.14);
+    print("Hello World");
     return 0;
 }
