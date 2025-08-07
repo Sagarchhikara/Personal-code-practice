@@ -249,25 +249,38 @@ using namespace std;
 // }
 
 // Overloaded functions
-void print(int i)
-{
-    cout << "Printing int: " << i << endl;
-}
-
-void print(double f)
-{
-    cout << "Printing float: " << f << endl;
-}
-
-void print(const string &s)
-{
-    cout << "Printing string: " << s << endl;
-}
-
+//
 int main()
 {
-    print(5);
-    print(3.14);
-    print("Hello World");
+    // Simple lambda
+    auto greet = []()
+    {
+        cout << "Hello from lambda!" << endl;
+    };
+    greet();
+
+    // Lambda with parameters
+    auto add = [](int a, int b)
+    {
+        return a + b;
+    };
+    cout << "5 + 3 = " << add(5, 3) << endl;
+
+    // Lambda with capture
+    int x = 10;
+    auto captureExample = [x](int y)
+    {
+        cout << "Captured x: " << x << ", parameter y: " << y << endl;
+    };
+    captureExample(20);
+
+    // Using lambda with STL algorithm
+    vector<int> numbers = {1, 2, 3, 4, 5};
+    cout << "Even numbers: ";
+    for_each(numbers.begin(), numbers.end(), [](int n)
+             {
+        if (n % 2 == 0) cout << n << " "; });
+    cout << endl;
+
     return 0;
 }
