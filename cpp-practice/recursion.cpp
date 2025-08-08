@@ -28,7 +28,7 @@ using namespace std;
 //     cout << result << endl;
 //     return 0;
 // }
-// fibonnaci series using recursion
+// fibonnaci series using recursionw
 // int fibonnaci(int n)
 // {
 //     if (n <= 1)
@@ -44,3 +44,16 @@ using namespace std;
 //     }
 //     return 0;
 // }
+// tail recusrion
+void tailrec(int n)
+{
+    if (n == 0)
+        return;
+    cout << n << " ";
+    tailrec(n - 1);
+}
+int main()
+{
+    tailrec(5);
+    return 0;
+}
