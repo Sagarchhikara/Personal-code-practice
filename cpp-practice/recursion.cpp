@@ -13,18 +13,34 @@ using namespace std;
 //     return 0;
 // }
 // factorial using recurion
-int factorial(int n)
+// int factorial(int n)
+// {
+//     if (n <= 1)
+//         return 1;
+//     return n * factorial(n - 1);
+// }
+// int main()
+// {
+//     cout << "Enter the number you want factorial of:\n";
+//     int a;
+//     cin >> a;
+//     int result = factorial(a);
+//     cout << result << endl;
+//     return 0;
+// }
+// fibonnaci series using recursion
+int fibonnaci(int n)
 {
     if (n <= 1)
-        return 1;
-    return n * factorial(n - 1);
+        return n;
+    return fibonnaci(n - 1) + fibonnaci(n - 1);
 }
 int main()
 {
-    cout << "Enter the number you want factorial of:\n";
-    int a;
-    cin >> a;
-    int result = factorial(a);
-    cout << result << endl;
+    for (int i = 0; i < 6; i++)
+    {
+        /* code */
+        cout << fibonnaci(i) << " ";
+    }
     return 0;
 }
