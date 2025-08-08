@@ -29,18 +29,18 @@ using namespace std;
 //     return 0;
 // }
 // fibonnaci series using recursion
-int fibonnaci(int n)
-{
-    if (n <= 1)
-        return n;
-    return fibonnaci(n - 1) + fibonnaci(n - 1);
-}
-int main()
-{
-    for (int i = 0; i < 6; i++)
-    {
-        /* code */
-        cout << fibonnaci(i) << " ";
-    }
-    return 0;
-}
+// int fibonnaci(int n)
+// {
+//     if (n <= 1)
+//         return n;
+//     return fibonnaci(n - 1) + fibonnaci(n - 1);
+// }
+// int main()
+// {
+//     for (int i = 0; i < 6; i++)
+//     {
+//         /* code */
+//         cout << fibonnaci(i) << " ";
+//     }
+//     return 0;
+// }
