@@ -237,6 +237,7 @@ using namespace std;
 // {
 //     return globalvar;
 // }
+<<<<<<< Updated upstream
 // int main()
 // {
 //     cout << "Original value: " << globalvar << endl;
@@ -247,6 +248,23 @@ using namespace std;
 //     cout << "Modified again " << globalvar << endl;
 //     return 0;
 // }
+=======
+// int main(){
+//     auto add=[](int a, int b) {
+//         return a + b;
+//     };
+//     cout << "Sum: " << add(5, 3) << endl;
+//     return 0;
+// }
+int main(){
+    int x=10;
+    auto show=[x](){
+        cout<< "Value of x: " << x << endl;
+    };
+    show();
+    return 0;
+}
+>>>>>>> Stashed changes
 
 // Overloaded functions
 //
