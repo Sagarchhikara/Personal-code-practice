@@ -300,18 +300,18 @@ using namespace std;
 
 //     return 0;
 //  simple binary tree 
-struct node{
-    int data; 
-    node*left;
-    node*right;
+// struct node{
+//     int data; 
+//     node*left;
+//     node*right;
 
-};
-int main(){
-    node*root=new node(1,nullptr,nullptr);
-    root->left=new node(2,nullptr,nullptr);
-    root->right=new node(3,nullptr,nullptr);
-    cout<<"Root: "<<root->data<<endl;
-    cout<<"Left child: "<<root->left->data<<endl;
-    cout<<"Right child: "<<root->right->data<<endl;
-    return 0;
-}
+// };
+// int main(){
+//     node*root=new node(1,nullptr,nullptr);
+//     root->left=new node(2,nullptr,nullptr);
+//     root->right=new node(3,nullptr,nullptr);
+//     cout<<"Root: "<<root->data<<endl;
+//     cout<<"Left child: "<<root->left->data<<endl;
+//     cout<<"Right child: "<<root->right->data<<endl;
+//     return 0;
+// }
