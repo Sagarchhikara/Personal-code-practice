@@ -237,7 +237,6 @@ using namespace std;
 // {
 //     return globalvar;
 // }
-<<<<<<< Updated upstream
 // int main()
 // {
 //     cout << "Original value: " << globalvar << endl;
@@ -248,7 +247,7 @@ using namespace std;
 //     cout << "Modified again " << globalvar << endl;
 //     return 0;
 // }
-=======
+
 // int main(){
 //     auto add=[](int a, int b) {
 //         return a + b;
@@ -256,15 +255,14 @@ using namespace std;
 //     cout << "Sum: " << add(5, 3) << endl;
 //     return 0;
 // }
-int main(){
-    int x=10;
-    auto show=[x](){
-        cout<< "Value of x: " << x << endl;
-    };
-    show();
-    return 0;
-}
->>>>>>> Stashed changes
+// int main(){
+//     int x=10;
+//     auto show=[x](){
+//         cout<< "Value of x: " << x << endl;
+//     };
+//     show();
+//     return 0;
+// }
 
 // Overloaded functions
 //
@@ -301,4 +299,19 @@ int main(){
 //     cout << endl;
 
 //     return 0;
-// }
+//  simple binary tree 
+struct node{
+    int data; 
+    node*left;
+    node*right;
+
+};
+int main(){
+    node*root=new node(1,nullptr,nullptr);
+    root->left=new node(2,nullptr,nullptr);
+    root->right=new node(3,nullptr,nullptr);
+    cout<<"Root: "<<root->data<<endl;
+    cout<<"Left child: "<<root->left->data<<endl;
+    cout<<"Right child: "<<root->right->data<<endl;
+    return 0;
+}
