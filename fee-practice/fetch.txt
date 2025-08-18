@@ -5,3 +5,5 @@ what is json
 useful for getting api and language indepent 
 supports nested data structures 
 exapmels of json 
+difference between json and object is that we need to enter the data in strings in json 
+like "name":"Alice"

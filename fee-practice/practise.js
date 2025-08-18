@@ -34,3 +34,5 @@
 // text based format(does not follow binary)
 // useful for getting api and language indepent
 // supports nested data structures 
+const str = '{"name":"adam"}';
+console.log(str.name)
