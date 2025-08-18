@@ -18,15 +18,16 @@ using namespace std;
 //     int prevpower = power(n, p - 1);
 //     return n * prevpower;
 // }
-int factorial(int n)
-{
-    if (n == 0)
-    {
-        return 1;
-    }
-    int prevfact = factorial(n - 1);
-    return n * prevfact;
-}
+// int factorial(int n)
+// {
+//     if (n == 0)
+//     {
+//         return 1;
+//     }
+//     int prevfact = factorial(n - 1);
+//     return n * prevfact;
+// }
+
 int main()
 {
     int a = 5, b = 2;
