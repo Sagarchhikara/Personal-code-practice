@@ -9,20 +9,29 @@ using namespace std;
 //     int prevsum = sum(n - 1);
 //     return n + prevsum;
 // }
-int power(int n, int p)
+// int power(int n, int p)
+// {
+//     if (p == 0)
+//     {
+//         return 1;
+//     }
+//     int prevpower = power(n, p - 1);
+//     return n * prevpower;
+// }
+int factorial(int n)
 {
-    if (p == 0)
+    if (n == 0)
     {
         return 1;
     }
-    int prevpower = power(n, p - 1);
-    return n * prevpower;
+    int prevfact = factorial(n - 1);
+    return n * prevfact;
 }
 int main()
 {
     int a = 5, b = 2;
 
-    int result = power(a, b);
+    int result = factorial(a);
     cout << result << endl;
     return 0;
 }
