@@ -1,0 +1,7 @@
+what is json
+ json is java script object notiation is a lightweight data interchanges format that is easy for humans to read and write and easy for machines to understand
+ it is essentially a tex format that follows javasctpit object syntax
+ text based format(does not follow binary)
+useful for getting api and language indepent 
+supports nested data structures 
+exapmels of json 
