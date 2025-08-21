@@ -285,10 +285,10 @@ using namespace std;
 //     return 0;
 // }
 // pointers and arrays
-int main(int argc, char const *argv[])
-{
-    int arr[3] = {1, 2, 3};
-    int *ptr = arr;
-    cout << *(ptr + 1);
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     int arr[3] = {1, 2, 3};
+//     int *ptr = arr;
+//     cout << *(ptr + 1);
+//     return 0;
+// }
