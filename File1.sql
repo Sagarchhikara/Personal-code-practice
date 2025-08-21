@@ -40,3 +40,5 @@ VALUES (
     );
 
 SELECT * FROM exam_result;
+
+use dbg4
