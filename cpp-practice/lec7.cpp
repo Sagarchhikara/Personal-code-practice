@@ -57,6 +57,18 @@ int main(int argc, char const *argv[])
     string notation, f_n, g_n;
     cin >> notation >> f_n >> g_n;
     int f = growthvalue(f_n);
-
+    int g = growthvalue(g_n);
+    bool result = false;
+    if (notation == "o")
+        result = f <= g;
+    if (notation == "O")
+        result = f >= g;
+    if (notation == "ϴ")
+        result = f == g;
+    if (notation == "Θ")
+        result = f < g;
+    if (notation == "ω")
+        result = f > g;
+    cout << (result ? "True" : "False") << endl;
     return 0;
 }
