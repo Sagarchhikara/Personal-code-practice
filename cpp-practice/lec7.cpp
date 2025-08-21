@@ -28,11 +28,35 @@ using namespace std;
 //     return n * prevfact;
 // }
 
-int main()
-{
-    int a = 5, b = 2;
+// int main()
+// {
+//     int a = 5, b = 2;
 
-    int result = factorial(a);
-    cout << result << endl;
+//     int result = factorial(a);
+//     cout << result << endl;
+//     return 0;
+// }
+int growthvalue(string func)
+{
+    if (func == "i")
+        return 0;
+    if (func == "log(n)")
+        return 1;
+    if (func == "n")
+        return 2;
+    if (func == "n logn")
+        return 3;
+    if (func == "n^2")
+        return 4;
+    if (func == "n^3")
+        return 5;
+    return -1;
+}
+int main(int argc, char const *argv[])
+{
+    string notation, f_n, g_n;
+    cin >> notation >> f_n >> g_n;
+    int f = growthvalue(f_n);
+
     return 0;
 }
