@@ -284,3 +284,65 @@ using namespace std;
 
 //     return 0;
 // }
+// pointers and arrays
+// int main(int argc, char const *argv[])
+// {
+//     int arr[3] = {1, 2, 3};
+//     int *ptr = arr;
+//     cout << *(ptr + 1);
+//     return 0;
+// }
+// Empolyee payroll system wrtie a cpp program using constructor destructor and friend function constructor initalizes employee data (name and salary)a friend funstion comapres
+// two salaries and destructor displays a meesage when objects are destroyed
+// class empolyees
+// {
+//     string name;
+//     int salary;
+
+// public:
+//     empolyees(string n, int m)
+//     {
+//         name = n;
+//         salary = m;
+//         cout << "Constructor called for employees" << endl;
+//     }
+//     ~empolyees()
+//     {
+//         cout << "Destructor called for employees" << endl;
+//     }
+//     friend void highersalary(const empolyees &e1, const empolyees &e2);
+//     void display()
+//     {
+//         cout << "Name: " << name << " Salary: " << salary << endl;
+//     }
+// };
+
+// void highersalary(const empolyees &e1, const empolyees &e2)
+// {
+//     if (e1.salary > e2.salary)
+//     {
+//         cout << e1.name << " has a higher salary." << endl;
+//     }
+//     else if (e1.salary < e2.salary)
+//     {
+//         cout << e2.name << " has a higher salary." << endl;
+//     }
+//     else
+//     {
+//         cout << "Both have equal salary." << endl;
+//     }
+// }
+
+// // Example usage
+// int main()
+// {
+//     empolyees e1("Alice", 5000);
+//     empolyees e2("Bob", 6000);
+
+//     e1.display();
+//     e2.display();
+
+//     highersalary(e1, e2);
+
+//     return 0;
+// }
