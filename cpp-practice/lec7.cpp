@@ -83,44 +83,44 @@ using namespace std;
 // }
 // write a cpp program that demonstarstes the use of constructor destructor and freid function the constructor initalizes studentdata (name and marks)
 // the destructor displays a message when an object is destroyed and a friend function calculates
-class student
-{
-    string name;
-    int marks;
+// class student
+// {
+//     string name;
+//     int marks;
 
-public:
-    student(string n, int m)
-    {
-        name = n;
-        marks = m;
-        cout << "Constructor called for student: " << name << endl;
-    }
-    ~student()
-    {
-        cout << "Destructor called for student: " << name << endl;
-    }
-    void display()
-    {
-        cout << "Name: " << name << endl;
-        cout << "Marks: " << marks << endl;
-    }
-    friend void findaverage(student s1, student s2);
-};
-void findaverage(student s1, student s2)
-{
-    double avg = (s1.marks + s2.marks) / 2.0;
-    cout << "Average marks: " << avg << endl;
-}
+// public:
+//     student(string n, int m)
+//     {
+//         name = n;
+//         marks = m;
+//         cout << "Constructor called for student: " << name << endl;
+//     }
+//     ~student()
+//     {
+//         cout << "Destructor called for student: " << name << endl;
+//     }
+//     void display()
+//     {
+//         cout << "Name: " << name << endl;
+//         cout << "Marks: " << marks << endl;
+//     }
+//     friend void findaverage(student s1, student s2);
+// };
+// void findaverage(student s1, student s2)
+// {
+//     double avg = (s1.marks + s2.marks) / 2.0;
+//     cout << "Average marks: " << avg << endl;
+// }
 
-int main(int argc, char const *argv[])
-{
-    student s1("Alice", 85);
-    student s2("Bob", 90);
+// int main(int argc, char const *argv[])
+// {
+//     student s1("Alice", 85);
+//     student s2("Bob", 90);
 
-    s1.display();
-    s2.display();
+//     s1.display();
+//     s2.display();
 
-    findaverage(s1, s2);
+//     findaverage(s1, s2);
 
-    return 0;
-}
+//     return 0;
+// }
