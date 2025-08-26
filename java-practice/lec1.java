@@ -8,5 +8,8 @@ class stud {
         num = sc.nextInt();
         System.out.println("Entered roll number is: " + num);
 
+        string name;
+        System.out.println("Enter ");
+
     }
 }
