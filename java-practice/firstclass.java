@@ -1,8 +1,18 @@
-public class firstclass {
-    public static void main(String[] args) {
-        // output in java
-        System.out.println("*\n**\n***\n****\n ");
-        System.out.println("Hello World with java ");
+import  java.util.Scanner;
+class stud{
+    public  static  void main(String args[]){
+        int num;
+        System.out.println("enter the roll  number");
+        Scanner sc=new Scanner(System.in);
+        num=sc.nextInt();
+        String name;
+        System.out.println("enter the name  ");
+        name=sc.next();
+        System.out.println("Hello "+name);
+        float marks;
+        System.out.println("enter the marks ");
+        marks=sc.nextFloat();
+        System.out.println("Entered marks "+marks);
 
     }
 }
