@@ -1,4 +1,3 @@
-package java_practice;
 
 public class HelloWorld {
     public static void main(String[] args) {
