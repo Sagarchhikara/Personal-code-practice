@@ -43,5 +43,8 @@ public class Main {
         // int b = 20;
         // int mul = a * b;
         // System.out.println(mul);
+        Scanner sc = new Scanner(System.in);
+        String name = sc.next();
+        System.out.println(name);
     }
 }
