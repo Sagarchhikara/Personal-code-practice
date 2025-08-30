@@ -43,8 +43,15 @@ public class Main {
         // int b = 20;
         // int mul = a * b;
         // System.out.println(mul);
+        // Scanner sc = new Scanner(System.in);
+        // String name = sc.next();
+        // System.out.println(name);
+        int a, b;
         Scanner sc = new Scanner(System.in);
-        String name = sc.next();
-        System.out.println(name);
+        System.out.println("Enter 1st number:");
+        a = sc.nextInt();
+        System.out.println("Eter second number:");
+        b = sc.nextInt();
+        System.out.println("Sum: " + (a + b));
     }
 }
