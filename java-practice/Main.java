@@ -1,4 +1,5 @@
-import  java.util.Scanner;
+import java.util.Scanner;
+
 // class stud{
 //     public  static  void main(String args[]){
 //         int num;
@@ -22,3 +23,15 @@ import  java.util.Scanner;
 //     a=sc.nextInt();
 //     b=sc.nextInt();
 // wap to accept two integers and demostratte relational operators
+public class Main {
+    public static void main(string[] args) {
+        string name = "tony stark";
+        int age = 48;
+        double price = 25.25;
+        int a = 25;
+        int b = 10;
+
+        b = 20;
+        name = "ironman";
+    }
+}
