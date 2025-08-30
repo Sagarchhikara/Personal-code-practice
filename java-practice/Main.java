@@ -33,11 +33,11 @@ public class Main {
 
         // b = 20;
         // name = "ironman";
-        int a = 10;
-        int b = 20;
-        int sum = a + b;
-        int diff = a - b;
-        System.out.println("Sum: " + sum);
-        System.out.println("Difference: " + diff);
+        // int a = 10;
+        // int b = 20;
+        // int sum = a + b;
+        // int diff = a - b;
+        // System.out.println("Sum: " + sum);
+        // System.out.println("Difference: " + diff);
     }
 }
