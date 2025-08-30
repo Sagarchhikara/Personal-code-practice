@@ -24,8 +24,8 @@ import java.util.Scanner;
 //     b=sc.nextInt();
 // wap to accept two integers and demostratte relational operators
 public class Main {
-    public static void main(string[] args) {
-        string name = "tony stark";
+    public static void main(String[] args) {
+        String name = "tony stark";
         int age = 48;
         double price = 25.25;
         int a = 25;
