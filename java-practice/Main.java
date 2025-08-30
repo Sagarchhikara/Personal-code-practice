@@ -25,13 +25,19 @@ import java.util.Scanner;
 // wap to accept two integers and demostratte relational operators
 public class Main {
     public static void main(String[] args) {
-        String name = "tony stark";
-        int age = 48;
-        double price = 25.25;
-        int a = 25;
-        int b = 10;
+        // String name = "tony stark";
+        // int age = 48;
+        // double price = 25.25;
+        // int a = 25;
+        // int b = 10;
 
-        b = 20;
-        name = "ironman";
+        // b = 20;
+        // name = "ironman";
+        int a = 10;
+        int b = 20;
+        int sum = a + b;
+        int diff = a - b;
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + diff);
     }
 }
