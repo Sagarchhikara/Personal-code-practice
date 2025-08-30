@@ -39,9 +39,9 @@ public class Main {
         // int diff = a - b;
         // System.out.println("Sum: " + sum);
         // System.out.println("Difference: " + diff);
-        int a = 10;
-        int b = 20;
-        int mul = a * b;
-        System.out.println(mul);
+        // int a = 10;
+        // int b = 20;
+        // int mul = a * b;
+        // System.out.println(mul);
     }
 }
