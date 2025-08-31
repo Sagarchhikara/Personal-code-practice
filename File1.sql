@@ -51,6 +51,17 @@ USE project;
 
 CREATE table users (
     userid INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    phone VARCHAR(20) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE movies (
+    movieid INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    genre VARCHAR(100) NOT NULL,
+    language VARCHAR(50),
+    duration INT CHECK (duration > 0),
+    rating DECIMAL(3, 1) CHECK (rating BETWEEN 0 AND 10)
 )
