@@ -46,3 +46,5 @@ use dbg4
 CREATE DATABASE project;
 
 SHOW DATABASES;
+
+USE project;
