@@ -42,3 +42,5 @@ VALUES (
 SELECT * FROM exam_result;
 
 use dbg4
+
+CREATE DATABASE project
