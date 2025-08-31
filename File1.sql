@@ -43,4 +43,6 @@ SELECT * FROM exam_result;
 
 use dbg4
 
-CREATE DATABASE project
+CREATE DATABASE project;
+
+SHOW DATABASES;
