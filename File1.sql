@@ -48,3 +48,9 @@ CREATE DATABASE project;
 SHOW DATABASES;
 
 USE project;
+
+CREATE table users (
+    userid INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
