@@ -64,4 +64,4 @@ CREATE TABLE movies (
     language VARCHAR(50),
     duration INT CHECK (duration > 0),
     rating DECIMAL(3, 1) CHECK (rating BETWEEN 0 AND 10)
-)
+);
