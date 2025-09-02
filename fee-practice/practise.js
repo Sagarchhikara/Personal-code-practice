@@ -23,8 +23,16 @@
 //     console.log("ExponentiationResult after faulty calculation: " + Exponentiation);
 // };
 // faultyCalculator(1, 1);
-console.log("This is string tutorila")
-let a = "SagarChhikara"
-console.log(a[0])
-console.log(a[1])
-console.log(a.length)
+// console.log("This is string tutorila")
+// let a = "SagarChhikara"
+// console.log(a[0])
+// console.log(a[1])
+// console.log(a.length)
+// what is json
+// json is java script object notiation is a lightweight data interchanges format that is easy for humans to read and write and easy for machines to understand
+// it is essentially a tex format that follows javasctpit object syntax
+// text based format(does not follow binary)
+// useful for getting api and language indepent
+// supports nested data structures 
+const str = '{"name":"adam"}';
+console.log(str.name)
