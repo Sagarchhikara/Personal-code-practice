@@ -30,8 +30,8 @@ public class conditions {
         // // else{
         // // System.out.println("The number is odd");
         // // }
-        // System.out.println("Enter a number 1 ,2 ,3: ");
-        // int num = sc.nextInt();
+        System.out.println("Enter a number 1 ,2 ,3: ");
+        int num = sc.nextInt();
         // if (num == 1) {
         // System.out.println("Hello!");
         // } else if (num == 2) {
@@ -41,6 +41,17 @@ public class conditions {
         // } else {
         // System.out.println("Invalid input");
         // }
-
+        switch (num) {
+            case 1:
+                System.out.println("hello");
+                break;
+            case 2:
+                System.out.println("namste");
+                break;
+            case 3:
+                System.out.println("bonjour");
+            default:
+                break;
+        }
     }
 }
