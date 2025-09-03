@@ -248,6 +248,22 @@ using namespace std;
 //     return 0;
 // }
 
+// int main(){
+//     auto add=[](int a, int b) {
+//         return a + b;
+//     };
+//     cout << "Sum: " << add(5, 3) << endl;
+//     return 0;
+// }
+// int main(){
+//     int x=10;
+//     auto show=[x](){
+//         cout<< "Value of x: " << x << endl;
+//     };
+//     show();
+//     return 0;
+// }
+
 // Overloaded functions
 //
 // int main()
@@ -283,7 +299,29 @@ using namespace std;
 //     cout << endl;
 
 //     return 0;
+//  simple binary tree 
+// struct node{
+//     int data; 
+//     node*left;
+//     node*right;
+
+// };
+// int main(){
+//     node*root=new node(1,nullptr,nullptr);
+//     root->left=new node(2,nullptr,nullptr);
+//     root->right=new node(3,nullptr,nullptr);
+//     cout<<"Root: "<<root->data<<endl;
+//     cout<<"Left child: "<<root->left->data<<endl;
+//     cout<<"Right child: "<<root->right->data<<endl;
+//     return 0;
 // }
+int main(){
+    int arr[5]={1, 2, 3, 4, 5};
+    for(int i=0; i<5; i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
 // pointers and arrays
 // int main(int argc, char const *argv[])
 // {
