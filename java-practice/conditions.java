@@ -58,34 +58,28 @@ import java.util.*;
 
 public class conditions {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the first number:");
-        int a=sc.nextInt();
+        int a = sc.nextInt();
         System.out.println("Enter the second number:");
-        int b=sc.nextInt();
+        int b = sc.nextInt();
         System.out.println("Enter the number of operation:");
-        int num =sc.nextInt();
+        int num = sc.nextInt();
         switch (num) {
             case 1:
-            System.out.println("The sum of nmber is"+(a+b));
-            break;
+                System.out.println("The sum of nmber is" + (a + b));
+                break;
             case 2:
-            System.out.println("The subtraction of number is:"+(a-b));
-            break;
+                System.out.println("The subtraction of number is:" + (a - b));
+                break;
             case 3:
-            System.out.println("The multiplication of number is"+(a*b));
-            
-            break;ase 1:
-            
-            break;ase 1:
-            
-            break;ase 1:
-            
-            break;ase 1:
-            
-            break;
-        
+                System.out.println("The multiplication of number is" + (a * b));
+                break;
+            case 4:
+                System.out.println("The division of number is" + (a / b));
+                break;
             default:
+                System.out.println("Invalid operation");
                 break;
         }
 
