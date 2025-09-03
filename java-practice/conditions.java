@@ -51,6 +51,7 @@ public class conditions {
             case 3:
                 System.out.println("bonjour");
             default:
+                System.out.println("Invaluid input ");
                 break;
         }
     }
