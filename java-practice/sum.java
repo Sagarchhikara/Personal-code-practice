@@ -5,6 +5,9 @@ public class Sum {
         sum();
 
     }
+    static void sum2(){
+        
+    }
 
     static void sum() {
         Scanner sc = new Scanner(System.in);
