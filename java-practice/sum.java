@@ -7,15 +7,16 @@ public class Sum {
         // System.out.println(ans);
         // String message = greet();
         // System.out.println(message);
-        int ans = sum3(2, 3);
-        System.out.println(ans);
+        // int ans = sum3(2, 3);
+        // System.out.println(ans);
+        String personalized= String mygreet();
 
     }
 
-    static int sum3(int a, int b) {
-        int sum = a + b;
-        return sum;
-    }
+    // static int sum3(int a, int b) {
+    // int sum = a + b;
+    // return sum;
+    // }
 
     // // return value
     // static int sum2() {
