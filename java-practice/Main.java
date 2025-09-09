@@ -54,7 +54,7 @@ public class Main {
         // b = sc.nextInt();
         // System.out.println("Sum: " + (a + b));
         // }
-        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("How many students? ");
         int count = sc.nextInt();
