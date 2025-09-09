@@ -8,6 +8,7 @@ public class Sum {
         // String message = greet();
         // System.out.println(message);
         int ans = sum3(2, 3);
+        System.out.println(ans);
 
     }
 
