@@ -54,6 +54,13 @@ public class Main {
         // b = sc.nextInt();
         // System.out.println("Sum: " + (a + b));
         // }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your roll number");
+        int rollno = sc.nextInt();
+        System.out.println("Enter your name");
+        String name = sc.nextLine();
+        System.out.println("Enter your marks");
+        int marks = sc.nextInt();
 
     }
 }
