@@ -61,6 +61,12 @@ public class Main {
         String name = sc.nextLine();
         System.out.println("Enter your marks");
         int marks = sc.nextInt();
-
+        System.out.println("\n+-----------------+----------------------+");
+        System.out.println("| Attribute       | Value                |");
+        System.out.println("+-----------------+----------------------+");
+        System.out.printf("| Roll Number    | %-20d |\n", rollno);
+        System.out.printf("| Name           | %-20s |\n", name);
+        System.out.printf("| Marks          | %-20d |\n", marks);
+        System.out.println("+-----------------+----------------------+");
     }
 }
