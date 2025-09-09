@@ -67,21 +67,25 @@ public class conditions {
         int num = sc.nextInt();
         switch (num) {
             case 1:
-                System.out.println("The sum of nmber is" + (a + b));
+                System.out.println("The sum of number is " + (a + b));
                 break;
             case 2:
-                System.out.println("The subtraction of number is:" + (a - b));
+                System.out.println("The subtraction of number is " + (a - b));
                 break;
             case 3:
-                System.out.println("The multiplication of number is" + (a * b));
+                System.out.println("The multiplication of number is " + (a * b));
                 break;
             case 4:
-                System.out.println("The division of number is" + (a / b));
+                if (b != 0) {
+                    System.out.println("The division of number is " + (a / b));
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
                 break;
             default:
                 System.out.println("Invalid operation");
                 break;
         }
-
+        sc.close();
     }
 }
