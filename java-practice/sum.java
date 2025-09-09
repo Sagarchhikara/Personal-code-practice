@@ -5,9 +5,15 @@ public class Sum {
 
         // int ans = sum2();
         // System.out.println(ans);
-        String message = greet();
-        System.out.println(message);
+        // String message = greet();
+        // System.out.println(message);
+        int ans = sum3(2, 3);
 
+    }
+
+    static int sum3(int a, int b) {
+        int sum = a + b;
+        return sum;
     }
 
     // // return value
@@ -28,8 +34,8 @@ public class Sum {
     // int b = sc.nextInt();
     // System.out.println("The sum of numbers is " + (a + b));
     // }
-    static String greet() {
-        String greeting = "how are you ";
-        return greeting;
-    }
+    // static String greet() {
+    // String greeting = "how are you ";
+    // return greeting;
+    // }
 }
