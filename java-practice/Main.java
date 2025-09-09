@@ -54,19 +54,46 @@ public class Main {
         // b = sc.nextInt();
         // System.out.println("Sum: " + (a + b));
         // }
+        import java.util.Scanner;
+
+public class StudentTableMultiple {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your roll number");
-        int rollno = sc.nextInt();
-        System.out.println("Enter your name");
-        String name = sc.nextLine();
-        System.out.println("Enter your marks");
-        int marks = sc.nextInt();
-        System.out.println("\n+-----------------+----------------------+");
-        System.out.println("| Attribute       | Value                |");
-        System.out.println("+-----------------+----------------------+");
-        System.out.printf("| Roll Number    | %-20d |\n", rollno);
-        System.out.printf("| Name           | %-20s |\n", name);
-        System.out.printf("| Marks          | %-20d |\n", marks);
-        System.out.println("+-----------------+----------------------+");
+        
+        System.out.print("How many students? ");
+        int count = sc.nextInt();
+        sc.nextLine();
+        
+        // Arrays to store data
+        int[] rollnos = new int[count];
+        String[] names = new String[count];
+        int[] marks = new int[count];
+        
+        // Input data
+        for (int i = 0; i < count; i++) {
+            System.out.println("\nStudent " + (i + 1) + ":");
+            System.out.print("Enter roll number: ");
+            rollnos[i] = sc.nextInt();
+            sc.nextLine();
+            
+            System.out.print("Enter name: ");
+            names[i] = sc.nextLine();
+            
+            System.out.print("Enter marks: ");
+            marks[i] = sc.nextInt();
+            sc.nextLine();
+        }
+        
+        // Display table
+        System.out.println("\n" + "=".repeat(50));
+        System.out.printf("| %-10s | %-20s | %-10s |\n", "Roll No", "Name", "Marks");
+        System.out.println("=".repeat(50));
+        
+        for (int i = 0; i < count; i++) {
+            System.out.printf("| %-10d | %-20s | %-10d |\n", rollnos[i], names[i], marks[i]);
+        }
+        System.out.println("=".repeat(50));
+    }
+}
     }
 }
