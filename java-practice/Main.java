@@ -95,4 +95,3 @@ public class StudentTableMultiple {
         System.out.println("=".repeat(50));
     }
 }
-    
