@@ -89,5 +89,6 @@ public class Main {
             System.out.printf("| %-10d | %-20s | %-10d |\n", rollnos[i], names[i], marks[i]);
         }
         System.out.println("=".repeat(50));
+        sc.close();
     }
 }
