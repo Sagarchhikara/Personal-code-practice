@@ -28,8 +28,10 @@
         }
 
         @media(max-width:500px) {
-            flex-direction: column;
+            #box {
+                flex-direction: column;
 
+            }
         }
 
         /* slide down transition top to bottom using css animation */
@@ -50,12 +52,14 @@
 <body>
     <div id="box">
         Box
-    </div>
-    <div id="box">
-        Box1
-    </div>
-    <div id="box">
-        Box2
+
+        <div id="box">
+            Box1
+
+            <div id="box">
+                Box2
+            </div>
+        </div>
     </div>
 </body>
 
