@@ -277,3 +277,15 @@ VALUES (
     );
 
 SELECT * FROM product;
+
+CREATE table sale_details (
+    sale_id int PRIMARY KEY AUTO_INCREMENT,
+    sale_date DATE DEFAULT(CURRENT_DATE),
+    c_id INT,
+    p_id int,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (c_id) REFERENCES customer01 (id),
+    FOREIGN KEY (p_id) REFERENCES product (p_id)
+)
