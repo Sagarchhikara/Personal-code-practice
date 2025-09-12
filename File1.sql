@@ -320,3 +320,7 @@ SELECT * FROM sale_details;
 6.ORDER BY<ATTRIBUTE> [ASC|DESC] -- sort records
 7.LIMIT<N> -- limit number of records
 8.OFFSET<N> -- skip number of records
+
+SELECT * FROM sale_details WHERE c_id = 3 AND p_id = 4;
+
+SELECT * FROM sale_details WHERE ( c_id = 3 AND p_id = 4 ) OR quantity > 2;
