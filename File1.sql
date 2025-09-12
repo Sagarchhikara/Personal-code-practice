@@ -133,3 +133,12 @@ VALUES (
         '+1222333444',
         '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
     );
+
+use dbg4
+
+create table if not exists customer01 (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    gender CHAR(1) NOT NULL CHECK (gender IN ('M', 'F')),
+    contact_number VARCHAR(15) NOT NULL UNIQUE
+);
