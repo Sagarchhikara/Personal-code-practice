@@ -196,6 +196,7 @@ CREATE TABLE product (
     price DECIMAL(10, 2) NOT NULL check (price >= 0),
     quantity INT NOT NULL
 )
+
 INSERT INTO
     product (
         brand,
