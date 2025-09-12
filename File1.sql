@@ -289,7 +289,7 @@ CREATE table sale_details (
     FOREIGN KEY (c_id) REFERENCES customer01 (id),
     FOREIGN KEY (p_id) REFERENCES product (p_id)
 )
--- Alternative example with more varied quantities and multiple sales for some customers
+
 INSERT INTO
     sale_details (
         c_id,
@@ -309,3 +309,4 @@ VALUES (1, 5, 3, 29.99, 89.97), -- Alice buys 3 T-Shirts
     (4, 2, 1, 449.99, 449.99), -- Diana buys a Tablet
     (6, 6, 1, 299.99, 299.99);
 -- Fiona buys a Mixer
+DELETE from sale_details
