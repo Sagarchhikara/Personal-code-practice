@@ -142,3 +142,48 @@ create table if not exists customer01 (
     gender CHAR(1) NOT NULL CHECK (gender IN ('M', 'F')),
     contact_number VARCHAR(15) NOT NULL UNIQUE
 );
+
+INSERT INTO
+    customer01 (name, gender, contact_number)
+VALUES (
+        'Alice Johnson',
+        'F',
+        '555-0101'
+    ),
+    ('Bob Smith', 'M', '555-0102'),
+    (
+        'Charlie Brown',
+        'M',
+        '555-0103'
+    ),
+    (
+        'Diana Prince',
+        'F',
+        '555-0104'
+    ),
+    ('Evan Davis', 'M', '555-0105'),
+    (
+        'Fiona Clark',
+        'F',
+        '555-0106'
+    ),
+    (
+        'George Wilson',
+        'M',
+        '555-0107'
+    ),
+    (
+        'Hannah Martinez',
+        'F',
+        '555-0108'
+    ),
+    (
+        'Ian Thompson',
+        'M',
+        '555-0109'
+    ),
+    (
+        'Jessica Garcia',
+        'F',
+        '555-0110'
+    );
