@@ -275,3 +275,5 @@ VALUES (
         749.99,
         8
     );
+
+SELECT * FROM product;
