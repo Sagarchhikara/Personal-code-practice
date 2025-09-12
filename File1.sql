@@ -309,4 +309,4 @@ VALUES (1, 5, 3, 29.99, 89.97), -- Alice buys 3 T-Shirts
     (4, 2, 1, 449.99, 449.99), -- Diana buys a Tablet
     (6, 6, 1, 299.99, 299.99);
 -- Fiona buys a Mixer
-DELETE from sale_details
+SELECT * FROM sale_details;
