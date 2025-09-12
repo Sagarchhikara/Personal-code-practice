@@ -323,4 +323,15 @@ SELECT * FROM sale_details;
 
 SELECT * FROM sale_details WHERE c_id = 3 AND p_id = 4;
 
-SELECT * FROM sale_details WHERE ( c_id = 3 AND p_id = 4 ) OR quantity > 2;
+SELECT *
+FROM sale_details
+WHERE (
+        c_id = 3
+        AND p_id = 4
+    )
+    OR quantity > 2;
+
+SELECT c_id, name, p_id, quantity
+FROM sale_details, customer01
+WHERE
+    sale_details.c_id = customer01.id;
