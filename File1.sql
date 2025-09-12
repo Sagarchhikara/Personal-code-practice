@@ -196,3 +196,81 @@ CREATE TABLE product (
     price DECIMAL(10, 2) NOT NULL check (price >= 0),
     quantity INT NOT NULL
 )
+INSERT INTO
+    product (
+        brand,
+        category,
+        sub_category,
+        price,
+        quantity
+    )
+VALUES (
+        'Apple',
+        'Electronics',
+        'Smartphone',
+        999.99,
+        25
+    ),
+    (
+        'Samsung',
+        'Electronics',
+        'Tablet',
+        449.99,
+        18
+    ),
+    (
+        'Nike',
+        'Clothing',
+        'Running Shoes',
+        129.99,
+        40
+    ),
+    (
+        'Sony',
+        'Electronics',
+        'Headphones',
+        199.99,
+        30
+    ),
+    (
+        'Adidas',
+        'Clothing',
+        'T-Shirt',
+        29.99,
+        100
+    ),
+    (
+        'KitchenAid',
+        'Home & Kitchen',
+        'Mixer',
+        299.99,
+        15
+    ),
+    (
+        'Dell',
+        'Electronics',
+        'Laptop',
+        1299.99,
+        12
+    ),
+    (
+        'Levi''s',
+        'Clothing',
+        'Jeans',
+        59.99,
+        75
+    ),
+    (
+        'Philips',
+        'Home & Kitchen',
+        'Air Fryer',
+        89.99,
+        22
+    ),
+    (
+        'Canon',
+        'Electronics',
+        'Camera',
+        749.99,
+        8
+    );
