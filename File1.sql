@@ -310,3 +310,13 @@ VALUES (1, 5, 3, 29.99, 89.97), -- Alice buys 3 T-Shirts
     (6, 6, 1, 299.99, 299.99);
 -- Fiona buys a Mixer
 SELECT * FROM sale_details;
+
+-- query in sql
+1. SELECT<ATTRIBUTE>
+2.FROM<TABLE>
+3.WHERE<CONDITION> -- filter records 
+4.GROUP BY<ATTRIBUTE> -- aggregate functions summarize data 
+5.HAVING<CONDITION> -- filter groups 
+6.ORDER BY<ATTRIBUTE> [ASC|DESC] -- sort records
+7.LIMIT<N> -- limit number of records
+8.OFFSET<N> -- skip number of records
