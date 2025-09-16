@@ -2,7 +2,7 @@ class RecipeFinder {
     constructor() {
         // Edamam API credentials (You need to replace these with your actual API credentials)
         this.APP_ID = 'your_app_id_here';
-        this.APP_KEY = 'your_app_key_here';
+        this.APP_KEY = '615f6e39d4f2d9fe4e4530a9c7a78991';
         this.BASE_URL = 'https://api.edamam.com/search';
 
         // Application state
