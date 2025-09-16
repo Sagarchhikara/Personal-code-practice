@@ -89,3 +89,26 @@
 
 // var a = prompt("Enter a number: ");
 // console.log(
+const inputButton = document.getElementById("inputButton")
+
+const apiKey = "933aa8c69fa6508450dd68cd7843892d"
+
+const base_url = "https://api.openweathermap.org/data/2.5/"
+
+async function HandleFetch(weather) {
+    const output = document.getElementById("output");
+
+    const response = await fetch(${ base_url }weather ? q = ${ weather } & appid=${ apiKey })
+    const data = await response.json()
+    console.log(data)
+    output.innerHTML = `
+            <p>Temp:${data.main.temp}</p>
+            <p>Humidity:${data.main.humidity}</p>`
+
+}
+
+inputButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const weather = document.getElementById("cityName").value.trim();
+    HandleFetch(weather)
+})
