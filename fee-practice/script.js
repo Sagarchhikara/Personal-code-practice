@@ -85,7 +85,7 @@
 // else {
 //     console.log("You cannot drive")
 // }
-<button onclick="alert('Button clicked!')">Click Me</button>
+//<button onclick="alert('Button clicked!')">Click Me</button>
 
 // var a = prompt("Enter a number: ");
 // console.log(
