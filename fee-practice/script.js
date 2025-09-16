@@ -98,7 +98,7 @@ const base_url = "https://api.openweathermap.org/data/2.5/"
 async function HandleFetch(weather) {
     const output = document.getElementById("output");
 
-    const response = await fetch(${ base_url }weather ? q = ${ weather } & appid=${ apiKey })
+    const response = await fetch(`${base_url}weather?q=${weather}&appid=${apiKey}`)
     const data = await response.json()
     console.log(data)
     output.innerHTML = `
