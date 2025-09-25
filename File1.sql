@@ -416,3 +416,5 @@ VALUES (
     );
 
 select * from product;
+
+create table sales_vi
