@@ -382,7 +382,7 @@ insert into
         price,
         quantity
     ) value (
-        ' wrangler',
+        'being human',
         'jeans',
         'A',
         3200,
