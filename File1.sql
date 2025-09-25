@@ -335,3 +335,66 @@ SELECT c_id, name, p_id, quantity
 FROM sale_details, customer01
 WHERE
     sale_details.c_id = customer01.id;
+
+create database st3;
+
+use st3;
+
+create table customer like project.customer01;
+
+insert into st3.customer select * from project.customer01;
+
+create table sales_details like project.student;
+
+insert into st3.sales_details select * from project.student;
+
+create table product like project.product;
+
+insert into st3.product select * from project.product;
+
+select * from product;
+
+alter table product add column discount int1;
+
+desc product;
+
+update product set discount = 5;
+
+select discount from product;
+
+create view product_view1 as
+select
+    p_id,
+    brand,
+    category,
+    sub_category,
+    price,
+    quantity
+from product;
+
+select * from product_view1;
+
+insert into
+    product_view1 (
+        brand,
+        category,
+        sub_category,
+        price,
+        quantity
+    ) value (
+        ' wrangler',
+        'jeans',
+        'A',
+        3200,
+        10
+    );
+
+select * from product_view1;
+
+select * from product;
+
+update product_view1
+set
+    quantity = quantity + 10
+where
+    brand = 'wrangler';
