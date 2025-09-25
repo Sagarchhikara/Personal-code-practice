@@ -417,4 +417,4 @@ VALUES (
 
 select * from product;
 
-create table sales_vi
+create table sales_views2
