@@ -397,4 +397,22 @@ update product_view1
 set
     quantity = quantity + 10
 where
-    brand = 'wrangler';
+    brand = 'being human';
+
+INSERT into
+    product_view1 (
+        brand,
+        category,
+        sub_category,
+        price,
+        quantity
+    )
+VALUES (
+        'being human',
+        'jeans',
+        'A',
+        3200,
+        10
+    );
+
+select * from product;
