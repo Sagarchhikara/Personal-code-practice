@@ -298,15 +298,15 @@ INSERT INTO
         price,
         amount
     )
-VALUES (1, 5, 3, 29.99, 89.97), -- Alice buys 3 T-Shirts
-    (2, 1, 1, 999.99, 999.99), -- Bob buys an iPhone
-    (3, 4, 2, 199.99, 399.98), -- Charlie buys 2 Headphones
-    (5, 9, 1, 89.99, 89.99), -- Evan buys an Air Fryer
-    (5, 5, 1, 29.99, 29.99), -- Evan also buys a T-Shirt
-    (7, 8, 2, 59.99, 119.98), -- George buys 2 Jeans
-    (8, 3, 1, 129.99, 129.99), -- Hannah buys Running Shoes
-    (10, 10, 1, 749.99, 749.99), -- Jessica buys a Camera
-    (4, 2, 1, 449.99, 449.99), -- Diana buys a Tablet
+VALUES (1, 5, 3, 29.99, 89.97),
+    (2, 1, 1, 999.99, 999.99),
+    (3, 4, 2, 199.99, 399.98),
+    (5, 9, 1, 89.99, 89.99),
+    (5, 5, 1, 29.99, 29.99),
+    (7, 8, 2, 59.99, 119.98),
+    (8, 3, 1, 129.99, 129.99),
+    (10, 10, 1, 749.99, 749.99),
+    (4, 2, 1, 449.99, 449.99),
     (6, 6, 1, 299.99, 299.99);
 -- Fiona buys a Mixer
 SELECT * FROM sale_details;
@@ -344,9 +344,9 @@ create table customer like project.customer01;
 
 insert into st3.customer select * from project.customer01;
 
-create table sales_details like project.student;
+create table sales_details like project.sale_details;
 
-insert into st3.sales_details select * from project.student;
+insert into st3.sales_details select * from project.sale_details;
 
 create table product like project.product;
 
@@ -381,7 +381,8 @@ insert into
         sub_category,
         price,
         quantity
-    ) value (
+    )
+VALUES (
         'being human',
         'jeans',
         'A',
@@ -417,4 +418,66 @@ VALUES (
 
 select * from product;
 
-create table sales_views2
+--stored procedures : named collection of commands
+-- need to call it to execute it COMMENT
+
+DELIMITER /
+/
+
+CREATE PROCEDURE product_p1() 
+begin 
+    INSERT into product (brand,category,sub_category,price,quantity)
+    VALUES ('puma','shoes','sports',4500,20);
+    select * from product where p_id>5;
+    end
+/
+/
+;
+DELIMITER;
+
+CALL product_p1 ();
+
+DELIMITER /
+/
+
+delimiter /
+/
+
+create procedure product_p3(IN id int1)
+begin
+delete from product where p_id = id;
+update product set discount = discount+1;
+select * from product where p_id > 5;
+end
+/
+/
+
+delimiter;
+
+call product_p3 (9);
+
+delimiter /
+/
+
+create procedure product_p4(IN id int1 , IN disc int1)
+begin
+delete from product where p_id = id;
+update product set discount = disc;
+select * from product where p_id > 5;
+end
+/
+/
+
+delimiter;
+
+call product_p4 (10, 6);
+
+DELIMITER / /
+CREATE PROCEDURE product_p5 (OUT p_count INT) begin
+SELECT *
+from product into p_count;
+
+end / / DELIMITER;
+
+CALL product_p5 (@total);
+
