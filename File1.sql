@@ -418,5 +418,7 @@ VALUES (
 select * from product;
 
 --stored procedures : named collection of commands 
--- need to call it to execute it 
+-- need to call it to execute it COMMENT
 
+DELIMITER //
+CREATE PROCEDURE product_p1() 
