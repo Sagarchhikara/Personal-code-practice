@@ -480,3 +480,4 @@ from product into p_count;
 end / / DELIMITER;
 
 CALL product_p5 (@total);
+
