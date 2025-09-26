@@ -344,9 +344,9 @@ create table customer like project.customer01;
 
 insert into st3.customer select * from project.customer01;
 
-create table sales_details like project.student;
+create table sales_details like project.sale_details;
 
-insert into st3.sales_details select * from project.student;
+insert into st3.sales_details select * from project.sale_details;
 
 create table product like project.product;
 
