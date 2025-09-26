@@ -421,7 +421,8 @@ select * from product;
 --stored procedures : named collection of commands
 -- need to call it to execute it COMMENT
 
-DELIMITER / /
+DELIMITER /
+/
 
 CREATE PROCEDURE product_p1() 
 begin 
