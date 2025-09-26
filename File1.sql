@@ -422,3 +422,9 @@ select * from product;
 
 DELIMITER //
 CREATE PROCEDURE product_p1() 
+begin 
+    INSERT into product (brand,category,sub_category,price,quantity)
+    VALUES ('puma','shoes','sports',4500,20);
+    select * from product where p_id>5;
+    end //;
+DELIMITER ;
