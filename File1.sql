@@ -434,3 +434,11 @@ begin
 /
 ;
 DELIMITER;
+
+CALL product_p1 ();
+
+DELIMITER / /
+CREATE PROCEDURE product_p2 () begin
+DELETE from product
+where
+    p_id = 11;
