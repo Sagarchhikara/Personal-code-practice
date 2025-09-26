@@ -417,4 +417,6 @@ VALUES (
 
 select * from product;
 
-create table sales_views2
+--stored procedures : collection of commands 
+-- need to call it to execute it 
+
