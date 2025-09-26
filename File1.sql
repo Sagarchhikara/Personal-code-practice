@@ -456,15 +456,27 @@ delimiter;
 
 call product_p3 (9);
 
-delimiter / /
+delimiter /
+/
 
 create procedure product_p4(IN id int1 , IN disc int1)
 begin
 delete from product where p_id = id;
 update product set discount = disc;
 select * from product where p_id > 5;
-end //
+end
+/
+/
 
 delimiter;
 
 call product_p4 (10, 6);
+
+DELIMITER / /
+CREATE PROCEDURE product_p5 (OUT p_count INT) begin
+SELECT *
+from product into p_count;
+
+end / / DELIMITER;
+
+CALL product_p5 (@total);
