@@ -17,27 +17,8 @@ CREATE TABLE exam_result (
 
 SELECT * FROM exam_result;
 
-INSERT INTO
-    exam_result (
-        roll_no,
-        sname,
-        gender,
-        exam_date,
-        sub_name1,
-        sub_name2,
-        marks1,
-        marks2
-    )
-VALUES (
-        1,
-        'John Doe',
-        'M',
-        '2023-10-01',
-        'Math',
-        'Science',
-        85,
-        90
-    );
+INSERT INTO exam_result (roll_no, sname, gender, exam_date, sub_name1, sub_name2, marks1, marks2)
+VALUES (1, 'John Doe', 'M', '2023-10-01', 'Math', 'Science', 85, 90);
 
 SELECT * FROM exam_result;
 
@@ -66,73 +47,17 @@ CREATE TABLE movies (
     rating DECIMAL(3, 1) CHECK (rating BETWEEN 0 AND 10)
 );
 
-INSERT INTO
-    users (
-        username,
-        email,
-        phone,
-        password
-    )
-VALUES (
-        'john_doe',
-        'john.doe@email.com',
-        '+1234567890',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'jane_smith',
-        'jane.smith@email.com',
-        '+1987654321',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'mike_wilson',
-        'mike.wilson@email.com',
-        '+1555123456',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'sarah_jones',
-        'sarah.jones@email.com',
-        '+1555987654',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'david_brown',
-        'david.brown@email.com',
-        '+1444333222',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'emily_davis',
-        'emily.davis@email.com',
-        '+1666777888',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'robert_taylor',
-        'robert.taylor@email.com',
-        '+1777888999',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'lisa_miller',
-        'lisa.miller@email.com',
-        '+1888999000',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'james_wilson',
-        'james.wilson@email.com',
-        '+1999000111',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    ),
-    (
-        'amy_clark',
-        'amy.clark@email.com',
-        '+1222333444',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
-    );
+INSERT INTO users (username, email, phone, password)
+VALUES ('john_doe', 'john.doe@email.com', '+1234567890', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('jane_smith', 'jane.smith@email.com', '+1987654321', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('mike_wilson', 'mike.wilson@email.com', '+1555123456', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('sarah_jones', 'sarah.jones@email.com', '+1555987654', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('david_brown', 'david.brown@email.com', '+1444333222', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('emily_davis', 'emily.davis@email.com', '+1666777888', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('robert_taylor', 'robert.taylor@email.com', '+1777888999', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('lisa_miller', 'lisa.miller@email.com', '+1888999000', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('james_wilson', 'james.wilson@email.com', '+1999000111', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+       ('amy_clark', 'amy.clark@email.com', '+1222333444', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
 use dbg4
 
@@ -143,50 +68,17 @@ create table if not exists customer01 (
     contact_number VARCHAR(15) NOT NULL UNIQUE
 );
 
-INSERT INTO
-    customer01 (name, gender, contact_number)
-VALUES (
-        'Alice Johnson',
-        'F',
-        '555-0101'
-    ),
-    ('Bob Smith', 'M', '555-0102'),
-    (
-        'Charlie Brown',
-        'M',
-        '555-0103'
-    ),
-    (
-        'Diana Prince',
-        'F',
-        '555-0104'
-    ),
-    ('Evan Davis', 'M', '555-0105'),
-    (
-        'Fiona Clark',
-        'F',
-        '555-0106'
-    ),
-    (
-        'George Wilson',
-        'M',
-        '555-0107'
-    ),
-    (
-        'Hannah Martinez',
-        'F',
-        '555-0108'
-    ),
-    (
-        'Ian Thompson',
-        'M',
-        '555-0109'
-    ),
-    (
-        'Jessica Garcia',
-        'F',
-        '555-0110'
-    );
+INSERT INTO customer01 (name, gender, contact_number)
+VALUES ('Alice Johnson', 'F', '555-0101'),
+       ('Bob Smith', 'M', '555-0102'),
+       ('Charlie Brown', 'M', '555-0103'),
+       ('Diana Prince', 'F', '555-0104'),
+       ('Evan Davis', 'M', '555-0105'),
+       ('Fiona Clark', 'F', '555-0106'),
+       ('George Wilson', 'M', '555-0107'),
+       ('Hannah Martinez', 'F', '555-0108'),
+       ('Ian Thompson', 'M', '555-0109'),
+       ('Jessica Garcia', 'F', '555-0110');
 
 CREATE TABLE product (
     p_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -197,84 +89,17 @@ CREATE TABLE product (
     quantity INT NOT NULL
 )
 
-INSERT INTO
-    product (
-        brand,
-        category,
-        sub_category,
-        price,
-        quantity
-    )
-VALUES (
-        'Apple',
-        'Electronics',
-        'Smartphone',
-        999.99,
-        25
-    ),
-    (
-        'Samsung',
-        'Electronics',
-        'Tablet',
-        449.99,
-        18
-    ),
-    (
-        'Nike',
-        'Clothing',
-        'Running Shoes',
-        129.99,
-        40
-    ),
-    (
-        'Sony',
-        'Electronics',
-        'Headphones',
-        199.99,
-        30
-    ),
-    (
-        'Adidas',
-        'Clothing',
-        'T-Shirt',
-        29.99,
-        100
-    ),
-    (
-        'KitchenAid',
-        'Home & Kitchen',
-        'Mixer',
-        299.99,
-        15
-    ),
-    (
-        'Dell',
-        'Electronics',
-        'Laptop',
-        1299.99,
-        12
-    ),
-    (
-        'Levi''s',
-        'Clothing',
-        'Jeans',
-        59.99,
-        75
-    ),
-    (
-        'Philips',
-        'Home & Kitchen',
-        'Air Fryer',
-        89.99,
-        22
-    ),
-    (
-        'Canon',
-        'Electronics',
-        'Camera',
-        749.99,
-        8
-    );
+INSERT INTO product (brand, category, sub_category, price, quantity)
+VALUES ('Apple', 'Electronics', 'Smartphone', 999.99, 25),
+       ('Samsung', 'Electronics', 'Tablet', 449.99, 18),
+       ('Nike', 'Clothing', 'Running Shoes', 129.99, 40),
+       ('Sony', 'Electronics', 'Headphones', 199.99, 30),
+       ('Adidas', 'Clothing', 'T-Shirt', 29.99, 100),
+       ('KitchenAid', 'Home & Kitchen', 'Mixer', 299.99, 15),
+       ('Dell', 'Electronics', 'Laptop', 1299.99, 12),
+       ('Levi''s', 'Clothing', 'Jeans', 59.99, 75),
+       ('Philips', 'Home & Kitchen', 'Air Fryer', 89.99, 22),
+       ('Canon', 'Electronics', 'Camera', 749.99, 8);
 
 SELECT * FROM product;
 
@@ -290,24 +115,17 @@ CREATE table sale_details (
     FOREIGN KEY (p_id) REFERENCES product (p_id)
 )
 
-INSERT INTO
-    sale_details (
-        c_id,
-        p_id,
-        quantity,
-        price,
-        amount
-    )
-VALUES (1, 5, 3, 29.99, 89.97), -- Alice buys 3 T-Shirts
-    (2, 1, 1, 999.99, 999.99), -- Bob buys an iPhone
-    (3, 4, 2, 199.99, 399.98), -- Charlie buys 2 Headphones
-    (5, 9, 1, 89.99, 89.99), -- Evan buys an Air Fryer
-    (5, 5, 1, 29.99, 29.99), -- Evan also buys a T-Shirt
-    (7, 8, 2, 59.99, 119.98), -- George buys 2 Jeans
-    (8, 3, 1, 129.99, 129.99), -- Hannah buys Running Shoes
-    (10, 10, 1, 749.99, 749.99), -- Jessica buys a Camera
-    (4, 2, 1, 449.99, 449.99), -- Diana buys a Tablet
-    (6, 6, 1, 299.99, 299.99);
+INSERT INTO sale_details (c_id, p_id, quantity, price, amount)
+VALUES (1, 5, 3, 29.99, 89.97),
+       (2, 1, 1, 999.99, 999.99),
+       (3, 4, 2, 199.99, 399.98),
+       (5, 9, 1, 89.99, 89.99),
+       (5, 5, 1, 29.99, 29.99),
+       (7, 8, 2, 59.99, 119.98),
+       (8, 3, 1, 129.99, 129.99),
+       (10, 10, 1, 749.99, 749.99),
+       (4, 2, 1, 449.99, 449.99),
+       (6, 6, 1, 299.99, 299.99);
 -- Fiona buys a Mixer
 SELECT * FROM sale_details;
 
@@ -374,20 +192,8 @@ from product;
 
 select * from product_view1;
 
-insert into
-    product_view1 (
-        brand,
-        category,
-        sub_category,
-        price,
-        quantity
-    ) value (
-        'being human',
-        'jeans',
-        'A',
-        3200,
-        10
-    );
+insert into product_view1 (brand, category, sub_category, price, quantity)
+VALUES ('being human', 'jeans', 'A', 3200, 10);
 
 select * from product_view1;
 
@@ -399,21 +205,8 @@ set
 where
     brand = 'being human';
 
-INSERT into
-    product_view1 (
-        brand,
-        category,
-        sub_category,
-        price,
-        quantity
-    )
-VALUES (
-        'being human',
-        'jeans',
-        'A',
-        3200,
-        10
-    );
+INSERT into product_view1 (brand, category, sub_category, price, quantity)
+VALUES ('being human', 'jeans', 'A', 3200, 10);
 
 select * from product;
 
