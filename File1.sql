@@ -440,15 +440,31 @@ CALL product_p1 ();
 DELIMITER /
 /
 
-delimiter / /
+delimiter /
+/
 
 create procedure product_p3(IN id int1)
 begin
 delete from product where p_id = id;
 update product set discount = discount+1;
 select * from product where p_id > 5;
-end //
+end
+/
+/
 
 delimiter;
 
 call product_p3 (9);
+
+delimiter / /
+
+create procedure product_p4(IN id int1 , IN disc int1)
+begin
+delete from product where p_id = id;
+update product set discount = disc;
+select * from product where p_id > 5;
+end //
+
+delimiter;
+
+call product_p4 (10, 6);
