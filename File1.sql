@@ -417,6 +417,6 @@ VALUES (
 
 select * from product;
 
---stored procedures : collection of commands 
+--stored procedures : named collection of commands 
 -- need to call it to execute it 
 
