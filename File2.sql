@@ -40,7 +40,7 @@ VALUES ('John Doe', 'M', '1234567890'),
     );
 
 CREATE TABLE exam (
-    id INT,
+    id INT PRIMARY KEY,
     subject VARCHAR(50) NOT NULL,
     marks INT CHECK (marks BETWEEN 0 AND 100),
     grade CHAR(1) CHECK (
