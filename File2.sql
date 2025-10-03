@@ -96,3 +96,12 @@ SET
         WHEN marks >= 60 THEN 'D'
         ELSE 'F'
     END;
+
+-- check duplicate id in exam table
+INSERT INTO exam (id, subject, marks, exam_date)
+VALUES (1, 'Physics', 88, '2023-05-06');
+ --
+ SELECT id, COUNT(*) AS cnt
+FROM exam
+GROUP BY id
+HAVING COUNT(*) > 1;
