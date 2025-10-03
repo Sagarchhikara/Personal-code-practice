@@ -15,19 +15,37 @@ CREATE TABLE student (
     contact_number VARCHAR(15) UNIQUE NOT NULL
 );
 
-INSERT INTO student (name, gender, contact_number)
-VALUES
-    ('John Doe', 'M', '1234567890'),
-    ('Jane Smith', 'F', '0987654321'),
-    ('Alice Johnson', 'F', '5555555555'),
-    ('Bob Brown', 'M', '4444444444'),
-    ('Charlie Davis', 'M', '3333333333');
+INSERT INTO
+    student (name, gender, contact_number)
+VALUES ('John Doe', 'M', '1234567890'),
+    (
+        'Jane Smith',
+        'F',
+        '0987654321'
+    ),
+    (
+        'Alice Johnson',
+        'F',
+        '5555555555'
+    ),
+    (
+        'Bob Brown',
+        'M',
+        '4444444444'
+    ),
+    (
+        'Charlie Davis',
+        'M',
+        '3333333333'
+    );
 
 CREATE TABLE exam (
     id INT,
     subject VARCHAR(50) NOT NULL,
-    marks INT CHECK (marks BETWEEN 0 AND 100),  
-    grade CHAR(1) CHECK (grade IN ('A', 'B', 'C', 'D', 'F')),
+    marks INT CHECK (marks BETWEEN 0 AND 100),
+    grade CHAR(1) CHECK (
+        grade IN ('A', 'B', 'C', 'D', 'F')
+    ),
     exam_date DATE NOT NULL,
-    CONSTRAINT fk_student FOREIGN KEY (id) REFERENCES student(id)
+    CONSTRAINT fk_student FOREIGN KEY (id) REFERENCES student (id)
 );
