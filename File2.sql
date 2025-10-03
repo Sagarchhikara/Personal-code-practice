@@ -87,6 +87,8 @@ VALUES (
 -- This will fail due to foreign key constraint
 
 -- Calculate grade based on marks
+ALTER TABLE exam ADD COLUMN grade CHAR(1);
+
 UPDATE exam
 SET
     grade = CASE
