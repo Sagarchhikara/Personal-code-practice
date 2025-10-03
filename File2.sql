@@ -49,3 +49,40 @@ CREATE TABLE exam (
     exam_date DATE NOT NULL,
     CONSTRAINT fk_student FOREIGN KEY (id) REFERENCES student (id)
 );
+
+INSERT INTO
+    exam (
+        id,
+        subject,
+        marks,
+        grade,
+        exam_date
+    )
+VALUES (
+        1,
+        'Mathematics',
+        95,
+        'A',
+        '2023-05-01'
+    ),
+    (
+        2,
+        'Science',
+        85,
+        'B',
+        '2023-05-02'
+    ),
+    (
+        3,
+        'History',
+        75,
+        'C',
+        '2023-05-03'
+    ),
+    (
+        4,
+        'Geography',
+        65,
+        'D',
+        '2023-05-04'
+    );
