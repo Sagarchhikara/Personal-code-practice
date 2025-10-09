@@ -109,3 +109,75 @@ SELECT * FROM exam;
 create DATABASE A1;
 
 use A1;
+-- create table student(id,name,gender,contact_number) use primary key,not null,check,unique contraints
+-- add 5 records
+-- create exam table(id,subject,marks,grade,exam_date) dont take id as primary key use forgien key contratint for marks and grade
+-- use not null and default constraint for exam date
+-- add 4 records
+
+CREATE Table student (
+    id INT PRIMARY KEY,
+    name VARCHAR(25) NOT NULL,
+    gender VARCHAR(1) CHECK (gender IN ('M', 'F')),
+    contact_number VARCHAR(10) UNIQUE NOT NULL
+);
+
+INSERT INTO
+    student (
+        id,
+        name,
+        gender,
+        contact_number
+    )
+VALUES (
+        1,
+        'Sagar Chhikara',
+        'M',
+        '1234567890'
+    ),
+    (
+        2,
+        'Ayusman ',
+        'M',
+        '987667897'
+    ),
+    (
+        3,
+        'Karmanya',
+        'M',
+        '5555555555'
+    ),
+    (
+        4,
+        'Aryan Malik',
+        'M',
+        '4444444444'
+    ),
+    (
+        5,
+        'Gourav sharma',
+        'M',
+        '3333333333'
+    );
+
+CREATE TABLE exam (
+    subject VARCHAR(50) NOT NULL,
+    marks INT CHECK (marks BETWEEN 0 AND 100),
+    grade CHAR(1) CHECK (
+        grade IN ('A', 'B', 'C', 'D', 'F')
+    ),
+    exam_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    CONSTRAINT fk_student FOREIGN KEY (id) REFERENCES student (id)
+);
+
+INSERT INTO
+    exam (
+        subject,
+        marks,
+        grade,
+        exam_date
+    )
+VALUES ('Dsa', 95, 'A', '2023-05-01'),
+    ('Dbms', 85, 'B', '2023-05-02'),
+    ('OOSE', 75, 'C', '2023-05-03'),
+    ('FEE', 65, 'D', '2023-05-04');
