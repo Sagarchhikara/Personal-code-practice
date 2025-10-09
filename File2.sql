@@ -197,3 +197,5 @@ SET
         WHEN marks >= 50 THEN 'C'
         ELSE 'F'
     END;
+
+-- show gender wise average ,maximum,and minimum marks
