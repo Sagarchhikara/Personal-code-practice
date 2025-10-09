@@ -113,7 +113,7 @@ use A1;
 -- add 5 records
 -- create exam table(id,subject,marks,grade,exam_date) dont take id as primary key use forgien key contratint for marks and grade
 -- use not null and default constraint for exam date
--- add 4 records
+-- add 4 records without grade data,sun should be same for all 4, dont use default for subject
 
 CREATE Table student (
     id INT PRIMARY KEY,
@@ -161,23 +161,9 @@ VALUES (
     );
 
 CREATE TABLE exam (
-    subject VARCHAR(50) NOT NULL,
+    id INT subject VARCHAR(50) NOT NULL,
     marks INT CHECK (marks BETWEEN 0 AND 100),
-    grade CHAR(1) CHECK (
-        grade IN ('A', 'B', 'C', 'D', 'F')
-    ),
+    grade CHAR(1),
     exam_date DATE NOT NULL DEFAULT CURRENT_DATE,
     CONSTRAINT fk_student FOREIGN KEY (id) REFERENCES student (id)
 );
-
-INSERT INTO
-    exam (
-        subject,
-        marks,
-        grade,
-        exam_date
-    )
-VALUES ('Dsa', 95, 'A', '2023-05-01'),
-    ('Dbms', 85, 'B', '2023-05-02'),
-    ('OOSE', 75, 'C', '2023-05-03'),
-    ('FEE', 65, 'D', '2023-05-04');
