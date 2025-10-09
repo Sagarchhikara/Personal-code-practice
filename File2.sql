@@ -199,3 +199,16 @@ SET
     END;
 
 -- show gender wise average ,maximum,and minimum marks
+SELECT
+    s.gender,
+    e.subject,
+    COUNT(*) as total_students,
+    ROUND(AVG(e.marks), 2) as average_marks,
+    MAX(e.marks) as maximum_marks,
+    MIN(e.marks) as minimum_marks
+FROM exam e
+    INNER JOIN student s ON e.id = s.id
+GROUP BY
+    s.gender,
+    e.subject
+ORDER BY s.gender, average_marks DESC;
