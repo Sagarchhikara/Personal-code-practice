@@ -179,3 +179,21 @@ VALUES (1, 'Dsa', 95),
 SELECT id, COUNT(*) AS cnt FROM exam GROUP BY id HAVING COUNT(*) > 1;
 
 INSERT into exam (id, subject, marks) values (1, 'Dsa', 90);
+
+-- remove duplicate from exam table
+DELETE e1
+FROM exam e1, exam e2
+WHERE
+    e1.id = e2.id
+    AND e1.marks < e2.marks;
+-- calculate  and update grade in exam table based on marks
+UPDATE exam
+SET
+    grade = CASE
+        WHEN marks >= 90 THEN 'O'
+        WHEN marks >= 80 THEN 'A+'
+        WHEN marks >= 70 THEN 'A'
+        WHEN marks >= 60 THEN 'B'
+        WHEN marks >= 50 THEN 'C'
+        ELSE 'F'
+    END;
