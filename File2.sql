@@ -175,3 +175,7 @@ VALUES (1, 'Dsa', 95),
     (2, 'Dsa', 80),
     (3, 'Dsa', 60),
     (4, 'Dsa', 50);
+-- check the duplicate data in exam table
+SELECT id, COUNT(*) AS cnt FROM exam GROUP BY id HAVING COUNT(*) > 1;
+
+INSERT into exam (id, subject, marks) values (1, 'Dsa', 90);
