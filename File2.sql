@@ -161,9 +161,17 @@ VALUES (
     );
 
 CREATE TABLE exam (
-    id INT subject VARCHAR(50) NOT NULL,
-    marks INT CHECK (marks BETWEEN 0 AND 100),
+    id INT,
+    subject VARCHAR(50) NOT NULL,
+    marks INT,
     grade CHAR(1),
-    exam_date DATE NOT NULL DEFAULT CURRENT_DATE,
-    CONSTRAINT fk_student FOREIGN KEY (id) REFERENCES student (id)
+    exam_date DATE NOT NULL DEFAULT(CURRENT_DATE),
+    FOREIGN KEY (id) REFERENCES student (id)
 );
+
+INSERT INTO
+    exam (id, subject, marks)
+VALUES (1, 'Dsa', 95),
+    (2, 'Dsa', 80),
+    (3, 'Dsa', 60),
+    (4, 'Dsa', 50);
