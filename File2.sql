@@ -179,5 +179,3 @@ VALUES (1, 'Dsa', 95),
 SELECT id, COUNT(*) AS cnt FROM exam GROUP BY id HAVING COUNT(*) > 1;
 
 INSERT into exam (id, subject, marks) values (1, 'Dsa', 90);
-
-remove duplicate data from exam table;
