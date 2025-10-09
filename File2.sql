@@ -105,5 +105,3 @@ SET
 SELECT id, COUNT(*) AS cnt FROM exam GROUP BY id HAVING COUNT(*) > 1;
 
 SELECT * FROM exam;
-
---
