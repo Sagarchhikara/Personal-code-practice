@@ -212,3 +212,7 @@ GROUP BY
     s.gender,
     e.subject
 ORDER BY s.gender, average_marks DESC;
+
+DELIMITER / /
+
+CREATE PROCEDURE temp_p1
