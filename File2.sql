@@ -232,3 +232,18 @@ END
 DELIMITER;
 
 call temp_p1 (15);
+
+DELIMITER / /
+
+CREATE PROCEDURE temp_p1(IN age INT1)
+BEGIN
+    IF age < 0 THEN
+        SELECT 'Please provide correct age' age;
+    ELSEIF age < 18 THEN
+        SELECT 'No. Not eligible for voting' age;
+    ELSE
+        SELECT 'Yes. Eligible for voting' age;
+    END IF;
+END //
+
+DELIMITER;
