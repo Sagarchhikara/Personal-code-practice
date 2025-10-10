@@ -213,6 +213,20 @@ GROUP BY
     e.subject
 ORDER BY s.gender, average_marks DESC;
 
-DELIMITER / /
+DELIMITER /
+/
 
-CREATE PROCEDURE temp_p1
+CREATE PROCEDURE temp_p1(IN age INT)
+BEGIN
+    IF age < 0 THEN
+        SELECT 'Please provide correct age' AS message;
+    ELSEIF age < 18 THEN
+        SELECT 'No. Not eligible for voting' AS message;
+    ELSE
+        SELECT 'Yes. Eligible for voting' AS message;
+    END IF;
+END
+/
+/
+
+DELIMITER;
