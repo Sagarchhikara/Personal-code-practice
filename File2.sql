@@ -230,3 +230,5 @@ END
 /
 
 DELIMITER;
+
+call temp_p1 (15);
