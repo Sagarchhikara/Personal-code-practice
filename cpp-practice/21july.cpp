@@ -55,10 +55,10 @@
 //         string department;
 //     }
 // };
-int main()
-{
-    A a1;
-    student s1(1, "ajay", "CSE");
-    s1.show();
-    return 0;
-}
+// int main()
+// {
+//     A a1;
+//     student s1(1, "ajay", "CSE");
+//     s1.show();
+//     return 0;
+// }
