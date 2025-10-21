@@ -34,21 +34,17 @@
 // }
 // incrementlaps()
 // incrementlaps()
-// let countEl=document.getElementById("count-el")
-// console.log(countEl)
-// let count=0;
-//  function increment(){
-//     count=count+1
-//    console.log(count)
-//    countEl.innerText=count
-//  }
-//  function save(){
-//     console.log(count)
-//  }
-let welcomeEL=document.getElementById("welcome-el")
-console.log(welcomeEL)
+let countEl=document.getElementById("count-el")
+console.log(countEl)
+let count=0;
+let saveEl=document.getElementById("save-el")
+ function increment(){
+    count+=1
+    countEl.innerText=count
+ }
+ function save(){
+    let countSTr=count+"-"
+    saveEl.innertext+=countSTr
+    console.log(count)
+ }
 
-let grettings= "Hello Your name is and welcome to"
-let name="sagar chhikara"
-
-welcomeEL.innerText=grettings+name
