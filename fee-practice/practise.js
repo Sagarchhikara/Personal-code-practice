@@ -64,13 +64,13 @@
 
 // let username='per'
 // console .log(username)
-let username="pper"
-let message="You have 3 new notifications"
-console.log(message+" "+username+"!")
-let messagetouser="You have logged in "
-console.log(messagetouser)
+// let username="pper"
+// let message="You have 3 new notifications"
+// console.log(message+" "+username+"!")
+// let messagetouser="You have logged in "
+// console.log(messagetouser)
 
-let name="42 "
-let gretting="Hi My name is"
-let Mygreetings=gretting+name;
-console.log(Mygreetings)
+// let name="42 "
+// let gretting="Hi My name is"
+// let Mygreetings=gretting+name;
+// console.log(Mygreetings)
