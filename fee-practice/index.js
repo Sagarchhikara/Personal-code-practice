@@ -27,3 +27,17 @@
 //     console.log(sumlaps)
 // }
 // laplos()
+
+// let lapscompleted=0
+// function incrementlaps(){
+//     lapscompleted=lapscompleted+1
+// }
+// incrementlaps()
+// incrementlaps()
+
+let count =0
+function incremet(){
+    count=count+1
+    console.log(count)
+}
+increment()
