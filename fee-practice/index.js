@@ -42,3 +42,7 @@ let count=0;
    console.log(count)
    countEl.innerText=count
  }
+ function save(){
+    console.log(count)
+ }
+ save()
