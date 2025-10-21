@@ -45,4 +45,3 @@ let count=0;
  function save(){
     console.log(count)
  }
- save()
