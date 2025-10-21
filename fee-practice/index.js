@@ -34,14 +34,21 @@
 // }
 // incrementlaps()
 // incrementlaps()
-let countEl=document.getElementById("count-el")
-console.log(countEl)
-let count=0;
- function increment(){
-    count=count+1
-   console.log(count)
-   countEl.innerText=count
- }
- function save(){
-    console.log(count)
- }
+// let countEl=document.getElementById("count-el")
+// console.log(countEl)
+// let count=0;
+//  function increment(){
+//     count=count+1
+//    console.log(count)
+//    countEl.innerText=count
+//  }
+//  function save(){
+//     console.log(count)
+//  }
+let welcomeEL=document.getElementById("welcome-el")
+console.log(welcomeEL)
+
+let grettings= "Hello Your name is and welcome to"
+let name="sagar chhikara"
+
+welcomeEL.innerText=grettings+name
