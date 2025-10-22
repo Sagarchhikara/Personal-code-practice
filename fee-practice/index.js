@@ -44,7 +44,9 @@ let saveEl=document.getElementById("save-el")
  }
  function save(){
     let countStr=count + "-"
-    saveEl.innertext +=countStr
+    saveEl.textContent +=countStr
+    countEl.textContent=0
+    count=0
  
  }
 
