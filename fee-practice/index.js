@@ -43,8 +43,8 @@ let saveEl=document.getElementById("save-el")
     countEl.innerText=count
  }
  function save(){
-    let countSTr=count+"-"
-    saveEl.innertext+=countSTr
-    console.log(count)
+    let countStr=count + "-"
+    saveEl.innertext +=countStr
+ 
  }
 
