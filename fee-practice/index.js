@@ -51,16 +51,52 @@
 //  }
 
 
-firstName="Sagar"
-lastName="Chhikara"
-fullName=firstName+lastName
-console.log(fullName)
+// firstName="Sagar"
+// lastName="Chhikara"
+// fullName=firstName+lastName
+// console.log(fullName)
 
-let name="Sagar"
-let greeting="Hi there"
+// let name="Sagar"
+// let greeting="Hi there"
 
-function greting(){
-    let fullgreetung=greeting+","+name+"!"
-    console.log(fullgreetung)
+// function greting(){
+//     let fullgreetung=greeting+","+name+"!"
+//     console.log(fullgreetung)
+// }
+// greting()
+
+// let points=3
+
+// function add3points(){
+//    points+=3
+// }
+// function remove1point(){
+//    points-=1
+// }
+
+// add3points()
+// add3points()
+// add3points()
+// remove1point()
+// remove1point()
+// console.log(points)
+
+// let errorMsg=document.getElementById("error")
+
+// function showerror(){
+//    errorMsg.textContent="Something went wrong please try again"
+// }
+
+let firstCard= 10
+let secondCard=12
+let sum=firstCard+secondCard
+
+if(sum<21){
+   console.log("Do you want to draw a new card")
 }
-greting()
+else if(sum===21){
+   console.log("You have got blcakjack")
+}
+else if(sum>21){
+   console.log("You are out of the game")
+}
