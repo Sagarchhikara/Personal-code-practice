@@ -34,19 +34,33 @@
 // }
 // incrementlaps()
 // incrementlaps()
-let countEl=document.getElementById("count-el")
-console.log(countEl)
-let count=0;
-let saveEl=document.getElementById("save-el")
- function increment(){
-    count+=1
-    countEl.innerText=count
- }
- function save(){
-    let countStr=count + "-"
-    saveEl.textContent +=countStr
-    countEl.textContent=0
-    count=0
+// let countEl=document.getElementById("count-el")
+// console.log(countEl)
+// let count=0;
+// let saveEl=document.getElementById("save-el")
+//  function increment(){
+//     count+=1
+//     countEl.innerText=count
+//  }
+//  function save(){
+//     let countStr=count + "-"
+//     saveEl.textContent +=countStr
+//     countEl.textContent=0
+//     count=0
  
- }
+//  }
 
+
+firstName="Sagar"
+lastName="Chhikara"
+fullName=firstName+lastName
+console.log(fullName)
+
+let name="Sagar"
+let greeting="Hi there"
+
+function greting(){
+    let fullgreetung=greeting+","+name+"!"
+    console.log(fullgreetung)
+}
+greting()
