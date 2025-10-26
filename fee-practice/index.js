@@ -87,16 +87,20 @@
 //    errorMsg.textContent="Something went wrong please try again"
 // }
 
-let firstCard= 10
+let firstCard= 9
 let secondCard=12
 let sum=firstCard+secondCard
+
+let hasblackjack=false
 
 if(sum<21){
    console.log("Do you want to draw a new card")
 }
 else if(sum===21){
    console.log("You have got blcakjack")
+   hasblackjack=true
 }
-else if(sum>21){
+else {
    console.log("You are out of the game")
 }
+console.log(hasblackjack)
