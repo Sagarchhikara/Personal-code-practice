@@ -62,3 +62,51 @@ SELECT
         ELSE 'F'
     END AS grade
 FROM Students;
+
+
+
+CREATE TABLE student (
+    roll INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    gender VARCHAR(10) NOT NULL CHECK (gender IN ('Male', 'Female', 'Other')),
+    dob DATE CHECK (dob <= CURDATE()),
+    password VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE DATABASE attendance;
+use attendance;
+create table student (
+roll_number int auto_increment primary key,
+name varchar(100) not null,
+gender VARCHAR(10) not null check (gender in ('Male', 'Female', 'Other')),
+dob date ,
+password VARCHAR(255) not null unique
+);
+insert into student (name, gender, dob, password)
+VALUES 
+('abc','Male', '2005-03-11', SHA('abc123')),
+('xyz','Female', '2004-04-12', SHA('xyz456')),
+('bcd','Female', '2003-03-21', SHA('bcd789'));
+
+drop table if exists attendance;
+create table users (
+user_role enum('Student','Faculty','Others') not null,
+contact_number char(10) not null,
+pass_word char(40) not null,
+created_on date not null default(current_date()),
+last_login date,
+user_active bool not null default false
+);
+select * from users;
+select * from users where user_role=1;
+select * from users where user_active;
+select * from users where not user_active;
+
+create table attendance_register
+(
+attendance_date date not null,
+roll_number int not null,
+present int not null check(present in(0,1)),
+primary key(attendance_date,roll_number),
+foreign key(roll_number) references student(roll_number)
+);
