@@ -247,3 +247,163 @@ BEGIN
 END //
 
 DELIMITER;
+
+DELIMITER //
+
+CREATE PROCEDURE ProcessEmployeeBonuses()
+BEGIN
+    -- 1. Declare variables (Think of these as your "scratchpad")
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE emp_id INT;
+    DECLARE emp_rating VARCHAR(10);
+    
+    -- 2. The Cursor (The "Conveyor Belt")
+    DECLARE emp_cursor CURSOR FOR 
+        SELECT id, rating FROM employees;
+        
+    -- 3. The "End of Belt" Signal
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    OPEN emp_cursor;
+
+    -- 4. The Loop
+    read_loop: LOOP
+        FETCH emp_cursor INTO emp_id, emp_rating;
+        
+        IF done THEN
+            LEAVE read_loop; -- Stop when the belt is empty
+        END IF;
+
+        -- 5. The Conditional (The Decision)
+        IF emp_rating = 'High' THEN
+            UPDATE employees SET salary = salary + 50 WHERE id = emp_id;
+        ELSE
+            UPDATE employees SET salary = salary + 10 WHERE id = emp_id;
+        END IF;
+
+    END LOOP;
+
+    CLOSE emp_cursor;
+END //
+
+DELIMITER ;
+
+use dbg4;
+-- Curosr
+CREATE table Employee(
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    salary INT
+);
+INSERT INTO Employee (name, salary) VALUES 
+('John Smith', 50000),
+('Sarah Johnson', 65000),
+('Michael Brown', 55000),
+('Emily Davis', 72000),
+('David Wilson', 60000);
+-- DELLIMITER $$
+-- CREATE Procedure showEmps()
+-- BEGIN
+--     DECLARE done INT DEFAULT 0;
+--     DECLARE empName VARCHAR(50);
+--     DECLARE empSalary INT;
+--     DECLARE emp_cursor CURSOR FOR SELECT name, salary FROM Employee;
+--     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+--     OPEN emp_cursor;
+--     read_loop: LOOP
+--         FETCH emp_cursor INTO empName, empSalary;
+--         IF done THEN
+--             LEAVE read_loop;
+--         END IF;
+--         IF empSalary > 60000 THEN
+--             SELECT empName AS Employee_Name, empSalary AS Salary;
+--         END IF;
+--     END LOOP;
+--     CLOSE emp_cursor;
+-- END$$
+
+-- DELLIMITER ;
+DELIMITER $$
+
+CREATE PROCEDURE showEmployees()
+BEGIN
+    DECLARE done INT DEFAULT 0;
+    DECLARE empName VARCHAR(50);
+    DECLARE empSalary INT;
+
+    DECLARE emp_cursor CURSOR FOR
+        SELECT name, salary FROM Employee;
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND
+        SET done = 1;
+
+    OPEN emp_cursor;
+
+    read_loop: LOOP
+        FETCH emp_cursor INTO empName, empSalary;
+
+        IF done = 1 THEN
+            LEAVE read_loop;
+        END IF;
+
+        SELECT empName AS Name, empSalary AS Salary;
+    END LOOP;
+
+    CLOSE emp_cursor;
+END$$
+
+DELIMITER ;
+CALL showEmployees();
+ CREATE TABLE Student1(
+  id INT,
+  name VARCHAR(50),
+  marks INT,
+  branch VARCHAR(20)
+);
+INSERT INTO Student1 (id, name, marks, branch) VALUES
+(1, 'Alice', 85, 'CSE'),
+(2, 'Bob', 92, 'ECE'),
+(3, 'Charlie', 78, 'MECH'),
+(4, 'David', 88, 'CSE'),
+(5, 'Eve', 95, 'ECE');
+
+CREATE VIEW HighScorers AS
+SELECT name, marks FROM Student1 WHERE marks > 80;
+
+SELECT * FROM HighScorers;
+
+use dbg4;
+
+CREATE TABLE CUSTOMERS (
+   ID INT NOT NULL,
+   NAME VARCHAR(15) NOT NULL,
+   AGE INT NOT NULL,
+   ADDRESS VARCHAR(25),
+   SALARY DECIMAL(10, 2),
+   PRIMARY KEY(ID)
+);
+INSERT INTO CUSTOMERS VALUES 
+(1, 'Ramesh', '32', 'Ahmedabad', 2000),
+(2, 'Khilan', '25', 'Delhi', 1500),
+(3, 'Kaushik', '23', 'Kota', 2500),
+(4, 'Chaitali', '26', 'Mumbai', 6500),
+(5, 'Hardik','27', 'Bhopal', 8500),
+(6, 'Komal', '22', 'MP', 9000),
+(7, 'Muffy', '24', 'Indore', 5500);
+
+CREATE VIEW first_view AS SELECT * FROM CUSTOMERS;
+
+SELECT * FROM first_view;
+
+CREATE VIEW test_view AS SELECT * FROM CUSTOMERS WHERE SALARY>3000;
+SELECT * FROM test_view;
+
+DROP Table Customers;
+CREATE TABLE CUSTOMERS(
+   ID int NOT NULL,
+   NAME varchar(20) NOT NULL,
+   AGE int NOT NULL,
+   ADDRESS varchar(25),
+   SALARY decimal(18, 2),
+   PRIMARY KEY (ID)
+);
