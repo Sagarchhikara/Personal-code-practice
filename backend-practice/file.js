@@ -19,3 +19,5 @@ data = fs.readFile('text.txt', 'utf8', (err, data) => {
     else console.log(data); // Output: This is an example of writeFile method
 });
 console.log(data); // Output: This is an example of writeFile method
+
+fs.appendFileSync('example.txt', '\nAppended Text!'); // appendFileSync is a method that appends data to a file synchronously. If the file does not exist, it will be created.
