@@ -25,4 +25,4 @@ fs.appendFileSync('example.txt', '\nAppended Text!'); // appendFileSync is a met
 fs.appendFile('text.txt', '\nThis text is appended using appendFile method', (err) => {
     if (err) console.log(err);
     else console.log("File appended successfully using appendFile method");
-}
+});
