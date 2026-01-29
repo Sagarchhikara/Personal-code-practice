@@ -5,3 +5,5 @@ fs.writeFileSync('example.txt', 'Hello, World!');
 
 const data = fs.readFileSync('example.txt', 'utf8');
 // readFileSync is a method that reads the contents of a file synchronously. The second argument specifies the encoding.
+
+console.log(data); // Output: Hello, World!
