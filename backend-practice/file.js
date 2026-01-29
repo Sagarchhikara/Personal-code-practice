@@ -30,4 +30,5 @@ fs.appendFile('text.txt', '\nThis text is appended using appendFile method', (er
 // fs.unlink("text.txt", (err) => { }) // unlink is async method that deteles a file 
 // create a folder student info inside the flder create atext file which contains students name and roll no then append the file for his phone number 
 fs.mkdirSync('student-info');
-fs.writeFileSync("student-indo/st") // mkdirSync is a method that creates a new directory synchronously.
+fs.writeFileSync("student-info/student", "Name= Sagar Chhikara \n Roll no 2734");
+fs.appendFileSync("student-info/student", "Phone no:2734")
