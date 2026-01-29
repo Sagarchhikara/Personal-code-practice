@@ -14,5 +14,8 @@ fs.writeFile("text.txt", "This is an example of writeFile method", (err) => {
 var data = fs.readFileSync('text.txt', 'utf8');
 console.log(data); // Output: Hello, World!
 
-data = fs.readFile('text.txt', 'utf8');
+data = fs.readFile('text.txt', 'utf8', (err, data) => {
+    if (err) console.log(err);
+    else console.log(data); // Output: This is an example of writeFile method
+});
 console.log(data); // Output: This is an example of writeFile method
