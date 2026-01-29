@@ -10,4 +10,4 @@ fs.writeFile("text.txt", "This is an example of writeFile method", (err) => {
 });
 // readFileSync is a method that reads the contents of a file synchronously. The second argument specifies the encoding.
 
-console.log(data); // Output: Hello, World!
+// console.log(data); // Output: Hello, World!
