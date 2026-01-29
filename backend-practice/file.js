@@ -26,3 +26,4 @@ fs.appendFile('text.txt', '\nThis text is appended using appendFile method', (er
     if (err) console.log(err);
     else console.log("File appended successfully using appendFile method");
 });
+fs.unlinkSync('example.txt'); // unlinkSync is a method that deletes a file synchronously.
