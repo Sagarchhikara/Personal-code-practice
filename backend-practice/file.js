@@ -11,5 +11,5 @@ fs.writeFile("text.txt", "This is an example of writeFile method", (err) => {
     const data = fs.readFileSync('example.txt', 'utf8');
 });
 // readFileSync is a method that reads the contents of a file synchronously. The second argument specifies the encoding.
-const data = fs.readFileSync('example.txt', 'utf8');
+const data = fs.readFileSync('text.txt', 'utf8');
 console.log(data); // Output: Hello, World!
