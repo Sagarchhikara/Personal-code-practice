@@ -1,2 +1,0 @@
-This is an example of writeFile method
-This text is appended using appendFile method
