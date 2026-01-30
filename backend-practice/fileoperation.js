@@ -11,6 +11,7 @@ function writeFile() {
     })
 };
 
+// Creating afunction to demonstrate file read operations Using ASync function 
 function readFile() {
     fs.readFile('data.txt', 'utf8', (err, data) => {
         if (err) {
