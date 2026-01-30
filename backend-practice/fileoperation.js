@@ -25,3 +25,15 @@ function readFile() {
 // Call the functions to demonstrate file operations
 writeFile();
 readFile();
+
+function appendFile() {
+    fs.appendFile('data.txt', '\nThis is appended data', (err) => {
+        if (err) {
+            console.error('Error appending to file:', err);
+        } else {
+            console.log('Data appended successfully');
+        }
+    });
+}
+
+appendFile();
