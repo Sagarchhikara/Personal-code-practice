@@ -38,4 +38,5 @@ function appendFile() {
 
 appendFile();
 readFile();
+// Samy way functions can be created for other file operations like delete, rename, etc.
 
