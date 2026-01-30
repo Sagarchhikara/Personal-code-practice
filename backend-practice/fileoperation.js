@@ -10,3 +10,17 @@ function writeFile() {
         }
     })
 };
+
+function readFile() {
+    fs.readFile('data.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+        } else {
+            console.log('File contents:', data);
+        }
+    });
+}
+
+// Call the functions to demonstrate file operations
+writeFile();
+readFile();
