@@ -1,5 +1,6 @@
 const fs = require("fs");
 
+// Creating a function to demonstrate file write operation
 function writeFile() {
     fs.writeFile('data.txt', 'This is some data to write to the file', (err) => {
         if (err) {
