@@ -40,3 +40,38 @@ appendFile();
 readFile();
 // Samy way functions can be created for other file operations like delete, rename, etc.
 
+// create functions to make  file of students that contains name, age, grade then append it add phone number and the cpy it 
+
+function createStudentFile() {
+    fs.writeFile('students.txt', 'Name: John Doe, Age: 20, Grade: A', (err) => {
+        if (err) {
+            console.error('Error creating student file:', err);
+        } else {
+            console.log('Student file created successfully');
+        }
+    });
+}
+
+function appendPhoneNumber() {
+    fs.appendFile('students.txt', ', Phone: 123-456-7890', (err) => {
+        if (err) {
+            console.error('Error appending phone number:', err);
+        } else {
+            console.log('Phone number appended successfully');
+        }
+    });
+}
+
+function copyStudentFile() {
+    fs.copyFile('students.txt', 'students_copy.txt', (err) => {
+        if (err) {
+            console.error('Error copying student file:', err);
+        } else {
+            console.log('Student file copied successfully');
+        }
+    });
+}
+
+createStudentFile();
+appendPhoneNumber();
+copyStudentFile();
