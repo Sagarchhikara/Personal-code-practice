@@ -1,1 +1,2 @@
 This is some data to write to the file
+This is appended data

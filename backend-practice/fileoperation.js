@@ -37,3 +37,4 @@ function appendFile() {
 }
 
 appendFile();
+readFile();
