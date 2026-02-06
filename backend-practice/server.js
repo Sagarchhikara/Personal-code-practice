@@ -5,6 +5,9 @@ const myserver = http.createServer((req, res) => { // createServer method create
         if (err) {
             console.log(err); // log any errors that occur during the file append operation
         }
+        else {
+            console.log('Data appended to file successfully'); // log message to indicate that data was appended to the file successfully
+        }
     });
     res.write('Hello World from the server!'); // write method sends a response body to the client
     res.end('Server is Running'); // end method sends the response back to the client and signals that all of the response headers and body have been sent
