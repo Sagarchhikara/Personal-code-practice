@@ -2,7 +2,8 @@ const http = require('http'); // http module is used to create an HTTP server in
 const fs = require('fs'); // fs module is used for file system operations
 
 const myserver = http.createServer((req, res) => { // createServer method creates a new HTTP server and takes a callback function with request and response bjects as parameters
-    fs.appendFile('log.txt', 'aaaaaa', (err) => { // appendFile method is used to append data to a file, in this case 'log.txt', and takes a callback function with an error parameter
+    const log = `path ls: ${req.url}\n`
+    fs.appendFile('log.txt', log, (err) => { // appendFile method is used to append data to a file, in this case 'log.txt', and takes a callback function with an error parameter
         if (err) {
             console.log(err); // log any errors that occur during the file append operation
         }
