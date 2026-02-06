@@ -5,7 +5,9 @@ const myserver = http.createServer((req, res) => { // createServer method create
     const log = `path ls: ${req.url}\n`
     fs.appendFile('log.txt', log, (err) => { // appendFile method is used to append data to a file, in this case 'log.txt', and takes a callback function with an error parameter
         if (err) {
-            console.log(err); // log any errors that occur during the file append operation
+            res.statusCode = 500;
+            res.end("Server Error");
+            return;// log any errors that occur during the file append operation
         }
         else {
             console.log('Data appended to file successfully'); // log message to indicate that data was appended to the file successfully
