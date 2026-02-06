@@ -12,22 +12,22 @@ const myserver = http.createServer((req, res) => { // createServer method create
         else {
             switch (req.url) { // switch statement is used to handle different routes based on the request URL
                 case '/':
-                    res.end("This is the home page");
+                    res.write("This is the home page");
                     break;
                 case '/about':
-                    res.end("This is the about page");
-                    break;
+                    res.write"This is the about page");
+    break;
                 case '/contact':
-                    res.end("This is the contact page");
-                    break;
+res.end("This is the contact page");
+break;
                 default:
-                    res.statusCode = 404;
-                    res.end("Page Not Found");
+res.statusCode = 404;
+res.end("Page Not Found");
             }
         }
     });
-    res.write('Hello World from the server!'); // write method sends a response body to the client
-    res.end('Server is Running'); // end method sends the response back to the client and signals that all of the response headers and body have been sent
+res.write('Hello World from the server!'); // write method sends a response body to the client
+res.end('Server is Running'); // end method sends the response back to the client and signals that all of the response headers and body have been sent
 });
 
 myserver.listen(3000, () => { // listen method binds the server to a specific port and hostname, and starts listening for incoming connections
