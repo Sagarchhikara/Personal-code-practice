@@ -1,6 +1,11 @@
 const http = require('http'); // http module is used to create an HTTP server in Node.js and manage relation between client and server
 
 const myserver = http.createServer((req, res) => { // createServer method creates a new HTTP server and takes a callback function with request and response bjects as parameters
+    fstat.appendFile('log.txt', 'aaaaaa', (err) => { // appendFile method is used to append data to a file, in this case 'log.txt', and takes a callback function with an error parameter
+        if (err) {
+            console.log(err); // log any errors that occur during the file append operation
+        }
+    });
     res.write('Hello World from the server!'); // write method sends a response body to the client
     res.end('Server is Running'); // end method sends the response back to the client and signals that all of the response headers and body have been sent
 });
