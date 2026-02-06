@@ -10,7 +10,20 @@ const myserver = http.createServer((req, res) => { // createServer method create
             return;// log any errors that occur during the file append operation
         }
         else {
-            console.log('Data appended to file successfully'); // log message to indicate that data was appended to the file successfully
+            switch (req.url) { // switch statement is used to handle different routes based on the request URL
+                case '/':
+                    res.end("This is the home page");
+                    break;
+                case '/about':
+                    res.end("This is the about page");
+                    break;
+                case '/contact':
+                    res.end("This is the contact page");
+                    break;
+                default:
+                    res.statusCode = 404;
+                    res.end("Page Not Found");
+            }
         }
     });
     res.write('Hello World from the server!'); // write method sends a response body to the client
