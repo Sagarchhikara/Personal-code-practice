@@ -30,3 +30,7 @@ path ls: /about
 path ls: /favicon.ico
 path ls: /about
 path ls: /favicon.ico
+path ls: /
+path ls: /about
+path ls: /contact
+path ls: /unknown
