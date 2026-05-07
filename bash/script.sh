@@ -8,3 +8,4 @@ files=(
 )
 echo "${my_array[@]}"
 # @ means all indexs will be printed 
+
