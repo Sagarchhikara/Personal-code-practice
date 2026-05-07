@@ -24,4 +24,4 @@ servers+=("app-01")
 echo "${servers[@]}"
 #deleton of an element in an array
 unset servers[1] # it will delete db-01 but index will be there
-echo "${servers[@]}"
+echo "${servers[@]}" 
