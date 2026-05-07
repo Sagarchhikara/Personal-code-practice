@@ -6,4 +6,5 @@ files=(
     "/etc/passwd"
     "/var/log/syslog"
 )
-echo "$my_array"
+echo "${my_array[@]}"
+# @ means all indexs will be printed 
