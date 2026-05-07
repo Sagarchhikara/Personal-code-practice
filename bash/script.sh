@@ -12,6 +12,6 @@ subject[1]="Python"
 subject[2]="Dsa"
 subject[10]="BE"
 echo "${my_array[@]}"
-echo "${subject[3]}"
+echo "${subject[@]}"
 # @ means all indexs will be printed 
 
