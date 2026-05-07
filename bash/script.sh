@@ -25,5 +25,5 @@ echo "${servers[@]}"
 #deleton of an element in an array
 unset servers[2] # it will delete db-01 but index will be there
 echo "${servers[@]}" 
-# searching and replacing the elment in an array
-echo "$(servers[@]/web-01/web-02)" # it will replace web-01 with web-02
+# searching and replacing the element in an array
+echo "${servers[@]/web-01/web-02}" # it will replace web-01 with web-02
