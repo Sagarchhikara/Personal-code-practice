@@ -17,3 +17,4 @@ echo "${my_array[@]}"
 echo "${subject[@]}"
 echo "${#files[@]}" # shows the number of elements in an array
 # @ means all indexs will be printed 
+echo "Your path is $PATH"
