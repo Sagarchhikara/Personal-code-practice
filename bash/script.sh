@@ -1,4 +1,8 @@
 #!/bin/bash
 
 my_array=("apple" "banana" "cherry")
-my_array1=
+files=(
+    "/etc/hosts"
+    "/etc/passwd"
+    "/var/log/syslog"
+)
