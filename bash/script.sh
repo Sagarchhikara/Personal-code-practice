@@ -12,7 +12,6 @@ subject[1]="Python"
 subject[2]="Dsa"
 subject[10]="BE"
 # explicit declarariion of array
-declare -a friends
 
 echo "${my_array[@]}"
 echo "${subject[@]}"
