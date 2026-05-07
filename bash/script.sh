@@ -7,5 +7,6 @@ files=(
     "/var/log/syslog"
 )
 echo "${my_array[@]}"
-# @ means all indexs will be printed 
+# @ means all indexs will be printe
+d 
 
