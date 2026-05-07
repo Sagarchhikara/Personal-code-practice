@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "Hello Sagar 🚀"
+my_array=("apple" "banana" "cherry")
+my_array1=
