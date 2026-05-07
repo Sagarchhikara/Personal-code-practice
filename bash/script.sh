@@ -8,7 +8,7 @@ files=(
 )
 subject[0]="Linux"
 subject[1]="Python"
-subject[10]="Dsa"
+subject[2]="Dsa"
 echo "${my_array[@]}"
 echo "${subject[@]}"
 # @ means all indexs will be printed 
