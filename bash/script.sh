@@ -11,7 +11,10 @@ subject[0]="Linux"
 subject[1]="Python"
 subject[2]="Dsa"
 subject[10]="BE"
+# explicit declarariion of array
+declare -a friends
+
 echo "${my_array[@]}"
 echo "${subject[@]}"
+echo "${#files[@]}" # shows the number of elements in an array
 # @ means all indexs will be printed 
-
