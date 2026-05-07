@@ -10,6 +10,6 @@ subject[0]="Linux"
 subject[1]="Python"
 subject[10]="Dsa"
 echo "${my_array[@]}"
-echo"${subject[@]}"
+echo "${subject[@]}"
 # @ means all indexs will be printed 
 
