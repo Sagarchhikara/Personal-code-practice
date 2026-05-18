@@ -23,3 +23,9 @@ while [ $count -le 5 ]; do
 done
 
 # Until loops
+count=10
+until [ $count -le 5 ]; do
+	echo "Count: $count"
+	((count--))
+done
+
