@@ -17,5 +17,6 @@ greeting="Hello"
 name="Sagar"
 echo "$greeting, $name!" # Output: Hello, Sagar!
 # String concatenation
-age=19
+age=19 
 echo "$name is $age years old." # Output: Sagar is 19 years old
+echo "$sagar+$age
