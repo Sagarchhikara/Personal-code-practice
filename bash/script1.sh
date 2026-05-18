@@ -19,4 +19,5 @@ echo "$greeting, $name!" # Output: Hello, Sagar!
 # String concatenation
 age=19 
 echo "$name is $age years old." # Output: Sagar is 19 years old
-sum=$(())
+sum=$((age+sagar))
+echo "The sum of age and sagar is $sum" # Output: The sum of
