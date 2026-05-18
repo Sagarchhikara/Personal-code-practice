@@ -26,3 +26,4 @@ echo "The sum of age and sagar is $sum" # Output: The sum of
  age1=19 # Integer
  height=5.9 # Float
  is_student=true # Boolean
+ 
