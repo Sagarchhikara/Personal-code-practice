@@ -12,3 +12,4 @@ myfunc(){
 	echo "My name is $name"
 }
 myfunc
+# Common variable 
