@@ -10,3 +10,5 @@ if [ $age1 -ge 18 ]; then
 else
 	echo "You are a minor."
 fi
+
+# For loops
