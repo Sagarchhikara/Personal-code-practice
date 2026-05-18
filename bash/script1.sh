@@ -22,3 +22,7 @@ echo "$name is $age years old." # Output: Sagar is 19 years old
 sum=$((age+sagar))
 echo "The sum of age and sagar is $sum" # Output: The sum of
 # Understanding data types 
+ name1="Sagar" # String
+ age1=19 # Integer
+ height=5.9 # Float
+ is_student=true # Boolean
