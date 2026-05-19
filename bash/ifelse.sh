@@ -30,3 +30,7 @@ until [ $count -le 5 ]; do
 done
 
 # bash functions 
+my_function() {
+	echo "This is a function."
+}
+my_function
