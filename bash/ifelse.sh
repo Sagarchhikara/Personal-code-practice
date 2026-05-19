@@ -39,3 +39,5 @@ greeting(){
 	echo "Hello, $name!"
 }
 greeting "Alice"
+
+# Return types
