@@ -1,3 +1,4 @@
+#!/bin/bash
 read str1
 read str2
 
@@ -6,3 +7,4 @@ if [ "$str1" = "$str2" ]; then
 else
     echo "NOT EQUAL"
 fi
+# Q2
