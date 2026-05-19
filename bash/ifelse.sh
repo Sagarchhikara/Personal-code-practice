@@ -35,5 +35,7 @@ my_function() {
 }
 my_function
 greeting(){
-	
+	local name=$1
+	echo "Hello, $name!"
 }
+greeting "Alice"
