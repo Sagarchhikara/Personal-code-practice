@@ -15,3 +15,9 @@ else
     echo "Not Exists"
 fi
 #Q3
+read no1
+read no2
+read no3
+sum=$((no1 + no2 + no3))
+echo "$sum"
+
