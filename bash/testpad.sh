@@ -8,4 +8,10 @@ else
     echo "NOT EQUAL"
 fi
 # Q2
-
+read input
+if [ -f "$input" ] ; then 
+    echo "Exists"
+else 
+    echo "Not Exists"
+fi
+#Q3
