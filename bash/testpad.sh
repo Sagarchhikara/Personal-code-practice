@@ -1,0 +1,8 @@
+read str1
+read str2
+
+if [ "$str1" = "$str2" ]; then
+    echo "EQUAL"
+else
+    echo "NOT EQUAL"
+fi
