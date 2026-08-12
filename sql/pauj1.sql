@@ -10,3 +10,5 @@ create table student (
     age int,
     email varchar(50)
 );
+
+select * from student;
