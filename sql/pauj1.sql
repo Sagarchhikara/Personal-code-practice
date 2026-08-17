@@ -13,7 +13,26 @@ create table student (
 
 select * from student;
 
-insert into student (id, name, age, email) values (2, 'Jane Smith', 22, 'jane.smith@example.com' );
+insert into
+    student (id, name, age, email)
+values (
+        2,
+        'Jane Smith',
+        22,
+        'jane.smith@example.com'
+    );
+
 select * from student;
 
-insert into student (id, name, age, email) values (3, 'Alice Johnson', 21, 'alice.johnson@example.com');
+insert into
+    student (id, name, age, email)
+values (
+        3,
+        'Alice Johnson',
+        21,
+        'alice.johnson@example.com'
+    );
+
+/
+/
+create two tables and perform innwer join between them
