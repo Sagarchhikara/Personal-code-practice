@@ -36,7 +36,7 @@ INSERT INTO
 VALUES (101, 1, 2500.00, '2026-08-01'),
     (102, 2, 1800.50, '2026-08-02'),
     (103, 1, 3200.75, '2026-08-03'),
-    (104, 4, 900.00, '2026-08-04');
+    (104, 3, 900.00, '2026-08-04');
 
 SELECT c.customer_id, c.customer_name, c.city, o.order_id, o.order_amount, o.order_date
 FROM customers c
